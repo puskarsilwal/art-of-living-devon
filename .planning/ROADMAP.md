@@ -33,10 +33,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Next.js 16 project with Tailwind CSS 4 and shadcn/ui is deployed and accessible on a public Vercel URL (*.vercel.app)
   2. Privacy policy page exists at /privacy-policy with UK GDPR and PECR compliant content
   3. Running `npm run build` locally produces zero errors and the deployed site loads in under 3 seconds
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Scaffold Next.js 16 + Tailwind CSS 4 + shadcn/ui, brand theming, privacy policy, deploy to Vercel
 
 ### Phase 2: Intro Talk Landing Page - Core
 **Goal**: A visitor arriving from a Facebook ad sees a compelling above-the-fold experience and can register in under 30 seconds on mobile
