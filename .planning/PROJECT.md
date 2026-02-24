@@ -30,6 +30,8 @@ Convert Facebook ad visitors into intro talk attendees, then nurture them toward
 - [ ] Rotating teacher support — flexible instructor display per session
 - [ ] Mobile-responsive design (Facebook ad traffic is heavily mobile)
 - [ ] Deep research on Art of Living Part 1 program, intro talk format, UK-specific details
+- [ ] Satsang/Kirtan event pages — community events the Devon/Southwest team hosts (similar to London Satsang model but local)
+- [ ] Reusable event page template for recurring community events
 
 ### Out of Scope
 
@@ -48,6 +50,7 @@ Convert Facebook ad visitors into intro talk attendees, then nurture them toward
 - **Funnel flow:** Facebook Ad → Intro Talk Landing Page → Register → Email Sequence → Attend Zoom Intro Talk → Course Landing Page → Official Registration Link
 - Public testimonials, research data, and credibility elements are available on the Art of Living website and can be leveraged
 - Extensive web research needed on the Part 1 program details, intro talk format, benefits, and UK-specific naming/positioning
+- **Imagery approach**: Use public Art of Living images where available; fall back to AI-generated images (Google Imagen/similar) for realistic, brand-aligned photos if needed
 
 ## Constraints
 
