@@ -106,13 +106,52 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (Populated during roadmap creation) | | |
+| INTRO-01 | Phase 2 | Pending |
+| INTRO-02 | Phase 2 | Pending |
+| INTRO-03 | Phase 2 | Pending |
+| INTRO-04 | Phase 2 | Pending |
+| INTRO-05 | Phase 2 | Pending |
+| INTRO-06 | Phase 3 | Pending |
+| INTRO-07 | Phase 3 | Pending |
+| INTRO-08 | Phase 3 | Pending |
+| INTRO-09 | Phase 2 | Pending |
+| INTRO-10 | Phase 4 | Pending |
+| INTRO-11 | Phase 4 | Pending |
+| INTRO-12 | Phase 4 | Pending |
+| INTRO-13 | Phase 3 | Pending |
+| INTRO-14 | Phase 3 | Pending |
+| COURSE-01 | Phase 5 | Pending |
+| COURSE-02 | Phase 5 | Pending |
+| COURSE-03 | Phase 5 | Pending |
+| COURSE-04 | Phase 5 | Pending |
+| COURSE-05 | Phase 5 | Pending |
+| HOME-01 | Phase 6 | Pending |
+| HOME-02 | Phase 6 | Pending |
+| HOME-03 | Phase 6 | Pending |
+| HOME-04 | Phase 6 | Pending |
+| EVENT-01 | Phase 7 | Pending |
+| EVENT-02 | Phase 7 | Pending |
+| EVENT-03 | Phase 7 | Pending |
+| EMAIL-01 | Phase 9 | Pending |
+| EMAIL-02 | Phase 9 | Pending |
+| EMAIL-03 | Phase 9 | Pending |
+| EMAIL-04 | Phase 10 | Pending |
+| EMAIL-05 | Phase 10 | Pending |
+| EMAIL-06 | Phase 10 | Pending |
+| EMAIL-07 | Phase 10 | Pending |
+| INFRA-01 | Phase 1 | Pending |
+| INFRA-02 | Phase 9 | Pending |
+| INFRA-03 | Phase 9 | Pending |
+| INFRA-04 | Phase 8 | Pending |
+| INFRA-05 | Phase 8 | Pending |
+| INFRA-06 | Phase 1 | Pending |
+| INFRA-07 | Phase 8 | Pending |
 
 **Coverage:**
-- v1 requirements: 35 total
-- Mapped to phases: 0
-- Unmapped: 35 (pending roadmap)
+- v1 requirements: 40 total
+- Mapped to phases: 40
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after initial definition*
+*Last updated: 2026-02-24 after roadmap revision*
