@@ -1,8 +1,8 @@
 ---
 phase: 03-intro-talk-landing-page-trust-content
 verified: 2026-02-25T02:30:00Z
-status: passed
-score: 5/5 gaps closed
+status: gaps_found
+score: 5/5 previous gaps closed (6 new page-wide visual polish gaps from human review)
 re_verification: true
 previous_status: gaps_found
 previous_score: "7/7 automated must-haves (5 visual quality gaps from human review)"
@@ -12,7 +12,13 @@ gaps_closed:
   - "Icon + text alignment is fixed across credentials, objections, and timeline"
   - "Overall visual quality elevated (premium cards, hover effects, gradients)"
   - "Teacher section has a real photo (not gradient placeholder)"
-gaps_remaining: []
+gaps_remaining:
+  - "Hero section is plain white text on white — no background image, gradient, or visual punch for Facebook ad landing"
+  - "Benefits section is just checkmarks + text — no icon cards, no imagery, looks like a bulleted list"
+  - "No visual rhythm between sections — flat white or barely-there bg-muted/50 everywhere, no background textures or gradients"
+  - "Every CTA button is identical — no visual variety, repetitive, no urgency cues"
+  - "Registration form is a plain card — no warmth, no urgency, no visual treatment that says 'this matters'"
+  - "Footer CTA is minimal solid orange block — no imagery or visual richness"
 regressions: []
 human_verification:
   - test: "Visual credibility on cold-traffic first impression"
@@ -226,10 +232,52 @@ All 5 visual quality gaps from the previous verification are closed. No new gaps
 - **Gap 4** (visual quality): CLOSED — premium card treatments (shadows, hover effects, gradients) applied across all 5 sections; pull-quote highlights, green check badges, decorative header bars, and Gurudev blockquote add visual richness and variety
 - **Gap 5** (teacher placeholder): CLOSED — gradient placeholder div replaced with real `teacher-guiding.jpg` via `next/image`; TODO comment and `Sparkles` icon removed
 
-Phase 3 goal is achieved in code. Human browser review is recommended to confirm photography quality and visual cohesion meet the premium standard required for cold Facebook traffic conversion.
+Previous 5 gaps are closed. However, **human review identified 6 new page-wide visual polish gaps** — the page still looks bland and generic for cold Facebook ad traffic.
+
+#### Gap 6: Hero section has no visual impact
+- **status: failed**
+- **severity: high**
+- **details:** Hero is plain white background with text. No background image, no gradient, no visual punch. This is the first thing someone sees after clicking a Facebook ad — it needs to be arresting. Currently looks like a generic template.
+- **fix:** Add a full-width background image (meditation/nature) with gradient overlay, larger typography, more dramatic visual treatment. The hero must feel premium within 2 seconds.
+- **files:** `src/components/intro/hero-section.tsx`
+
+#### Gap 7: Benefits section is a plain text list
+- **status: failed**
+- **severity: high**
+- **details:** Just CheckCircle icons + text in a 2-column grid. No cards, no imagery, no visual weight. Looks like a bulleted list, not a benefits showcase.
+- **fix:** Each benefit should be in its own card with a meaningful icon, short title, and description. Add visual richness — card backgrounds, icon treatments, maybe a subtle image accent.
+- **files:** `src/components/intro/benefits-section.tsx`
+
+#### Gap 8: No visual rhythm between sections — page feels flat
+- **status: failed**
+- **severity: high**
+- **details:** Sections alternate between white and barely-there `bg-muted/50`. No background textures, gradients, or visual variation. The page reads as one long flat document rather than distinct, visually varied sections that create a journey.
+- **fix:** Add gradient backgrounds, subtle patterns or textures, section dividers, and more color variation between sections. Each section should feel visually distinct.
+- **files:** `src/app/globals.css`, multiple section components
+
+#### Gap 9: CTA buttons are identical and repetitive
+- **status: failed**
+- **severity: medium**
+- **details:** Every "Save My Seat" button is the same orange rectangle. No visual variety, no urgency cues (countdown, limited spots), no animation or hover differentiation.
+- **fix:** Vary CTA treatments — some with subtle animation/pulse, add urgency text ("Only X spots left"), different button styles for different positions in the funnel.
+- **files:** `src/components/intro/hero-section.tsx`, `src/components/intro/benefits-section.tsx`, `src/components/intro/footer-cta.tsx`
+
+#### Gap 10: Registration form is a plain card with no warmth
+- **status: failed**
+- **severity: medium**
+- **details:** The registration form is a basic shadcn Card. No visual warmth, no urgency cues, no social proof near the form ("Join 500+ registrants"), no imagery. Doesn't make the visitor feel like registering is exciting.
+- **fix:** Add warm background treatment, social proof counter or trust badges near the form, subtle urgency cues, and a more visually engaging card treatment.
+- **files:** `src/components/intro/registration-form.tsx`
+
+#### Gap 11: Footer CTA is a minimal solid block
+- **status: failed**
+- **severity: low**
+- **details:** Just solid orange background with white text. No imagery, no visual richness, no emotional pull for the final nudge.
+- **fix:** Add a background image with overlay, or gradient treatment, testimonial snippet, or countdown — something that makes the final CTA feel like a last compelling moment.
+- **files:** `src/components/intro/footer-cta.tsx`
 
 ---
 
-_Verified: 2026-02-25_
-_Verifier: Claude (gsd-verifier)_
-_Re-verification after Plans 03-03 and 03-04 gap closure_
+_Updated: 2026-02-25_
+_Verifier: Human review (page-wide visual polish)_
+_Re-verification needed after gap closure Plans 03-05 and 03-06_
