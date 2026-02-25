@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- phase complete
-Plan: 11 of 11 in current phase (all plans including gap closure done)
-Status: Phase 03 fully complete (all 11 plans executed, all gaps closed)
-Last activity: 2026-02-25 -- Plan 03-11 complete: remove TeacherSection, fix stats grid overflow, consistent CTAs
+Phase: 4 of 10 (Registration Flow & Session Selection)
+Plan: 1 of 4 in current phase
+Status: Phase 04 in progress — Plan 01 complete (session data model + countdown timer)
+Last activity: 2026-02-25 -- Plan 04-01 complete: extended intro-talks data model, CountdownTimer component, hero integration
 
-Progress: [#####░░░░░] 45%
+Progress: [#####░░░░░] 47%
 
 ## Performance Metrics
 
@@ -40,6 +40,7 @@ Progress: [#####░░░░░] 45%
 | Phase 03 P09 | 2min | 3 tasks | 3 files |
 | Phase 03 P10 | 2min | 3 tasks | 6 files |
 | Phase 03 P11 | 3min | 5 tasks | 4 files |
+| Phase 04 P01 | 10min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -93,6 +94,9 @@ Recent decisions affecting current work:
 - [Phase 03-11]: TeacherSection removed: no named teacher or bio, AboutSection covers organisational trust
 - [Phase 03-11]: AboutSection stats grid uses lg:grid-cols-4 to match outer layout breakpoint and prevent tablet overflow
 - [Phase 03-11]: All CTAs use shadcn Button component — CredibilitySection CTA copy changed to 'Save My Seat (It's Free)' for consistency
+- [Phase 04-01]: null-init useState<TimeLeft>(null) prevents SSR hydration mismatch — renders null before client hydration
+- [Phase 04-01]: introTalkSessions array with 3 sessions; nextIntroTalk preserved as introTalkSessions[0] for backward compat
+- [Phase 04-01]: Zoom URLs use PLACEHOLDER with TODO comment — real meeting IDs needed before go-live
 
 ### Pending Todos
 
@@ -107,5 +111,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 03-11-PLAN.md (remove TeacherSection, fix stats grid, consistent CTAs) — Phase 03 fully complete (11/11 plans)
+Stopped at: Completed 04-01-PLAN.md (session data model, CountdownTimer, hero integration) — Phase 04 Plan 01 complete
 Resume file: None
