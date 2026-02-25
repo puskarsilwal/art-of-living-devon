@@ -48,11 +48,12 @@ Plans:
   3. "Save My Seat" CTA appears in at least 4 locations: hero, after benefits, after social proof area, and footer
   4. Page renders correctly and is fully usable on mobile viewports (375px+) with touch-friendly form inputs
   5. GDPR consent checkbox (unticked by default) and link to privacy policy are visible adjacent to the registration form
-**Plans**: 2 plans
+**Plans**: 3 plans
 
 Plans:
 - [x] 02-01-PLAN.md — Route group architecture, form dependencies, registration schema + server action
 - [x] 02-02-PLAN.md — Intro talk landing page sections, registration form, 4 CTAs, mobile-first layout
+- [ ] 02-03-PLAN.md — Gap closure: client-side Zod validation via react-hook-form + trust indicators near form
 
 ### Phase 3: Intro Talk Landing Page - Trust & Content
 **Goal**: Cold Facebook traffic sees enough social proof and credibility to trust registering for an event from an organization they have never heard of
@@ -175,7 +176,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Scaffolding & Deploy | 0/1 | Complete    | 2026-02-25 |
-| 2. Intro Talk LP - Core | 2/2 | Complete    | 2026-02-25 |
+| 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
 | 3. Intro Talk LP - Trust | 0/2 | Not started | - |
 | 4. Registration Flow | 0/1 | Not started | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
