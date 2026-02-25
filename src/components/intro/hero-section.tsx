@@ -35,10 +35,20 @@ export function HeroSection() {
           <span className="text-primary">Changes Everything</span>
         </h1>
 
-        <p className="text-white/85 text-base sm:text-lg max-w-xl mx-auto mb-5">
-          Join a free 60-minute intro to the Art of Living. Learn a powerful
-          breathing technique used by millions worldwide.
-        </p>
+        <ul className="text-white/85 text-base sm:text-lg max-w-xl mx-auto mb-5 space-y-2 text-left list-none">
+          <li className="flex items-start gap-2">
+            <span className="text-primary mt-1 shrink-0">✓</span>
+            <span>Learn <strong className="text-white">SKY Breath Meditation</strong> — a science-backed technique used by 500M+ people worldwide</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-primary mt-1 shrink-0">✓</span>
+            <span>Discover how to <strong className="text-white">manage stress and calm your mind</strong> in minutes, not months</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-primary mt-1 shrink-0">✓</span>
+            <span>Experience <strong className="text-white">effortless meditation</strong> — even if you&apos;ve never meditated before</span>
+          </li>
+        </ul>
 
         <div className="flex items-center justify-center gap-2 text-base sm:text-lg font-medium mb-6 text-white/90">
           <Clock className="h-5 w-5 text-white/90 shrink-0" />
