@@ -23,10 +23,10 @@ export function AboutSection() {
               <span className="text-primary">Peace to the World</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-4">
-              The Art of Living Foundation was founded in 1981 by Gurudev Sri Sri Ravi Shankar — a humanitarian, spiritual teacher, and peace ambassador. What began as a small programme to share powerful breathing techniques has grown into one of the world&apos;s largest volunteer-run non-profit organisations.
+              Founded in 1981 by Gurudev Sri Sri Ravi Shankar, the Art of Living Foundation has grown from a small breathing programme into one of the world&apos;s largest volunteer-run non-profits.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              Today, Art of Living operates in 180 countries and has touched over 500 million lives — not through advertising, but through direct teaching, word of mouth, and the genuine transformation people experience in its programmes. Every local session you attend is run by a volunteer certified teacher who has completed the same training.
+              Today we operate in 180 countries and have touched 500 million lives — through direct teaching and the genuine transformation people experience. Every local session is run by a volunteer certified teacher.
             </p>
 
             {/* Org fact grid */}

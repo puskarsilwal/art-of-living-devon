@@ -2,10 +2,10 @@ import Image from "next/image"
 import { CheckCircle2 } from "lucide-react"
 
 const sessionPoints = [
-  "A guided SKY Breath Meditation experience — the same technique practiced by over 500 million people worldwide",
-  "Simple, practical tools to calm the nervous system and clear mental noise — no prior experience needed",
-  "An introduction to the Art of Living community and the science behind our breathing practices",
-  "Space to ask questions and explore what a regular practice could look like for you",
+  "A guided SKY Breath Meditation — the technique used by 500M+ people worldwide",
+  "Practical tools to calm your nervous system instantly — no experience needed",
+  "The science behind why breathing changes everything",
+  "Live Q&A with your certified teacher",
 ]
 
 export function SessionIntroSection() {
@@ -36,7 +36,7 @@ export function SessionIntroSection() {
               <span className="text-primary">Stress Less</span>
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6">
-              In 60 minutes, you&apos;ll move from wherever you are right now — stressed, curious, or simply looking for something that works — to a place of genuine calm. No philosophy. No sitting in silence for an hour. Just a breathing practice that actually does what it says.
+              In 60 minutes, you&apos;ll go from stressed and scattered to genuinely calm. No philosophy, no prior experience — just a breathing technique that actually works.
             </p>
 
             <ul className="space-y-3">

@@ -35,18 +35,18 @@ export function HeroSection() {
           <span className="text-primary">Changes Everything</span>
         </h1>
 
-        <ul className="text-white/85 text-base sm:text-lg max-w-xl mx-auto mb-5 space-y-2 text-left list-none">
-          <li className="flex items-start gap-2">
-            <span className="text-primary mt-1 shrink-0">✓</span>
-            <span>Learn <strong className="text-white">SKY Breath Meditation</strong> — a science-backed technique used by 500M+ people worldwide</span>
+        <ul className="text-white/85 text-sm sm:text-base max-w-lg mx-auto mb-5 space-y-2.5 text-left list-none">
+          <li className="flex items-center gap-2">
+            <span className="text-primary shrink-0">✓</span>
+            <span><strong className="text-white">SKY Breath Meditation</strong> — science-backed, used by 500M+</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-primary mt-1 shrink-0">✓</span>
-            <span>Discover how to <strong className="text-white">manage stress and calm your mind</strong> in minutes, not months</span>
+          <li className="flex items-center gap-2">
+            <span className="text-primary shrink-0">✓</span>
+            <span><strong className="text-white">Calm stress and quiet your mind</strong> in minutes, not months</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-primary mt-1 shrink-0">✓</span>
-            <span>Experience <strong className="text-white">effortless meditation</strong> — even if you&apos;ve never meditated before</span>
+          <li className="flex items-center gap-2">
+            <span className="text-primary shrink-0">✓</span>
+            <span><strong className="text-white">Effortless meditation</strong> — zero experience needed</span>
           </li>
         </ul>
 

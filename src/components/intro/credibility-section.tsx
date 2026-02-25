@@ -57,7 +57,7 @@ export function CredibilitySection() {
             {/* Research highlights narrative */}
             <div className="space-y-4">
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                Universities including Yale, Harvard, and Stanford have published independent research confirming that SKY Breath Meditation significantly reduces:
+                Leading universities have independently confirmed SKY Breath Meditation&apos;s impact:
               </p>
               <ul className="space-y-2">
                 {researchHighlights.map((research) => (

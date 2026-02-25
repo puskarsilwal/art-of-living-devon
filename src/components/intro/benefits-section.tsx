@@ -6,22 +6,19 @@ const benefits = [
     image: "/images/intro/breathing-session.jpg",
     alt: "People learning SKY Breath Meditation in a group session",
     caption: "SKY Breath Meditation",
-    description:
-      "A powerful rhythmic breathing technique backed by Yale and Harvard research — reduces stress and anxiety in a single session",
+    description: "Science-backed technique validated by Yale & Harvard — feel the shift in a single session",
   },
   {
     image: "/images/intro/meditation-group.jpg",
     alt: "Group meditating together in an Art of Living session",
     caption: "Deep Rest & Better Sleep",
-    description:
-      "Guided practices that calm the nervous system, deepen sleep quality, and restore natural energy — without years of training",
+    description: "Calms the nervous system and restores natural energy — no years of training required",
   },
   {
     image: "/images/intro/teacher-guiding.jpg",
     alt: "Certified Art of Living teacher guiding participants",
-    caption: "Expert Guidance, Warm Community",
-    description:
-      "Certified Art of Living teachers and a welcoming Devon & Southwest community to support your journey every step of the way",
+    caption: "Expert Guidance",
+    description: "Live certified teachers and a warm Devon & Southwest community behind you every step",
   },
 ]
 

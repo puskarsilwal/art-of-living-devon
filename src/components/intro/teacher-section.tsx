@@ -8,11 +8,11 @@ const credentials = [
   },
   {
     icon: Heart,
-    label: "Warm, supportive approach",
+    label: "Warm & supportive",
   },
   {
     icon: Users,
-    label: "Part of your local community",
+    label: "Local community",
   },
 ]
 
@@ -44,13 +44,7 @@ export function TeacherSection() {
               Certified Art of Living Teacher
             </p>
             <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-2">
-              Trained personally in the tradition of Gurudev Sri Sri Ravi
-              Shankar, bringing authentic practices that have transformed
-              millions of lives worldwide.
-            </p>
-            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-2">
-              Passionate about sharing these life-changing techniques with your
-              local Devon &amp; Southwest community.
+              Trained in the tradition of Gurudev Sri Sri Ravi Shankar, passionate about bringing authentic, life-changing practices to the Devon &amp; Southwest community.
             </p>
 
             {/* Decorative Gurudev quote */}
