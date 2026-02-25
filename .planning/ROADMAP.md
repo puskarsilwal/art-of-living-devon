@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Scaffolding & Deploy** - Scaffold Next.js project, deploy to Vercel free tier, create privacy policy page
 - [x] **Phase 2: Intro Talk Landing Page - Core** - Hero section, registration form, repeated CTAs, mobile-first layout, GDPR consent
-- [ ] **Phase 3: Intro Talk Landing Page - Trust & Content** - Social proof, credibility stats, teacher profile, what-to-expect section, objection handling
+- [x] **Phase 3: Intro Talk Landing Page - Trust & Content** - Social proof, credibility stats, teacher profile, what-to-expect section, objection handling (completed 2026-02-25)
 - [ ] **Phase 4: Registration Flow & Session Selection** - Confirmation page with Zoom link and calendar add, countdown timer, session date picker
 - [ ] **Phase 5: Course Landing Page** - Happiness Program details, benefits/format, research data, testimonials, link to official registration
 - [ ] **Phase 6: Homepage** - Art of Living Devon/Southwest community hub with branding, navigation to all pages, about section
@@ -181,7 +181,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 |-------|----------------|--------|-----------|
 | 1. Project Scaffolding & Deploy | 1/1 | Complete    | 2026-02-25 |
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
-| 3. Intro Talk LP - Trust | 5/6 | In Progress|  |
+| 3. Intro Talk LP - Trust | 6/6 | Complete   | 2026-02-25 |
 | 4. Registration Flow | 0/1 | Not started | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
 | 6. Homepage | 0/1 | Not started | - |
