@@ -14,8 +14,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **INTRO-03**: Visitor can register with name + email (phone optional) via minimal-friction form
 - [x] **INTRO-04**: Repeated CTA ("Save My Seat") appears in hero, after benefits, after social proof, and footer
 - [x] **INTRO-05**: Page is mobile-first responsive (Facebook ad traffic is 80%+ mobile)
-- [ ] **INTRO-06**: Visitor sees social proof section with public testimonials from Art of Living participants
-- [ ] **INTRO-07**: Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries
+- [x] **INTRO-06**: Visitor sees social proof section with public testimonials from Art of Living participants
+- [x] **INTRO-07**: Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries
 - [ ] **INTRO-08**: Visitor sees teacher/host photo, name, and credentials
 - [x] **INTRO-09**: Page includes GDPR-compliant explicit consent checkbox (unticked), privacy policy link, and trust indicators
 - [ ] **INTRO-10**: After registration, visitor sees confirmation page with Zoom link and calendar add button (ICS/Google)
@@ -111,8 +111,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INTRO-03 | Phase 2 | Complete |
 | INTRO-04 | Phase 2 | Complete |
 | INTRO-05 | Phase 2 | Complete |
-| INTRO-06 | Phase 3 | Pending |
-| INTRO-07 | Phase 3 | Pending |
+| INTRO-06 | Phase 3 | Complete |
+| INTRO-07 | Phase 3 | Complete |
 | INTRO-08 | Phase 3 | Pending |
 | INTRO-09 | Phase 2 | Complete |
 | INTRO-10 | Phase 4 | Pending |
