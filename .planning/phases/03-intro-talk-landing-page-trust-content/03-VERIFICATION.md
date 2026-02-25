@@ -1,127 +1,158 @@
 ---
 phase: 03-intro-talk-landing-page-trust-content
-verified: 2026-02-25T02:30:00Z
-status: gaps_found
-score: 5/5 previous gaps closed (6 new page-wide visual polish gaps from human review)
+verified: 2026-02-25T10:00:00Z
+status: passed
+score: 5/5 success criteria verified
 re_verification: true
 previous_status: gaps_found
-previous_score: "7/7 automated must-haves (5 visual quality gaps from human review)"
+previous_score: "5/5 success criteria (6 page-wide visual polish gaps from human review)"
 gaps_closed:
-  - "Testimonials now have real profile photos (not letter initials)"
-  - "Sections have imagery breaking up text (lifestyle photos)"
-  - "Icon + text alignment is fixed across credentials, objections, and timeline"
-  - "Overall visual quality elevated (premium cards, hover effects, gradients)"
-  - "Teacher section has a real photo (not gradient placeholder)"
-gaps_remaining:
-  - "Hero section is plain white text on white — no background image, gradient, or visual punch for Facebook ad landing"
-  - "Benefits section is just checkmarks + text — no icon cards, no imagery, looks like a bulleted list"
-  - "No visual rhythm between sections — flat white or barely-there bg-muted/50 everywhere, no background textures or gradients"
-  - "Every CTA button is identical — no visual variety, repetitive, no urgency cues"
-  - "Registration form is a plain card — no warmth, no urgency, no visual treatment that says 'this matters'"
-  - "Footer CTA is minimal solid orange block — no imagery or visual richness"
+  - "Hero section is now a full-width background image (breathing-session.jpg) with dark gradient overlay — visually arresting, not plain white"
+  - "Benefits section is now 4 icon cards with gradient card backgrounds — not a plain checkmark list"
+  - "Registration form section has warm orange-tinted gradient background and social proof trust badge above the Card"
+  - "Footer CTA uses meditation-group.jpg as background with rich gradient overlay — not a flat solid orange block"
+  - "CTA buttons are now visually distinct: hero (solid primary + urgency sub-text), benefits (outline variant), footer (white on image background with different text)"
+  - "globals.css has @layer utilities block with section rhythm classes for visual variety"
+gaps_remaining: []
 regressions: []
 human_verification:
+  - test: "Hero section first impression for cold Facebook traffic"
+    expected: "breathing-session.jpg background with dark gradient overlay reads as premium and arresting within 2 seconds; white text is legible; urgency sub-text 'Free - No credit card - Spots limited' appears below CTA"
+    why_human: "Visual impact and legibility at a glance require human perception"
+  - test: "Benefits section icon cards visual weight"
+    expected: "4 icon cards (Wind, Moon, Users, GraduationCap) in a 2-column grid with gradient card backgrounds and orange icon circles feel rich and premium — not like a bulleted list"
+    why_human: "Whether cards feel premium vs generic requires human visual judgment"
+  - test: "Registration form warm treatment and social proof"
+    expected: "Warm orange-tinted gradient section background creates a 'this matters' feeling; overlapping avatar initials with '500M+ lives transformed' above card reinforces trust at point of conversion"
+    why_human: "Conversion funnel effectiveness and perceived warmth require human judgment"
+  - test: "Footer CTA background image richness"
+    expected: "meditation-group.jpg visible under deep orange gradient overlay; 'Your Transformation Starts Here' heading and 'Claim Your Free Seat Now' white button feel like a compelling final nudge"
+    why_human: "Emotional pull of the final CTA requires human perception"
+  - test: "Full page visual rhythm and variety"
+    expected: "Scrolling Hero (dark image) > Benefits (light muted) > Credibility > Testimonials > WhatToExpect > Teacher > Objections > Form (warm gradient) > Footer (image overlay) creates visual variety — not a flat document"
+    why_human: "Holistic page rhythm and flow require human scroll-through assessment"
   - test: "Visual credibility on cold-traffic first impression"
-    expected: "Stats (500M+, 180+ countries, Yale/Harvard) read as impressive and visually dominant — large numbers (text-4xl/5xl) with gradient card backgrounds and icon glow"
-    why_human: "Visual hierarchy and perceived credibility cannot be verified programmatically"
-  - test: "Testimonial photos feel like real people, not stock-photo-obvious"
-    expected: "Real profile photos (200x200px face-cropped JPEGs) make participants feel authentic alongside their quotes"
-    why_human: "Perceived authenticity of photography requires human judgment"
+    expected: "Stats (500M+, 180+ countries, Yale/Harvard) read as impressive; gradient card backgrounds and glow effects feel premium"
+    why_human: "Perceived credibility for a skeptical first-time visitor requires human judgment"
+  - test: "Testimonial photos feel like real people"
+    expected: "6 real profile photos (200x200px) paired with names and professional context feel authentic, not stock-photo-obvious"
+    why_human: "Perceived authenticity of photography requires human visual assessment"
   - test: "Teacher section warmth with real photo"
-    expected: "teacher-guiding.jpg (800x600px) reads as warm and inviting; Gurudev quote blockquote adds authenticity"
-    why_human: "Photo warmth and approachability perception requires human review"
-  - test: "Objections section pre-form friction removal"
-    expected: "Six icon badges with green check overlays and card backgrounds feel like guarantees, not marketing copy"
-    why_human: "Conversion funnel effectiveness requires human judgment"
-  - test: "Full page visual flow cohesion"
-    expected: "Scrolling Hero > Benefits > Credibility > Testimonials > WhatToExpect > Teacher > Objections > Form feels like an escalating trust journey with visual variety"
-    why_human: "Holistic page flow and visual rhythm require human perception"
+    expected: "teacher-guiding.jpg reads as warm and inviting; Gurudev quote blockquote adds authenticity"
+    why_human: "Photo warmth and approachability require human perception"
 ---
 
-# Phase 3: Intro Talk Landing Page — Trust & Content RE-VERIFICATION Report
+# Phase 3: Intro Talk Landing Page — Trust & Content FINAL VERIFICATION Report
 
 **Phase Goal:** Cold Facebook traffic sees enough social proof and credibility to trust registering for an event from an organization they have never heard of
 **Verified:** 2026-02-25
 **Status:** PASSED
-**Re-verification:** Yes — after gap closure (Plans 03-03 and 03-04 executed)
+**Re-verification:** Yes — after gap closure Plans 03-05 and 03-06 executed
 
 ---
 
 ## Re-Verification Summary
 
-The previous verification found 7/7 automated must-haves passing but flagged 5 visual quality gaps from human review. Gap closure Plans 03-03 (stock images) and 03-04 (visual overhaul) have been executed. This re-verification confirms all 5 gaps are now closed.
+The previous verification (status: `gaps_found`) identified 6 page-wide visual polish gaps from human review:
+
+- Gap 6: Hero was plain white text on white — no background image
+- Gap 7: Benefits was just checkmarks + text — no icon cards
+- Gap 8: No visual rhythm between sections — flat white everywhere
+- Gap 9: All CTA buttons identical — no visual variety
+- Gap 10: Registration form plain card — no warmth or social proof
+- Gap 11: Footer CTA minimal solid orange block — no imagery
+
+Plans 03-05 and 03-06 have been executed (6 feature commits confirmed in git log). This re-verification confirms all 6 gaps are now closed and no regressions have been introduced.
 
 ---
 
 ## Gap Closure Verification
 
-### Gap 1: Testimonials have real profile photos (not letter initials)
+### Gap 6: Hero has full-width background image
 
 **Status: CLOSED**
 
 Evidence:
-- 6 JPEG files exist at `public/images/intro/testimonials/` — all valid `JPEG image data, JFIF standard 1.01`, `200x200` pixels (verified with `file` command)
-- `src/lib/data/testimonials.ts` now exports `imagePath: string` field on `Testimonial` type; all 6 entries have correct paths (`/images/intro/testimonials/charlotte.jpg` etc.)
-- `src/components/intro/testimonials-section.tsx` line 1: `import Image from "next/image"` — uses `next/image` with `src={testimonial.imagePath}`, `className="rounded-full object-cover h-12 w-12"` — no letter-initial circles remain
-- Commit `6c32edf` verified: "Replace letter-initial avatars with real photos via next/image"
+- `src/components/intro/hero-section.tsx` line 9: `<section className="relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] flex items-center">`
+- Lines 11-18: `<div className="absolute inset-0 z-0">` contains `<Image src="/images/intro/breathing-session.jpg" alt="" fill className="object-cover" priority />`
+- Line 22: dark gradient overlay `bg-gradient-to-b from-black/60 via-black/40 to-black/70`
+- All text elements use `text-white` or `text-white/85` — readable against dark overlay
+- Urgency sub-text line 58-60: "Free - No credit card - Spots limited"
+- `public/images/intro/breathing-session.jpg` — 187KB valid JPEG confirmed on disk
+- Commit `f5fddfa` verified: "feat(03-05): hero section — full-width background image with gradient overlay"
 
-### Gap 2: Sections have imagery breaking up text (lifestyle photos)
-
-**Status: CLOSED**
-
-Evidence:
-- `public/images/intro/breathing-session.jpg` — valid JPEG, `1200x600` pixels (verified)
-- `public/images/intro/meditation-group.jpg` — valid JPEG, present on disk
-- `src/components/intro/what-to-expect-section.tsx` lines 29-44: `breathing-session.jpg` rendered as full-width header image (`h-40 sm:h-48 object-cover`) with gradient overlay — lifestyle image visually breaks the text wall before the timeline
-- `src/components/intro/teacher-section.tsx`: `teacher-guiding.jpg` rendered as the teacher photo (`aspect-[4/3]`, `rounded-2xl`) — second imagery break in the page flow
-- Commit `8c0fdfe` verified: "Add breathing-session.jpg as lifestyle header image in what-to-expect"
-
-### Gap 3: Icon + text alignment is fixed
+### Gap 7: Benefits section has icon cards
 
 **Status: CLOSED**
 
 Evidence:
-- `src/components/intro/teacher-section.tsx` line 71: credential badges use `flex items-center gap-2` with `shrink-0` on icon div — correct vertical alignment
-- `src/components/intro/objections-section.tsx`: objection items use `flex-col items-center text-center gap-2` — consistent gap-2 across all 6 items; icons are `h-16 w-16` with `h-8 w-8` content icons — properly sized and contained
-- `src/components/intro/what-to-expect-section.tsx` line 71: step title row uses `flex flex-wrap items-center gap-2` with `shrink-0` on the icon — icon, title, and Badge are `items-center` aligned
-- Commit `8c0fdfe` verified: "Fix gap consistency across all badge/icon elements"
+- `src/components/intro/benefits-section.tsx` line 1: `import { Wind, Moon, Users, GraduationCap } from "lucide-react"`
+- Lines 5-30: `benefits` array with 4 objects each having `icon`, `title`, `description` fields — no more flat string array
+- Lines 44-59: Each benefit in a `<Card>` with `bg-gradient-to-br from-background to-primary/5 hover:shadow-md transition-shadow`; icon in `h-12 w-12 rounded-xl bg-primary/10`
+- No `CheckCircle` import remains — plain checkmark list fully replaced
+- Commit `451e632` verified: "feat(03-05): benefits section — icon cards with visual richness"
 
-### Gap 4: Overall visual quality elevated (premium cards, hover effects, gradients)
-
-**Status: CLOSED**
-
-Evidence by section:
-- **TestimonialsSection**: Cards have `border-0 shadow-md hover:shadow-lg transition-shadow`; alternating `bg-primary/[0.02]` tints; decorative `Quote` watermark at `text-primary/[0.06]`; pull-quote `highlight` in `text-primary font-semibold` above full quote; section header has decorative `w-12 h-1 bg-primary` bar
-- **CredibilitySection**: Stat numbers upgraded to `text-4xl sm:text-5xl`; cards have `bg-gradient-to-b from-background to-primary/5 shadow-sm hover:scale-105 transition-transform`; icons have glow via `absolute bg-primary/10 scale-150 blur-sm`; research area has `bg-gradient-to-br from-primary/[0.03]` container
-- **ObjectionsSection**: `ShieldCheck` header icon in `bg-primary/10` circle; items have `bg-muted/30 rounded-xl p-4` card backgrounds; green `Check` badge overlaid on each icon (`bg-green-500`)
-- **WhatToExpectSection**: Steps wrapped in `bg-background rounded-xl p-4 shadow-sm` cards; connecting line uses `bg-gradient-to-b from-primary/40 to-primary/10`; numbered circles enlarged to `h-14 w-14 text-xl`
-- **TeacherSection**: Gurudev blockquote (`border-l-2 border-primary/30`) adds visual warmth; `shadow-lg` on photo; credential badges properly aligned with `items-center`
-
-### Gap 5: Teacher section has a real photo (not gradient placeholder)
+### Gap 8: Visual rhythm with section rhythm CSS utilities
 
 **Status: CLOSED**
 
 Evidence:
-- `public/images/intro/teacher-guiding.jpg` — valid JPEG, `800x600` pixels, 48KB (verified with `file` command)
-- `src/components/intro/teacher-section.tsx` line 1: `import Image from "next/image"`; lines 32-39: `<Image src="/images/intro/teacher-guiding.jpg" alt="Art of Living teacher guiding a breathing and meditation session" width={600} height={400} className="rounded-2xl object-cover w-full aspect-[4/3] shadow-lg" />`
-- No gradient placeholder div, no `Sparkles` icon, no TODO comment remains in the file
-- Commit `8c0fdfe` verified: "Replace gradient placeholder with real teacher photo via next/image"
+- `src/app/globals.css` lines 138-149: `@layer utilities` block with `.section-warm-gradient`, `.section-cool-gradient`, `.section-primary-wash`
+- Registration form section uses `bg-gradient-to-b from-primary/5 via-primary/[0.03] to-background` (warm tint)
+- Hero section is dark (image overlay)
+- Footer CTA is image + orange gradient
+- Sections have alternating visual treatments throughout the page
+- Commit `cb2f951` verified: "feat(03-06): footer CTA background image overlay and section rhythm CSS utilities"
+
+### Gap 9: CTA buttons are visually distinct
+
+**Status: CLOSED**
+
+Evidence:
+- **Hero CTA**: Solid primary button + urgency sub-text below it
+- **Benefits CTA**: `variant="outline"` with `border-primary text-primary hover:bg-primary` — bordered style
+- **Registration form submit**: In-card full-width submit button (distinct context)
+- **Footer CTA**: `bg-white text-primary hover:bg-white/95 border-2 border-white` — white button against image background; text "Claim Your Free Seat Now" (different from "Save My Seat")
+- Four distinct CTA treatments confirmed across the page
+
+### Gap 10: Registration form has warm treatment and social proof
+
+**Status: CLOSED**
+
+Evidence:
+- `src/components/intro/registration-form.tsx` line 24: `bg-gradient-to-b from-primary/5 via-primary/[0.03] to-background` on `<section>`
+- Lines 27-32: Section heading "Ready to Experience It?" with sub-text
+- Lines 34-49: Social proof trust badge with overlapping avatar initials (C, P, S, R) and "500M+ lives transformed worldwide"
+- Line 51: `<Card className="shadow-lg border-primary/10">` — subtle primary-tinted border
+- All existing form logic, server action, and GDPR checkbox intact — no regression
+- Commit `5d46124` verified: "feat(03-06): warm gradient section bg and social proof trust badge on registration form"
+
+### Gap 11: Footer CTA has background image with overlay
+
+**Status: CLOSED**
+
+Evidence:
+- `src/components/intro/footer-cta.tsx` line 7: `<section className="relative overflow-hidden">`
+- Lines 9-15: `<Image src="/images/intro/meditation-group.jpg" alt="" fill className="object-cover" />`
+- Line 18: `bg-gradient-to-br from-primary/90 via-primary/80 to-orange-700/90`
+- Heading "Your Transformation Starts Here" (upgraded from generic text)
+- Button: `bg-white text-primary` with text "Claim Your Free Seat Now"
+- `public/images/intro/meditation-group.jpg` — 174KB valid JPEG confirmed on disk
+- Commit `cb2f951` verified
 
 ---
 
-## Observable Truths (Full Set — Regression Check)
+## Observable Truths (Success Criteria Verification)
 
-| #  | Truth | Status | Evidence |
-|----|-------|--------|----------|
-| 1  | Visitor sees testimonials from real AoL participants with names and real profile photos | VERIFIED | `testimonials-section.tsx` renders 6 photo-backed cards; `next/image` with `imagePath` field; no letter-initial circles |
-| 2  | Visitor sees credibility stats with large numbers, gradient cards, and hover effects | VERIFIED | `credibility-section.tsx` renders 4 stats at `text-4xl sm:text-5xl`; gradient cards; `hover:scale-105`; icon glow effects |
-| 3  | No duplicate stats — SocialProofSection is aliased to CredibilitySection | VERIFIED | `social-proof-section.tsx` is a single-line re-export; `page.tsx` imports `CredibilitySection` directly; no regression |
-| 4  | Visitor sees teacher/host with real photo, generic credentials, and Gurudev quote | VERIFIED | `teacher-section.tsx` renders `teacher-guiding.jpg` (800x600 real JPEG); "Certified Art of Living Teacher"; Gurudev blockquote; 3 aligned credentials |
-| 5  | Visitor reads 6 step-by-step what-to-expect breakdown with steps and outcomes | VERIFIED | `what-to-expect-section.tsx` renders 6 step cards from `whatToExpectSteps` with lifestyle header image; each with description, italic outcome, duration Badge, icon |
-| 6  | Visitor sees 6 objection-handling badges with visual guarantee treatment | VERIFIED | `objections-section.tsx` renders 6 items in `bg-muted/30 rounded-xl` cards with green check badges; all 3 required objections present |
-| 7  | All sections composed into intro page in correct trust-building order | VERIFIED | `page.tsx` imports and renders all 9 sections in documented order; no changes introduced by Plans 03-03 or 03-04 |
+| # | Truth | Status | Evidence |
+|---|-------|--------|---------|
+| 1 | Visitor sees testimonials from real Art of Living participants in a dedicated social proof section | VERIFIED | `TestimonialsSection` renders 6 named participant testimonials with real 200x200 profile photos via `next/image`; wired to `page.tsx`; no regressions |
+| 2 | Visitor sees credibility stats (Yale/Harvard research, 500M+ lives, 180 countries) with visual emphasis | VERIFIED | `CredibilitySection` renders stats at `text-4xl sm:text-5xl` in gradient cards with `hover:scale-105`; Yale/Harvard in research highlights; no regression |
+| 3 | Visitor sees teacher/host photo, name, and credentials in a profile section | VERIFIED | `TeacherSection` renders `teacher-guiding.jpg` (800x600 real JPEG), "Certified Art of Living Teacher", 3 aligned credential badges, Gurudev blockquote |
+| 4 | Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format | VERIFIED | `WhatToExpectSection` renders 6 steps including breathing technique, guided meditation, Q&A with lifestyle photo header |
+| 5 | Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly | VERIFIED | `ObjectionsSection` includes all three objections verbatim plus 3 additional; green check badges and card treatments |
 
-**Score:** 7/7 truths verified (no regressions)
+**Score:** 5/5 success criteria verified
 
 ---
 
@@ -129,16 +160,15 @@ Evidence:
 
 | Artifact | Expected | Status | Details |
 |----------|----------|--------|---------|
-| `public/images/intro/testimonials/` | 6 real profile photo JPEGs (200x200) | VERIFIED | charlotte.jpg, phillip.jpg, sonia.jpg, rebecca.jpg, neeva.jpg, luis.jpg — all valid JPEGs confirmed |
-| `public/images/intro/teacher-guiding.jpg` | Teacher in action photo (800x600) | VERIFIED | Valid JPEG, 48KB |
-| `public/images/intro/breathing-session.jpg` | Lifestyle section image (1200x600) | VERIFIED | Valid JPEG, 188KB |
-| `public/images/intro/meditation-group.jpg` | Additional lifestyle image | VERIFIED | Valid JPEG, present on disk |
-| `src/lib/data/testimonials.ts` | Updated with `imagePath` field | VERIFIED | `Testimonial` type includes `imagePath: string`; all 6 entries have correct paths |
-| `src/components/intro/testimonials-section.tsx` | Photo-backed cards via next/image | VERIFIED | `import Image from "next/image"`; `src={testimonial.imagePath}` used; no letter-initial avatars |
-| `src/components/intro/credibility-section.tsx` | Elevated stats with gradients and hover | VERIFIED | `text-4xl sm:text-5xl`; gradient cards; `hover:scale-105`; icon glow |
-| `src/components/intro/teacher-section.tsx` | Real photo via next/image | VERIFIED | `import Image from "next/image"`; `src="/images/intro/teacher-guiding.jpg"`; no gradient placeholder |
-| `src/components/intro/what-to-expect-section.tsx` | Polished timeline with lifestyle image header | VERIFIED | `breathing-session.jpg` as header; steps in `bg-background rounded-xl shadow-sm` cards; `items-center` alignment |
-| `src/components/intro/objections-section.tsx` | Aligned icon badges with card treatment | VERIFIED | `flex-col items-center gap-2`; `bg-muted/30 rounded-xl p-4` cards; green check badges; `ShieldCheck` header |
+| `src/components/intro/hero-section.tsx` | Full-width hero with background image, gradient overlay, urgency CTA | VERIFIED | 64 lines; `next/image` with `fill`; dark overlay; urgency sub-text |
+| `src/components/intro/benefits-section.tsx` | 4 icon cards with gradient backgrounds | VERIFIED | 79 lines; Wind/Moon/Users/GraduationCap icons; Card components with gradients |
+| `src/components/intro/registration-form.tsx` | Warm gradient section, social proof badge above Card | VERIFIED | 155 lines; `from-primary/5` gradient; trust badge with 500M+; `shadow-lg border-primary/10` Card |
+| `src/components/intro/footer-cta.tsx` | Background image overlay, distinct CTA | VERIFIED | 49 lines; `next/image` with `fill`; deep gradient overlay; "Claim Your Free Seat Now" white button |
+| `src/app/globals.css` | @layer utilities with section rhythm classes | VERIFIED | 149 lines; 3 rhythm utility classes at lines 138-149 |
+| `public/images/intro/breathing-session.jpg` | Lifestyle image for hero background | VERIFIED | 187KB valid JPEG on disk |
+| `public/images/intro/meditation-group.jpg` | Lifestyle image for footer CTA background | VERIFIED | 174KB valid JPEG on disk |
+| `public/images/intro/teacher-guiding.jpg` | Teacher photo | VERIFIED | 48KB valid JPEG on disk |
+| `src/app/(landing)/intro/page.tsx` | All 9 sections composed in trust-building order | VERIFIED | Imports all 9 section components; renders in documented order; no changes from gap closure |
 
 ---
 
@@ -146,138 +176,117 @@ Evidence:
 
 | From | To | Via | Status | Details |
 |------|----|-----|--------|---------|
-| `testimonials-section.tsx` | `testimonials.ts` | `import { testimonials }` + `testimonial.imagePath` | WIRED | Import on line 5; `testimonials.map()` uses `testimonial.imagePath` as `src` prop — import actively consumed |
-| `testimonials-section.tsx` | `public/images/intro/testimonials/*.jpg` | `imagePath` field paths | WIRED | 6 JPEG files confirmed at declared paths; `next/image` will serve them |
-| `teacher-section.tsx` | `public/images/intro/teacher-guiding.jpg` | `src="/images/intro/teacher-guiding.jpg"` | WIRED | Hardcoded src prop; file verified as valid JPEG at that path |
-| `what-to-expect-section.tsx` | `public/images/intro/breathing-session.jpg` | `src="/images/intro/breathing-session.jpg"` | WIRED | Hardcoded src prop; file verified as valid JPEG at that path |
-| `credibility-section.tsx` | `credibility-stats.ts` | `import { credibilityStats, researchHighlights }` | WIRED | Both arrays mapped in render; no regression from gap closure |
-| `what-to-expect-section.tsx` | `what-to-expect.ts` | `import { whatToExpectSteps }` | WIRED | `whatToExpectSteps.map()` renders all steps; no regression |
-| `page.tsx` | all 5 section components | direct imports + JSX usage | WIRED | No changes to `page.tsx` from gap closure plans; all imports and renders intact |
+| `hero-section.tsx` | `public/images/intro/breathing-session.jpg` | `src="/images/intro/breathing-session.jpg"` on `next/image fill` | WIRED | Hardcoded src; file confirmed 187KB on disk |
+| `footer-cta.tsx` | `public/images/intro/meditation-group.jpg` | `src="/images/intro/meditation-group.jpg"` on `next/image fill` | WIRED | Hardcoded src; file confirmed 174KB on disk |
+| `registration-form.tsx` | Social proof "500M+" text | Inline JSX above `<Card>` | WIRED | "500M+" in `<span>` at line 47; directly above Card in DOM order |
+| `benefits-section.tsx` | lucide-react icons | `import { Wind, Moon, Users, GraduationCap }` line 1 | WIRED | All 4 icons used in `benefits.map()` via `const Icon = benefit.icon` |
+| `page.tsx` | All 9 section components | Direct named imports + JSX usage | WIRED | All 9 components imported and rendered in trust-building order |
+| `testimonials-section.tsx` | `testimonials.ts` + profile photo JPEGs | `imagePath` field + `next/image` | WIRED | No regression — confirmed in prior verification |
+| `credibility-section.tsx` | `credibility-stats.ts` | `import { credibilityStats, researchHighlights }` | WIRED | No regression — confirmed in prior verification |
 
 ---
 
 ## Requirements Coverage
 
 | Requirement | Source Plan | Description | Status | Evidence |
-|-------------|-------------|-------------|--------|----------|
+|-------------|-------------|-------------|--------|---------|
 | INTRO-06 | 03-01, 03-04 | Visitor sees social proof section with public testimonials from Art of Living participants | SATISFIED | `TestimonialsSection` renders 6 named participant testimonials with real profile photos; wired into `page.tsx` |
-| INTRO-07 | 03-01, 03-04 | Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries | SATISFIED | `CredibilitySection` renders these numbers at `text-4xl sm:text-5xl` in premium gradient cards; Yale/Harvard named in research highlights |
-| INTRO-08 | 03-02, 03-03, 03-04 | Visitor sees teacher/host photo, name, and credentials | SATISFIED | `TeacherSection` renders `teacher-guiding.jpg` (real 800x600 JPEG), "Certified Art of Living Teacher" title, 3 credential badges, Gurudev quote — no specific name per locked project decision |
-| INTRO-13 | 03-02, 03-04 | "What to expect" section explains the 60-min format step-by-step (breathing technique, meditation, Q&A) | SATISFIED | `WhatToExpectSection` renders 6 steps including Step 3 "Breathing Technique", Step 4 "Guided Meditation", Step 6 "Q&A + Next Steps"; lifestyle photo header added |
-| INTRO-14 | 03-02, 03-04 | Page addresses common objections ("No experience needed", "Free, no credit card required", "Camera on but no pressure") | SATISFIED | `ObjectionsSection` includes all three verbatim plus 3 additional; green check badges and card treatment reinforce guarantee messaging |
+| INTRO-07 | 03-01, 03-04 | Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries | SATISFIED | `CredibilitySection` renders at `text-4xl sm:text-5xl` in premium gradient cards; Yale/Harvard named; no regression |
+| INTRO-08 | 03-02, 03-03, 03-04 | Visitor sees teacher/host photo, name, and credentials | SATISFIED | `TeacherSection` renders `teacher-guiding.jpg` (real JPEG), "Certified Art of Living Teacher", 3 credential badges, Gurudev quote |
+| INTRO-13 | 03-02, 03-04 | "What to expect" section explains the 60-min format step-by-step (breathing technique, meditation, Q&A) | SATISFIED | `WhatToExpectSection` renders 6 steps including breathing technique, guided meditation, Q&A; lifestyle photo header |
+| INTRO-14 | 03-02, 03-04 | Page addresses common objections ("No experience needed", "Free, no credit card required", "Camera on but no pressure") | SATISFIED | `ObjectionsSection` includes all three objections verbatim plus 3 additional; green check badges and card treatment |
 
-**Orphaned requirements check:** All 5 requirement IDs (INTRO-06, INTRO-07, INTRO-08, INTRO-13, INTRO-14) appear in both plan frontmatter and REQUIREMENTS.md traceability table. All marked `[x] Complete` in REQUIREMENTS.md. No orphaned requirements.
+**Orphaned requirements check:** All 5 requirement IDs (INTRO-06, INTRO-07, INTRO-08, INTRO-13, INTRO-14) appear in plan frontmatter and REQUIREMENTS.md. No orphaned requirements.
 
 ---
 
 ## Anti-Patterns Found
 
-None. The previous anti-pattern (gradient placeholder div with TODO comment and `Sparkles` icon in `teacher-section.tsx`) is fully resolved — none of these elements remain in the file.
-
-No stub implementations, empty returns, or console-log-only handlers found in any of the 5 modified files.
+None. The three `placeholder` grep hits are valid HTML `placeholder` attributes on `<Input>` form fields — not stub implementations. No TODO/FIXME comments, empty returns, gradient placeholders, or console-log-only handlers found in any modified file.
 
 ---
 
 ## Build Verification
 
-- `npx tsc --noEmit` — passes with zero errors (confirmed, no output)
-- Commits `6c32edf` and `8c0fdfe` verified in git log — both exist with correct file diff stats
-- Additional commit `db51d36` ("fix(03): reduce Yale & Harvard stat font size to prevent card overflow") — post-hoc refinement confirming real implementation, not a stub
+- `npx tsc --noEmit` — passes with zero output (zero errors)
+- 6 feature commits confirmed in git log:
+  - `f5fddfa` — feat(03-05): hero section — full-width background image with gradient overlay
+  - `451e632` — feat(03-05): benefits section — icon cards with visual richness
+  - `5d46124` — feat(03-06): warm gradient section bg and social proof trust badge on registration form
+  - `cb2f951` — feat(03-06): footer CTA background image overlay and section rhythm CSS utilities
+  - `97f3284` — docs(03-05): complete hero + benefits visual overhaul plan
+  - `e18a509` — docs(03-06): complete registration form warmth and footer CTA image plan
 
 ---
 
 ## Human Verification Required
 
-The following items cannot be verified programmatically and require opening `/intro` in a browser:
+All automated checks pass. The following require opening `/intro` in a browser:
 
-### 1. Visual Credibility — First Impression
+### 1. Hero Section First Impression
 
-**Test:** Scroll to CredibilitySection without prior context (simulate a Facebook ad click)
-**Expected:** "500M+", "180+", "100+" and "Yale & Harvard" read as impressive at a glance; gradient card backgrounds and glow effects feel premium; large bold numbers dominate
-**Why human:** Whether `text-4xl sm:text-5xl` with gradient backgrounds creates perceived authority for a skeptical first-time visitor requires human judgment
+**Test:** Open `/intro` and observe within 2 seconds without scrolling
+**Expected:** `breathing-session.jpg` background with dark gradient overlay reads as premium and arresting; all text is legible in white against the dark overlay; urgency sub-text "Free - No credit card - Spots limited" appears below the CTA button
+**Why human:** Visual impact and whether the image creates a premium feeling for a cold Facebook ad visitor require human perception
 
-### 2. Testimonial Photos Feel Authentic
+### 2. Benefits Section Visual Weight
+
+**Test:** Scroll to the Benefits section
+**Expected:** 4 icon cards in a 2-column grid (Wind, Moon, Users, GraduationCap) with orange-tinted icon circles and gradient card backgrounds feel rich and premium — clearly distinct from a plain bulleted list
+**Why human:** Whether cards feel premium vs. generic depends on human visual judgment
+
+### 3. Registration Form Warmth and Social Proof
+
+**Test:** Scroll to the registration form section
+**Expected:** Warm orange-tinted gradient section background creates "this matters" signal; overlapping avatar initials (C, P, S, R) with "500M+ lives transformed" text above the card reinforces trust; card has subtle primary-tinted border
+**Why human:** Conversion funnel effectiveness and perceived warmth require human judgment
+
+### 4. Footer CTA Background Image Richness
+
+**Test:** Scroll to the footer CTA
+**Expected:** `meditation-group.jpg` visible under a rich orange-to-orange-700 gradient overlay (not flat solid orange); "Your Transformation Starts Here" heading prominent; "Claim Your Free Seat Now" white button clearly distinct from hero/benefits CTAs
+**Why human:** Emotional pull of the final CTA and image visibility under the gradient require human perception
+
+### 5. Full Page Visual Rhythm
+
+**Test:** Scroll the entire `/intro` page from Hero to Footer
+**Expected:** Hero (dark image) > Benefits (light muted) > Credibility > Testimonials > WhatToExpect > Teacher > Objections > Form (warm gradient) > Footer (image overlay) creates visual variety throughout — distinct from a flat one-tone document
+**Why human:** Holistic page rhythm and trust-journey feel require a human scrolling the full experience
+
+### 6. Visual Credibility on First-Time Impression
+
+**Test:** View the Credibility section as a skeptical first-time visitor
+**Expected:** "500M+", "180+", "100+" numbers and "Yale & Harvard" text read as impressive at a glance; gradient card backgrounds and glow effects feel premium
+**Why human:** Perceived authority for a skeptical visitor requires human judgment
+
+### 7. Testimonial Authenticity
 
 **Test:** View the 6 testimonial cards with profile photos
-**Expected:** 200x200px profile photos look like real people (not obviously stock photos); paired with names and professional context (Lawyer, CEO, Parent) they create genuine social proof
-**Why human:** Whether downloaded Unsplash photos feel authentic or stock-photo-obvious depends on human visual assessment
+**Expected:** 200x200px profile photos paired with names and professional context (Lawyer, CEO, Parent) feel authentic — not obviously stock photos
+**Why human:** Perceived authenticity of photography requires human visual assessment
 
-### 3. Teacher Section — Photo Warmth
+### 8. Teacher Section Photo Warmth
 
-**Test:** View the TeacherSection with teacher-guiding.jpg
-**Expected:** 800x600 landscape photo reads as warm, inviting, and in-action; Gurudev quote blockquote reinforces authenticity
-**Why human:** Whether the specific photo conveys warmth vs. generic stock requires human perception
-
-### 4. Objections Section — Pre-Form Guarantee Feel
-
-**Test:** Scroll from ObjectionsSection directly into RegistrationForm
-**Expected:** Green check badges on all 6 icon items reinforce that these are guarantees, not just claims; card backgrounds create visual containment that reads as "promise"
-**Why human:** Conversion funnel effectiveness is a subjective UX judgment
-
-### 5. Full Page Visual Flow Cohesion
-
-**Test:** Scroll the entire `/intro` page from Hero to FooterCTA
-**Expected:** Lifestyle photos (breathing-session.jpg, teacher-guiding.jpg), alternating section backgrounds, and consistent decorative header accents create visual rhythm and an escalating trust journey
-**Why human:** Holistic page flow and visual variety require human perception across the full scroll experience
+**Test:** View the TeacherSection
+**Expected:** `teacher-guiding.jpg` reads as warm and inviting; Gurudev blockquote reinforces authenticity; credential badges are visually aligned and trustworthy
+**Why human:** Photo warmth and approachability require human perception
 
 ---
 
 ## Gaps Summary
 
-All 5 visual quality gaps from the previous verification are closed. No new gaps introduced.
+All 6 page-wide visual polish gaps from the previous verification are closed. All 5 success criteria are verified. No regressions introduced.
 
-- **Gap 1** (testimonial photos): CLOSED — 6 real 200x200 JPEGs downloaded and confirmed valid; `imagePath` added to data type; `next/image` rendering confirmed in component
-- **Gap 2** (section imagery): CLOSED — `breathing-session.jpg` used as lifestyle header in what-to-expect; `teacher-guiding.jpg` as teacher photo; both verified as valid JPEGs
-- **Gap 3** (icon alignment): CLOSED — `items-center` with `gap-2` used consistently in credentials, objections, and timeline; `shrink-0` on icons prevents misalignment
-- **Gap 4** (visual quality): CLOSED — premium card treatments (shadows, hover effects, gradients) applied across all 5 sections; pull-quote highlights, green check badges, decorative header bars, and Gurudev blockquote add visual richness and variety
-- **Gap 5** (teacher placeholder): CLOSED — gradient placeholder div replaced with real `teacher-guiding.jpg` via `next/image`; TODO comment and `Sparkles` icon removed
+- **Gap 6** (hero plain white): CLOSED — `breathing-session.jpg` as `next/image fill` background with dark gradient overlay; all text white; urgency sub-text present
+- **Gap 7** (benefits plain list): CLOSED — 4 icon cards with Wind/Moon/Users/GraduationCap icons; Card components with gradient backgrounds; outline CTA variant
+- **Gap 8** (no visual rhythm): CLOSED — globals.css `@layer utilities` block with 3 section rhythm utility classes; sections use distinct gradient treatments
+- **Gap 9** (identical CTAs): CLOSED — 4 visually distinct CTA treatments: solid primary (hero), outline border (benefits), submit (form), white-on-image (footer) with different button text
+- **Gap 10** (plain form): CLOSED — warm `from-primary/5` gradient section; overlapping avatar initials trust badge; "500M+" social proof; `border-primary/10 shadow-lg` Card
+- **Gap 11** (flat footer): CLOSED — `meditation-group.jpg` as `next/image fill` background with deep `from-primary/90 to-orange-700/90` gradient overlay; white "Claim Your Free Seat Now" button
 
-Previous 5 gaps are closed. However, **human review identified 6 new page-wide visual polish gaps** — the page still looks bland and generic for cold Facebook ad traffic.
-
-#### Gap 6: Hero section has no visual impact
-- **status: failed**
-- **severity: high**
-- **details:** Hero is plain white background with text. No background image, no gradient, no visual punch. This is the first thing someone sees after clicking a Facebook ad — it needs to be arresting. Currently looks like a generic template.
-- **fix:** Add a full-width background image (meditation/nature) with gradient overlay, larger typography, more dramatic visual treatment. The hero must feel premium within 2 seconds.
-- **files:** `src/components/intro/hero-section.tsx`
-
-#### Gap 7: Benefits section is a plain text list
-- **status: failed**
-- **severity: high**
-- **details:** Just CheckCircle icons + text in a 2-column grid. No cards, no imagery, no visual weight. Looks like a bulleted list, not a benefits showcase.
-- **fix:** Each benefit should be in its own card with a meaningful icon, short title, and description. Add visual richness — card backgrounds, icon treatments, maybe a subtle image accent.
-- **files:** `src/components/intro/benefits-section.tsx`
-
-#### Gap 8: No visual rhythm between sections — page feels flat
-- **status: failed**
-- **severity: high**
-- **details:** Sections alternate between white and barely-there `bg-muted/50`. No background textures, gradients, or visual variation. The page reads as one long flat document rather than distinct, visually varied sections that create a journey.
-- **fix:** Add gradient backgrounds, subtle patterns or textures, section dividers, and more color variation between sections. Each section should feel visually distinct.
-- **files:** `src/app/globals.css`, multiple section components
-
-#### Gap 9: CTA buttons are identical and repetitive
-- **status: failed**
-- **severity: medium**
-- **details:** Every "Save My Seat" button is the same orange rectangle. No visual variety, no urgency cues (countdown, limited spots), no animation or hover differentiation.
-- **fix:** Vary CTA treatments — some with subtle animation/pulse, add urgency text ("Only X spots left"), different button styles for different positions in the funnel.
-- **files:** `src/components/intro/hero-section.tsx`, `src/components/intro/benefits-section.tsx`, `src/components/intro/footer-cta.tsx`
-
-#### Gap 10: Registration form is a plain card with no warmth
-- **status: failed**
-- **severity: medium**
-- **details:** The registration form is a basic shadcn Card. No visual warmth, no urgency cues, no social proof near the form ("Join 500+ registrants"), no imagery. Doesn't make the visitor feel like registering is exciting.
-- **fix:** Add warm background treatment, social proof counter or trust badges near the form, subtle urgency cues, and a more visually engaging card treatment.
-- **files:** `src/components/intro/registration-form.tsx`
-
-#### Gap 11: Footer CTA is a minimal solid block
-- **status: failed**
-- **severity: low**
-- **details:** Just solid orange background with white text. No imagery, no visual richness, no emotional pull for the final nudge.
-- **fix:** Add a background image with overlay, or gradient treatment, testimonial snippet, or countdown — something that makes the final CTA feel like a last compelling moment.
-- **files:** `src/components/intro/footer-cta.tsx`
+Phase 3 automated goal verification: PASSED. Awaiting human browser review for final visual quality confirmation.
 
 ---
 
-_Updated: 2026-02-25_
-_Verifier: Human review (page-wide visual polish)_
-_Re-verification needed after gap closure Plans 03-05 and 03-06_
+_Verified: 2026-02-25_
+_Verifier: Claude (gsd-verifier) — re-verification after Plans 03-05 and 03-06 gap closure_
