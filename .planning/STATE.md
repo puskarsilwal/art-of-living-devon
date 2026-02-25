@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 5 complete -- course landing page all 5 plans done; /happiness-program live
+**Current focus:** Phase 6 in progress -- homepage; Plan 01 complete (SiteHeader/SiteFooter nav upgrade)
 
 ## Current Position
 
-Phase: 5 of 10 (Course Landing Page)
-Plan: 5 of 5 in current phase (01, 02, 03, 04, and 05 done — all plans complete)
-Status: Phase 05 complete — all 11 course sections built and assembled at /happiness-program
-Last activity: 2026-02-25 -- Plan 05-05 complete: happiness-program/page.tsx assembled, human-verified
+Phase: 6 of 10 (Homepage)
+Plan: 1 of 3 in current phase (01 done)
+Status: Phase 06 in progress — SiteHeader and SiteFooter upgraded with full navigation
+Last activity: 2026-02-25 -- Plan 06-01 complete: SiteHeader nav links + Register Free CTA; SiteFooter 3-column layout
 
-Progress: [######░░░░] 60%
+Progress: [######░░░░] 62%
 
 ## Performance Metrics
 
@@ -48,6 +48,7 @@ Progress: [######░░░░] 60%
 | Phase 05 P04 | 5 | 2 tasks | 4 files |
 | Phase 05 P03 | 2 | 2 tasks | 3 files |
 | Phase 05 P05 | 5min | 2 tasks | 1 file |
+| Phase 06 P01 | 3min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -124,6 +125,8 @@ Recent decisions affecting current work:
 - [Phase 05-05]: page.tsx is a pure assembler — zero logic/state, just imports and JSX composition for 11 sections
 - [Phase 05-05]: Course page at /happiness-program uses (landing) route group (no header/footer), matching intro talk pattern
 - [Phase 05-05]: robots index+follow on /happiness-program — primary SEO target for the course
+- [Phase 06-01]: SiteHeader nav and CTA hidden on mobile — mobile users navigate via hero CTAs on page
+- [Phase 06-01]: Events link added to header/footer now with Phase 7 comment — anticipates /events route
 
 ### Pending Todos
 
@@ -138,5 +141,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 05-05-PLAN.md (happiness-program page.tsx assembled, human-verified) — Phase 05 complete
+Stopped at: Completed 06-01-PLAN.md (SiteHeader nav + Register CTA; SiteFooter 3-column layout)
 Resume file: None
