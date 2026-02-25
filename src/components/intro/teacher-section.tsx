@@ -54,7 +54,7 @@ export function TeacherSection() {
                 mind.&rdquo;
               </p>
               <cite className="text-xs text-primary/70 not-italic font-medium">
-                -- Gurudev Sri Sri Ravi Shankar
+                Gurudev Sri Sri Ravi Shankar
               </cite>
             </blockquote>
 
