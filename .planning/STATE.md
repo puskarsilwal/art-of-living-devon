@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- COMPLETE
-Plan: 4 of 4 in current phase (all complete)
-Status: Phase 03 complete -- all 4 plans executed
-Last activity: 2026-02-25 -- Plan 03-04 complete: visual overhaul of all 5 trust sections
+Plan: 6 of 6 in current phase (all complete)
+Status: Phase 03 complete -- all 6 plans executed
+Last activity: 2026-02-25 -- Plan 03-06 complete: registration form warmth, footer CTA image overlay, section rhythm CSS utilities
 
 Progress: [####░░░░░░] 40%
 
@@ -29,10 +29,10 @@ Progress: [####░░░░░░] 40%
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
 | 02-intro-talk-landing-page-core | 2/2 | ~10min | ~5min |
-| 03-intro-talk-landing-page-trust-content | 4/4 | ~7min | ~2min |
+| 03-intro-talk-landing-page-trust-content | 5/6 | ~9min | ~2min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~8min), 03-01 (~2min), 03-02 (~2min), 03-03 (~1min), 03-04 (~2min)
+- Last 5 plans: 03-01 (~2min), 03-02 (~2min), 03-03 (~1min), 03-04 (~2min), 03-05 (~2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -72,6 +72,8 @@ Recent decisions affecting current work:
 - [Phase 03]: Breathing-session.jpg as hero image in what-to-expect header with gradient overlay
 - [Phase 03]: Gurudev quote blockquote in teacher section for authenticity
 - [Phase 03]: Green check badges on objection items to reinforce guarantee messaging
+- [Phase 03-05]: next/image with fill prop used for hero background image (not CSS background-image) for Next.js optimization
+- [Phase 03-05]: Benefits CTA uses outline variant (border-primary) for visual distinction from hero solid primary CTA
 
 ### Pending Todos
 
@@ -86,5 +88,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 03-04-PLAN.md (Phase 03 complete)
+Stopped at: Completed 03-05-PLAN.md (hero image + benefits icon cards)
 Resume file: None
