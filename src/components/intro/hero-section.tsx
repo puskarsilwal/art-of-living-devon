@@ -3,6 +3,7 @@ import { Clock } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { nextIntroTalk } from "@/lib/data/intro-talks"
+import { CountdownTimer } from "@/components/intro/countdown-timer"
 
 export function HeroSection() {
   return (
@@ -55,6 +56,11 @@ export function HeroSection() {
           <span>
             {nextIntroTalk.date}, {nextIntroTalk.time} {nextIntroTalk.timezone}
           </span>
+        </div>
+
+        {/* Countdown timer — live urgency below static date */}
+        <div className="flex justify-center mb-6">
+          <CountdownTimer />
         </div>
 
         <a href="#register">
