@@ -44,7 +44,7 @@ export function CredibilitySection() {
                     <Icon className="relative h-8 w-8 text-primary" />
                   </div>
                 )}
-                <div className="text-4xl sm:text-5xl font-bold text-primary mb-1">
+                <div className={`font-bold text-primary mb-1 ${stat.isText ? "text-xl sm:text-2xl" : "text-4xl sm:text-5xl"}`}>
                   {stat.number}
                 </div>
                 <div className="text-sm text-muted-foreground">

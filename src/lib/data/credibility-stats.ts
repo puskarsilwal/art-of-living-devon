@@ -2,6 +2,7 @@ export type CredibilityStat = {
   icon: string
   number: string
   label: string
+  isText?: boolean
 }
 
 export const credibilityStats: CredibilityStat[] = [
@@ -12,6 +13,7 @@ export const credibilityStats: CredibilityStat[] = [
     icon: "GraduationCap",
     number: "Yale & Harvard",
     label: "Research-backed",
+    isText: true,
   },
 ]
 
