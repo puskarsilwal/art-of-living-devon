@@ -64,9 +64,13 @@ Follow the proven structure from the reference pages, adapted for Devon/Southwes
 <specifics>
 ## Specific Ideas
 
-- Reference 1 (first screenshot): Use the "3 steps" flow (Clear Stress → Experience Meditation → Connect to Inner Peace) — good for the "How does it work?" section
-- Reference 2 (second screenshot): Use the stat grid layout exactly — 6 stats in 2 rows of 3, with percentage, arrow icon, and label
-- Reference 2: The upcoming courses filter (All / Online / In-person, Date, Country) is a good pattern — simplify for Devon context (just list Devon courses)
+**Reference pages location:** `/Users/mac/Documents/Art of Living Landing Page/Course Landing Page Reference/`
+- `www.artofliving.org_de-en_art-of-living-part-1-course.png` — German/English AoL site (3-step flow, research brain graphic, media logos, upcoming dates, founder, testimonials)
+- `www.artofliving.org_uk-en_courses_art-of-living-part-one.png` — UK/English AoL site (stat grid, course content, upcoming courses filter, FAQ, numbers section)
+
+- Reference 1 (DE): Use the "3 steps" flow (Clear Stress → Experience Meditation → Connect to Inner Peace) — good for the "How does it work?" section
+- Reference 2 (UK): Use the stat grid layout exactly — 6 stats in 2 rows of 3, with percentage, arrow icon, and label
+- Reference 2 (UK): The upcoming courses filter (All / Online / In-person, Date, Country) is a good pattern — simplify for Devon context (just list Devon courses)
 - Both references use: CNN, Yoga Journal, Harvard Health Publishing, Washington Post logos — use these same media partners
 - Quote from Gurudev: "The quality of our lives depends on the quality of our minds." — use this as a featured pullquote between sections
 
