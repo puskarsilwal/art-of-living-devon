@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { credibilityStats, researchHighlights } from "@/lib/data/credibility-stats"
+import { Button } from "@/components/ui/button"
 
 export function CredibilitySection() {
   return (
@@ -75,9 +76,12 @@ export function CredibilitySection() {
             {/* CTA */}
             <div className="mt-8">
               <a href="#register">
-                <button className="w-full sm:w-auto px-8 h-12 rounded-lg bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors">
-                  Experience It For Free
-                </button>
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto h-12 text-base font-semibold px-8"
+                >
+                  Save My Seat (It&apos;s Free)
+                </Button>
               </a>
             </div>
           </div>

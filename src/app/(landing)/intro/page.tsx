@@ -6,7 +6,6 @@ import { CredibilitySection } from "@/components/intro/credibility-section"
 import { MediaLogosSection } from "@/components/intro/media-logos-section"
 import { TestimonialsSection } from "@/components/intro/testimonials-section"
 import { WhatToExpectSection } from "@/components/intro/what-to-expect-section"
-import { TeacherSection } from "@/components/intro/teacher-section"
 import { AboutSection } from "@/components/intro/about-section"
 import { ObjectionsSection } from "@/components/intro/objections-section"
 import { RegistrationForm } from "@/components/intro/registration-form"
@@ -30,11 +29,10 @@ export default function IntroPage() {
         5. Media Logos — external press validation
         6. Testimonials — real people confirm it works
         7. What-to-Expect — reduce uncertainty about the session
-        8. Teacher — human connection before asking for registration
-        9. About — organizational credibility and founding story
-        10. Objections — remove last barriers right before the form
-        11. Registration — the ask
-        12. Footer CTA — final nudge
+        8. About — organizational credibility and founding story
+        9. Objections — remove last barriers right before the form
+        10. Registration — the ask
+        11. Footer CTA — final nudge
       */}
       <HeroSection />
       <SessionIntroSection />
@@ -43,7 +41,6 @@ export default function IntroPage() {
       <MediaLogosSection />
       <TestimonialsSection />
       <WhatToExpectSection />
-      <TeacherSection />
       <AboutSection />
       <ObjectionsSection />
       <RegistrationForm />
