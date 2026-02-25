@@ -51,5 +51,5 @@ export const introTalkSessions: IntroTalkSession[] = [
   },
 ]
 
-// Backward compatibility export — consumers expecting a single session use this
+// Backward compatibility export - consumers expecting a single session use this
 export const nextIntroTalk = introTalkSessions[0]

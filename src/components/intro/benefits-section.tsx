@@ -6,19 +6,25 @@ const benefits = [
     image: "/images/intro/breathing-session.jpg",
     alt: "People learning SKY Breath Meditation in a group session",
     caption: "SKY Breath Meditation",
-    description: "Science-backed technique validated by Yale and Harvard. Feel the shift in a single session.",
+    description: "Independently researched at leading universities. Feel a tangible shift in a single session.",
   },
   {
     image: "/images/intro/meditation-group.jpg",
-    alt: "Group meditating together in an Art of Living session",
-    caption: "Deep Rest & Better Sleep",
-    description: "Calms the nervous system and restores natural energy. No years of training required.",
+    alt: "Group in a guided meditation during an Art of Living session",
+    caption: "Guided Meditation",
+    description: "Sink into deep rest and inner stillness. Often described as a bubble bath for the mind.",
   },
   {
     image: "/images/intro/teacher-guiding.jpg",
+    alt: "Participant in deep rest during a guided Art of Living session",
+    caption: "Deep Rest & Better Sleep",
+    description: "Settles the mind and restores natural energy without years of practice.",
+  },
+  {
+    image: "/images/intro/breathing-session.jpg",
     alt: "Certified Art of Living teacher guiding participants",
     caption: "Expert Guidance",
-    description: "Live certified teachers and a warm Devon & Southwest community behind you every step",
+    description: "Live certified teachers and a warm Devon & Southwest community behind you every step.",
   },
 ]
 
@@ -35,7 +41,7 @@ export function BenefitsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 mb-10">
           {benefits.map((benefit) => (
             <div key={benefit.caption} className="flex flex-col items-center text-center">
               {/* Circular photo */}
@@ -65,7 +71,7 @@ export function BenefitsSection() {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full sm:w-auto h-14 text-lg font-semibold px-8"
             >
-              Save My Seat (It&apos;s Free)
+              Join the Free Session →
             </Button>
           </a>
         </div>

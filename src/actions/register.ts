@@ -34,6 +34,6 @@ export async function registerForIntroTalk(
   // TODO: Brevo integration in Phase 9
   console.log("New registration:", result.data)
 
-  // redirect() must be outside try/catch — it throws a NEXT_REDIRECT control-flow exception
+  // redirect() must be outside try/catch - it throws a NEXT_REDIRECT control-flow exception
   redirect(`/intro/confirmation?session=${encodeURIComponent(result.data.sessionId)}`)
 }

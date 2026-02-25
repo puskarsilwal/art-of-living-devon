@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { SessionPicker } from "@/components/intro/session-picker"
+import Image from "next/image"
 import Link from "next/link"
 
 const initialState: RegistrationState = {
@@ -29,17 +30,28 @@ export function RegistrationForm() {
         {/* Social proof trust badge */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <div className="flex -space-x-2">
-            {["C", "P", "S", "R"].map((initial) => (
+            {[
+              { src: "/images/intro/testimonials/charlotte-puls.webp", alt: "Charlotte" },
+              { src: "/images/intro/testimonials/phillip-mertz.webp", alt: "Phillip" },
+              { src: "/images/intro/testimonials/mawahib-shaibani.webp", alt: "Mawahib" },
+              { src: "/images/intro/testimonials/glenn-haig.webp", alt: "Glenn" },
+            ].map((person) => (
               <div
-                key={initial}
-                className="h-8 w-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center text-xs font-semibold text-primary"
+                key={person.alt}
+                className="h-8 w-8 rounded-full border-2 border-background overflow-hidden relative"
               >
-                {initial}
+                <Image
+                  src={person.src}
+                  alt={person.alt}
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                />
               </div>
             ))}
           </div>
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">500M+</span> lives transformed worldwide
+            <span className="font-semibold text-foreground">500M+</span> people practise worldwide
           </p>
         </div>
 

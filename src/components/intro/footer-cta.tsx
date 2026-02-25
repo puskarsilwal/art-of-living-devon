@@ -14,14 +14,14 @@ export function FooterCTA() {
           className="object-cover"
         />
       </div>
-      {/* Deep gradient overlay — rich, not flat orange */}
+      {/* Deep gradient overlay - rich, not flat orange */}
       <div className="absolute inset-0 z-10 bg-gradient-to-br from-primary/90 via-primary/80 to-orange-700/90" />
 
       {/* Content */}
       <div className="relative z-20 px-4 py-16 sm:px-6 sm:py-20 lg:py-24 text-center text-primary-foreground max-w-4xl mx-auto">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Sparkles className="h-5 w-5 opacity-80" />
-          <span className="text-sm font-medium opacity-80 uppercase tracking-wider">Join 500M+ worldwide</span>
+          <span className="text-sm font-medium opacity-80 uppercase tracking-wider">Practised in 180+ countries</span>
           <Sparkles className="h-5 w-5 opacity-80" />
         </div>
 
@@ -29,10 +29,10 @@ export function FooterCTA() {
           Your Transformation Starts Here
         </h2>
         <p className="text-base sm:text-lg opacity-90 mb-8 max-w-xl mx-auto">
-          One free session. A technique backed by Yale and Harvard research. A community waiting to welcome you.
+          One free session. Decades of independent research behind it. A community ready to welcome you.
         </p>
 
-        {/* CTA — white style for contrast against image background (distinct from other CTAs) */}
+        {/* CTA - white style for contrast against image background (distinct from other CTAs) */}
         <a href="#register">
           <Button
             size="lg"

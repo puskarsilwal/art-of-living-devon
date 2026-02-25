@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { introTalkSessions } from "@/lib/data/intro-talks"
 
 export const metadata = {
-  title: "You're Registered — Art of Living Devon & Southwest",
+  title: "You're Registered | Art of Living Devon & Southwest",
   robots: "noindex", // Confirmation page should not be indexed
 }
 
@@ -63,7 +63,7 @@ export default async function ConfirmationPage({ searchParams }: Props) {
               <p className="text-muted-foreground">{selectedSession.time} {selectedSession.timezone} · {selectedSession.duration} · Online</p>
             </div>
 
-            {/* Join Zoom — most prominent element */}
+            {/* Join Zoom - most prominent element */}
             <Button asChild size="lg" className="w-full mt-4 gap-2">
               <a href={selectedSession.zoomUrl} target="_blank" rel="noopener noreferrer">
                 <Video className="h-4 w-4" />
@@ -71,12 +71,12 @@ export default async function ConfirmationPage({ searchParams }: Props) {
               </a>
             </Button>
             <p className="text-xs text-muted-foreground text-center">
-              Save this link — you&apos;ll need it to join the session
+              Save this link. You&apos;ll need it to join the session.
             </p>
           </CardContent>
         </Card>
 
-        {/* Calendar add — side by side */}
+        {/* Calendar add - side by side */}
         <div className="space-y-2">
           <p className="text-sm font-medium">Add to your calendar</p>
           <div className="grid grid-cols-2 gap-3">
@@ -101,8 +101,8 @@ export default async function ConfirmationPage({ searchParams }: Props) {
         {/* What to expect reassurance */}
         <div className="text-sm text-muted-foreground border-t pt-6">
           <p>
-            The session is 60 minutes online. You&apos;ll experience a guided SKY Breath technique,
-            a short meditation, and have time for questions. Camera on but no pressure to participate actively.
+            The session is 60 minutes online. You&apos;ll experience a guided breathing exercise,
+            a short meditation, and have time for live Q&amp;A. Camera on but no pressure to participate actively.
           </p>
         </div>
 

@@ -47,7 +47,7 @@ export function CountdownTimer() {
       const result = calcTimeLeft(session.dateISO)
 
       if (result === null) {
-        // Session just passed — advance to next
+        // Session just passed - advance to next
         session = getNextSession()
         if (!session) {
           setTimeLeft(null)
@@ -70,7 +70,7 @@ export function CountdownTimer() {
     if (!session) {
       return (
         <p className="text-sm text-white/80">
-          Registration open — join the next session
+          Registration open. Join the next session
         </p>
       )
     }

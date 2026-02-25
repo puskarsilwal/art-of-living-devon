@@ -80,7 +80,7 @@ export function CredibilitySection() {
                   size="lg"
                   className="w-full sm:w-auto h-12 text-base font-semibold px-8"
                 >
-                  Save My Seat (It&apos;s Free)
+                  Experience It Yourself →
                 </Button>
               </a>
             </div>

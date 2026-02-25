@@ -104,10 +104,14 @@ Plans:
   2. Visitor sees SKY Breath Meditation research data with university names and key statistics
   3. Visitor sees testimonials from Part 1 course participants
   4. A clear CTA links to the official Art of Living registration page for course enrollment
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — Data modules (course-stats, course-dates, course-testimonials) + accordion install + image assets
+- [ ] 05-02-PLAN.md — Hero, Program Overview, Research Stats, Media Logos sections
+- [ ] 05-03-PLAN.md — Course Content, Upcoming Dates, Founder sections
+- [ ] 05-04-PLAN.md — Testimonials, Numbers, FAQ, Footer CTA sections
+- [ ] 05-05-PLAN.md — Page assembler (happiness-program/page.tsx) + visual verification checkpoint
 
 ### Phase 6: Homepage
 **Goal**: Art of Living Devon/Southwest has a branded local web presence that connects visitors to all offerings
@@ -190,7 +194,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
 | 3. Intro Talk LP - Trust | 11/11 | Complete   | 2026-02-25 |
 | 4. Registration Flow | 3/4 | In Progress|  |
-| 5. Course Landing Page | 0/1 | Not started | - |
+| 5. Course Landing Page | 0/5 | Planned | - |
 | 6. Homepage | 0/1 | Not started | - |
 | 7. Event Pages | 0/1 | Not started | - |
 | 8. Analytics & Tracking | 0/1 | Not started | - |

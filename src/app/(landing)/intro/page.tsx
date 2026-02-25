@@ -7,12 +7,11 @@ import { MediaLogosSection } from "@/components/intro/media-logos-section"
 import { TestimonialsSection } from "@/components/intro/testimonials-section"
 import { WhatToExpectSection } from "@/components/intro/what-to-expect-section"
 import { AboutSection } from "@/components/intro/about-section"
-import { ObjectionsSection } from "@/components/intro/objections-section"
 import { RegistrationForm } from "@/components/intro/registration-form"
 import { FooterCTA } from "@/components/intro/footer-cta"
 
 export const metadata: Metadata = {
-  title: "Free Intro Talk — Art of Living Devon & Southwest",
+  title: "Free Intro Talk | Art of Living Devon & Southwest",
   description:
     "Join a free 60-minute online intro to the Art of Living. Learn a powerful breathing technique used by millions worldwide. Reserve your seat today.",
 }
@@ -22,17 +21,16 @@ export default function IntroPage() {
     <>
       {/*
         Trust-building funnel order:
-        1. Hero — hook with specific learning bullets
-        2. Session Intro — narrative bridge: what is this session?
-        3. Benefits — what you'll experience
-        4. Credibility — quick stats (500M+ lives, Yale/Harvard research)
-        5. Media Logos — external press validation
-        6. Testimonials — real people confirm it works
-        7. What-to-Expect — reduce uncertainty about the session
-        8. About — organizational credibility and founding story
-        9. Objections — remove last barriers right before the form
-        10. Registration — the ask
-        11. Footer CTA — final nudge
+        1. Hero -hook with specific learning bullets
+        2. Session Intro -narrative bridge: what is this session?
+        3. Benefits -what you'll experience
+        4. Credibility -quick stats (500M+ lives, Yale/Harvard research)
+        5. Media Logos -external press validation
+        6. Testimonials -real people confirm it works
+        7. What-to-Expect -reduce uncertainty about the session
+        8. About -organizational credibility and founding story
+        9. Registration -the ask
+        10. Footer CTA -final nudge
       */}
       <HeroSection />
       <SessionIntroSection />
@@ -42,7 +40,6 @@ export default function IntroPage() {
       <TestimonialsSection />
       <WhatToExpectSection />
       <AboutSection />
-      <ObjectionsSection />
       <RegistrationForm />
       <FooterCTA />
     </>

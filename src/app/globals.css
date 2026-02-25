@@ -55,7 +55,7 @@
   --brand-orange: oklch(0.75 0.18 55);
   --brand-warm-gray: oklch(0.96 0.01 80);
 
-  /* shadcn/ui theme — Art of Living branded */
+  /* shadcn/ui theme - Art of Living branded */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0.014 260);
   --card: oklch(1 0 0);
@@ -136,7 +136,7 @@
 }
 
 @layer utilities {
-  /* Section rhythm — graduated background palettes for visual variety */
+  /* Section rhythm - graduated background palettes for visual variety */
   .section-warm-gradient {
     background: linear-gradient(to bottom, oklch(1 0 0), oklch(0.98 0.01 60));
   }

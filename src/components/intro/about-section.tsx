@@ -1,10 +1,10 @@
 import Image from "next/image"
 
 const organizationFacts = [
+  { number: "1981", label: "Year founded" },
   { number: "40+", label: "Years of teaching" },
-  { number: "180", label: "Countries worldwide" },
-  { number: "500M+", label: "Lives touched" },
-  { number: "10,000+", label: "Volunteer teachers" },
+  { number: "1M+", label: "Volunteers globally" },
+  { number: "10,000+", label: "Certified teachers" },
 ]
 
 export function AboutSection() {
@@ -26,7 +26,7 @@ export function AboutSection() {
               Founded in 1981 by Gurudev Sri Sri Ravi Shankar, the Art of Living Foundation has grown from a small breathing programme into one of the world&apos;s largest volunteer-run non-profits.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              Today we operate in 180 countries and have touched 500 million lives through direct teaching and genuine personal transformation. Every local session is run by a volunteer certified teacher.
+              Today it is one of the world&apos;s largest volunteer-run humanitarian organisations, with courses running across six continents. Every local session is led by a certified teacher who does this because it changed their own life.
             </p>
 
             {/* Org fact grid */}

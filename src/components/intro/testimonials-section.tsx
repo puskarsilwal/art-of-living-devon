@@ -70,7 +70,7 @@ export function TestimonialsSection() {
               size="lg"
               className="w-full sm:w-auto h-14 text-lg font-semibold px-8"
             >
-              Save My Seat (It&apos;s Free)
+              I Want This →
             </Button>
           </a>
         </div>
