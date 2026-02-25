@@ -6,13 +6,13 @@ const benefits = [
     image: "/images/intro/breathing-session.jpg",
     alt: "People learning SKY Breath Meditation in a group session",
     caption: "SKY Breath Meditation",
-    description: "Science-backed technique validated by Yale & Harvard — feel the shift in a single session",
+    description: "Science-backed technique validated by Yale and Harvard. Feel the shift in a single session.",
   },
   {
     image: "/images/intro/meditation-group.jpg",
     alt: "Group meditating together in an Art of Living session",
     caption: "Deep Rest & Better Sleep",
-    description: "Calms the nervous system and restores natural energy — no years of training required",
+    description: "Calms the nervous system and restores natural energy. No years of training required.",
   },
   {
     image: "/images/intro/teacher-guiding.jpg",
@@ -65,7 +65,7 @@ export function BenefitsSection() {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full sm:w-auto h-14 text-lg font-semibold px-8"
             >
-              Save My Seat — It&apos;s Free
+              Save My Seat (It&apos;s Free)
             </Button>
           </a>
         </div>
