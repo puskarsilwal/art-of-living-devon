@@ -198,7 +198,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 3. Intro Talk LP - Trust | 11/11 | Complete   | 2026-02-25 |
 | 4. Registration Flow | 3/4 | In Progress|  |
 | 5. Course Landing Page | 5/5 | Complete   | 2026-02-25 |
-| 6. Homepage | 2/4 | In Progress|  |
+| 6. Homepage | 3/4 | In Progress|  |
 | 7. Event Pages | 0/1 | Not started | - |
 | 8. Analytics & Tracking | 0/1 | Not started | - |
 | 9. Email - Core Sequence | 0/2 | Not started | - |

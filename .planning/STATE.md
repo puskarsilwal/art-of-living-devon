@@ -1,3 +1,16 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: unknown
+last_updated: "2026-02-25T22:21:22.339Z"
+progress:
+  total_phases: 6
+  completed_phases: 3
+  total_plans: 28
+  completed_plans: 25
+---
+
 # Project State
 
 ## Project Reference
@@ -5,14 +18,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 6 in progress -- homepage; Plan 02 complete (HeroSection + OfferingsSection)
+**Current focus:** Phase 6 in progress -- homepage; Plan 03 complete (AboutSection + LocalGuidesSection + FooterCta)
 
 ## Current Position
 
 Phase: 6 of 10 (Homepage)
-Plan: 2 of 3 in current phase (01, 02 done)
-Status: Phase 06 in progress — HeroSection and OfferingsSection built
-Last activity: 2026-02-25 -- Plan 06-02 complete: HeroSection (full-bleed hero, Devon/SW identity, 2 CTAs) + OfferingsSection (3 offering cards)
+Plan: 3 of 3 in current phase (01, 02, 03 done)
+Status: Phase 06 in progress — AboutSection, LocalGuidesSection, and FooterCta built
+Last activity: 2026-02-25 -- Plan 06-03 complete: AboutSection (credibility stats + mission statement) + LocalGuidesSection (Devon/SW teacher section) + FooterCta (full-bleed orange CTA)
 
 Progress: [######░░░░] 62%
 
@@ -50,6 +63,8 @@ Progress: [######░░░░] 62%
 | Phase 05 P05 | 5min | 2 tasks | 1 file |
 | Phase 06 P01 | 3min | 2 tasks | 2 files |
 | Phase 06 P02 | 1min | 2 tasks | 2 files |
+| Phase 06 P03 | 2min | 2 tasks | 3 files |
+| Phase 06-homepage P03 | 2 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -131,6 +146,8 @@ Recent decisions affecting current work:
 - [Phase 06-02]: Home hero reuses breathing-session.jpg for consistent meditation imagery across site
 - [Phase 06-02]: Offerings data inlined in OfferingsSection component (3 static items, no separate data module)
 - [Phase 06-02]: Phase 7 comment on /events href in OfferingsSection for forward compatibility
+- [Phase 06-homepage]: AboutSection renders stats from credibilityStats data module (not inlined) — single source of truth for credibility numbers
+- [Phase 06-homepage]: FooterCta uses bg-primary with Button variant=secondary — matches Phase 05-04 course page footer pattern
 
 ### Pending Todos
 
@@ -145,5 +162,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 06-01-PLAN.md (SiteHeader nav + Register CTA; SiteFooter 3-column layout)
+Stopped at: Completed 06-03-PLAN.md (AboutSection + LocalGuidesSection + FooterCta)
 Resume file: None
