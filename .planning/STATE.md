@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- COMPLETE
-Plan: 6 of 6 in current phase (all complete)
-Status: Phase 03 complete -- all 6 plans executed
-Last activity: 2026-02-25 -- Plan 03-06 complete: registration form warmth, footer CTA image overlay, section rhythm CSS utilities
+Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- gap closure in progress
+Plan: 7 of 8 in current phase (gap closure plans)
+Status: Phase 03 gap closure plan 07 complete
+Last activity: 2026-02-25 -- Plan 03-07 complete: hero learning bullets, SessionIntroSection, MediaLogosSection (gaps 12/13/15)
 
 Progress: [####░░░░░░] 40%
 
@@ -29,10 +29,10 @@ Progress: [####░░░░░░] 40%
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
 | 02-intro-talk-landing-page-core | 2/2 | ~10min | ~5min |
-| 03-intro-talk-landing-page-trust-content | 6/6 | ~11min | ~2min |
+| 03-intro-talk-landing-page-trust-content | 7/8 | ~13min | ~2min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (~2min), 03-03 (~1min), 03-04 (~2min), 03-05 (~2min), 03-06 (~5min)
+- Last 5 plans: 03-03 (~1min), 03-04 (~2min), 03-05 (~2min), 03-06 (~5min), 03-07 (~2min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -77,6 +77,8 @@ Recent decisions affecting current work:
 - [Phase 03-06]: Social proof trust badge uses avatar initials cluster (plain divs, no new deps) above Card
 - [Phase 03-06]: Footer CTA button text changed to 'Claim Your Free Seat Now' to differentiate from hero 'Save My Seat'
 - [Phase 03-06]: Section rhythm utilities added as @layer utilities in globals.css for future phase use
+- [Phase 03]: Styled text logos used for CNN/Yoga Journal/Harvard/WashPost — no brand-licensed image assets available
+- [Phase 03]: SessionIntroSection reuses breathing-session.jpg from hero for 2-column narrative bridge
 
 ### Pending Todos
 
@@ -91,5 +93,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 03-06-PLAN.md (registration form warmth + footer CTA image overlay)
+Stopped at: Completed 03-07-PLAN.md (hero bullets, SessionIntroSection, MediaLogosSection — gaps 12/13/15 closed)
 Resume file: None
