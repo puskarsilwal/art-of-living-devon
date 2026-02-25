@@ -1,31 +1,27 @@
-import { Wind, Moon, Users, GraduationCap } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 
 const benefits = [
   {
-    icon: Wind,
-    title: "SKY Breath Meditation",
+    image: "/images/intro/breathing-session.jpg",
+    alt: "People learning SKY Breath Meditation in a group session",
+    caption: "SKY Breath Meditation",
     description:
-      "A powerful technique backed by Yale and Harvard research — calm your mind in minutes",
+      "A powerful rhythmic breathing technique backed by Yale and Harvard research — reduces stress and anxiety in a single session",
   },
   {
-    icon: Moon,
-    title: "Better Sleep & Energy",
+    image: "/images/intro/meditation-group.jpg",
+    alt: "Group meditating together in an Art of Living session",
+    caption: "Deep Rest & Better Sleep",
     description:
-      "Simple practices that reduce stress, deepen sleep, and restore natural vitality",
+      "Guided practices that calm the nervous system, deepen sleep quality, and restore natural energy — without years of training",
   },
   {
-    icon: Users,
-    title: "Welcoming Community",
+    image: "/images/intro/teacher-guiding.jpg",
+    alt: "Certified Art of Living teacher guiding participants",
+    caption: "Expert Guidance, Warm Community",
     description:
-      "Connect with like-minded people in Devon & Southwest on the same journey",
-  },
-  {
-    icon: GraduationCap,
-    title: "Expert Guidance",
-    description:
-      "Guided by an experienced, certified Art of Living teacher in every session",
+      "Certified Art of Living teachers and a welcoming Devon & Southwest community to support your journey every step of the way",
   },
 ]
 
@@ -33,32 +29,36 @@ export function BenefitsSection() {
   return (
     <section className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20 bg-muted/50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl text-center mb-8">
-          What You&apos;ll Experience
-        </h2>
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
+            What You&apos;ll Experience
+          </p>
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
+            Real Techniques. Real Results. Real People.
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
-          {benefits.map((benefit) => {
-            const Icon = benefit.icon
-            return (
-              <Card
-                key={benefit.title}
-                className="h-full border-0 shadow-sm bg-gradient-to-br from-background to-primary/5 hover:shadow-md transition-shadow"
-              >
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-base sm:text-lg mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </CardContent>
-              </Card>
-            )
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 mb-10">
+          {benefits.map((benefit) => (
+            <div key={benefit.caption} className="flex flex-col items-center text-center">
+              {/* Circular photo */}
+              <div className="relative w-40 h-40 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full overflow-hidden mb-4 shadow-lg ring-4 ring-primary/20">
+                <Image
+                  src={benefit.image}
+                  alt={benefit.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 160px, (max-width: 768px) 144px, 176px"
+                />
+              </div>
+              <h3 className="font-semibold text-base sm:text-lg mb-2">
+                {benefit.caption}
+              </h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xs">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
         </div>
 
         <div className="text-center">
