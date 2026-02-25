@@ -121,10 +121,13 @@ Plans:
   1. Homepage is accessible at the root URL with Art of Living Devon/Southwest branding (white, orange, peaceful imagery with local warmth)
   2. Homepage links to the intro talk page, course page, and upcoming events
   3. An "About Art of Living" section displays foundation credibility facts (global reach, Gurudev, mission)
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Upgrade SiteHeader + SiteFooter with nav links and CTA button
+- [ ] 06-02-PLAN.md — Build HeroSection + OfferingsSection homepage components
+- [ ] 06-03-PLAN.md — Build AboutSection + LocalGuidesSection + FooterCta components
+- [ ] 06-04-PLAN.md — Assemble page.tsx + human visual verification checkpoint
 
 ### Phase 7: Event Pages
 **Goal**: The Devon/Southwest team can promote Satsang, Kirtan, and other community events using a consistent, reusable page template
