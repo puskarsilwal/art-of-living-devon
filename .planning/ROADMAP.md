@@ -48,11 +48,11 @@ Plans:
   3. "Save My Seat" CTA appears in at least 4 locations: hero, after benefits, after social proof area, and footer
   4. Page renders correctly and is fully usable on mobile viewports (375px+) with touch-friendly form inputs
   5. GDPR consent checkbox (unticked by default) and link to privacy policy are visible adjacent to the registration form
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
+- [ ] 02-01-PLAN.md — Route group architecture, form dependencies, registration schema + server action
+- [ ] 02-02-PLAN.md — Intro talk landing page sections, registration form, 4 CTAs, mobile-first layout
 
 ### Phase 3: Intro Talk Landing Page - Trust & Content
 **Goal**: Cold Facebook traffic sees enough social proof and credibility to trust registering for an event from an organization they have never heard of
