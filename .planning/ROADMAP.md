@@ -12,7 +12,7 @@ This roadmap converts 40 v1 requirements into 10 phases that deliver a complete 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Project Scaffolding & Deploy** - Scaffold Next.js project, deploy to Vercel free tier, create privacy policy page
+- [x] **Phase 1: Project Scaffolding & Deploy** - Scaffold Next.js project, deploy to Vercel free tier, create privacy policy page
 - [ ] **Phase 2: Intro Talk Landing Page - Core** - Hero section, registration form, repeated CTAs, mobile-first layout, GDPR consent
 - [ ] **Phase 3: Intro Talk Landing Page - Trust & Content** - Social proof, credibility stats, teacher profile, what-to-expect section, objection handling
 - [ ] **Phase 4: Registration Flow & Session Selection** - Confirmation page with Zoom link and calendar add, countdown timer, session date picker
@@ -36,7 +36,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Next.js 16 + Tailwind CSS 4 + shadcn/ui, brand theming, privacy policy, deploy to Vercel
+- [x] 01-01-PLAN.md — Scaffold Next.js 16 + Tailwind CSS 4 + shadcn/ui, brand theming, privacy policy, deploy to Vercel
 
 ### Phase 2: Intro Talk Landing Page - Core
 **Goal**: A visitor arriving from a Facebook ad sees a compelling above-the-fold experience and can register in under 30 seconds on mobile

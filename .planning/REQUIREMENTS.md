@@ -57,12 +57,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Next.js 16 project scaffolded with Tailwind CSS 4 and shadcn/ui, deployed on Vercel free tier
+- [x] **INFRA-01**: Next.js 16 project scaffolded with Tailwind CSS 4 and shadcn/ui, deployed on Vercel free tier
 - [ ] **INFRA-02**: Brevo account configured and integrated for email automation (free tier)
 - [ ] **INFRA-03**: SPF/DKIM/DMARC email authentication configured on domain DNS
 - [ ] **INFRA-04**: Meta Pixel installed with Lead conversion event firing on registration confirmation page
 - [ ] **INFRA-05**: Google Analytics 4 installed with UTM parameter tracking for Facebook ad campaigns
-- [ ] **INFRA-06**: Privacy policy page compliant with UK GDPR and PECR regulations
+- [x] **INFRA-06**: Privacy policy page compliant with UK GDPR and PECR regulations
 - [ ] **INFRA-07**: SEO meta tags and Open Graph tags configured for social sharing on all pages
 
 ## v2 Requirements
@@ -139,12 +139,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EMAIL-05 | Phase 10 | Pending |
 | EMAIL-06 | Phase 10 | Pending |
 | EMAIL-07 | Phase 10 | Pending |
-| INFRA-01 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 9 | Pending |
 | INFRA-03 | Phase 9 | Pending |
 | INFRA-04 | Phase 8 | Pending |
 | INFRA-05 | Phase 8 | Pending |
-| INFRA-06 | Phase 1 | Pending |
+| INFRA-06 | Phase 1 | Complete |
 | INFRA-07 | Phase 8 | Pending |
 
 **Coverage:**

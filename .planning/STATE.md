@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 1 - Project Scaffolding & Deploy
+**Current focus:** Phase 2 - Intro Talk Landing Page - Core
 
 ## Current Position
 
-Phase: 1 of 10 (Project Scaffolding & Deploy)
-Plan: 0 of 1 in current phase
-Status: Ready to plan
-Last activity: 2026-02-24 -- Roadmap revised: landing pages prioritised, email/DNS deferred until domain purchased
+Phase: 2 of 10 (Intro Talk Landing Page - Core)
+Plan: 0 of 0 in current phase (awaiting planning)
+Status: Phase 1 complete, ready to plan Phase 2
+Last activity: 2026-02-24 -- Phase 1 complete: scaffolding deployed to art-of-living-devon.vercel.app
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [#░░░░░░░░░] 10%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: -
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: ~25min
+- Total execution time: ~0.4 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
 
 **Recent Trend:**
-- Last 5 plans: -
-- Trend: -
+- Last 5 plans: 01-01 (~25min)
+- Trend: baseline
 
 *Updated after each plan completion*
 
@@ -50,6 +50,10 @@ Recent decisions affecting current work:
 - [Revision]: Deploy to Vercel free tier with *.vercel.app URL (no custom domain yet)
 - [Revision]: Privacy policy kept in Phase 1 (just a page, no domain needed)
 - [Revision]: Email automation phases moved to end (Phases 9-10) pending domain purchase
+- [Phase 1]: Inter font chosen for clean body text via next/font/google
+- [Phase 1]: OKLCH color system used for Tailwind v4 native compatibility
+- [Phase 1]: Privacy policy uses card-based layout with numbered sections for readability
+- [Phase 1]: Deployed via GitHub integration (Vercel auto-deploys on push to master)
 
 ### Pending Todos
 
@@ -64,5 +68,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Roadmap revised, ready to plan Phase 1
+Stopped at: Completed 01-01-PLAN.md (Phase 1 complete)
 Resume file: None
