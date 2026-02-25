@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- phase complete
-Plan: 8 of 8 in current phase (all gap closure plans done)
-Status: Phase 03 fully complete (all 8 plans executed, all gaps closed)
-Last activity: 2026-02-25 -- Plan 03-08 complete: photo cards, dark credibility, AboutSection (gaps 14/16/17)
+Plan: 10 of 10 in current phase (all plans including gap closure done)
+Status: Phase 03 fully complete (all 10 plans executed, all gaps closed)
+Last activity: 2026-02-25 -- Plan 03-10 complete: em-dash removal, registration heading fix, WhatToExpect header polish
 
 Progress: [#####░░░░░] 45%
 
@@ -29,7 +29,7 @@ Progress: [#####░░░░░] 45%
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
 | 02-intro-talk-landing-page-core | 2/2 | ~10min | ~5min |
-| 03-intro-talk-landing-page-trust-content | 8/8 | ~15min | ~2min |
+| 03-intro-talk-landing-page-trust-content | 10/10 | ~19min | ~2min |
 
 **Recent Trend:**
 - Last 5 plans: 03-03 (~1min), 03-04 (~2min), 03-05 (~2min), 03-06 (~5min), 03-07 (~2min)
@@ -37,6 +37,8 @@ Progress: [#####░░░░░] 45%
 
 *Updated after each plan completion*
 | Phase 03 P08 | 2min | 3 tasks | 4 files |
+| Phase 03 P09 | 2min | 3 tasks | 3 files |
+| Phase 03 P10 | 2min | 3 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -83,6 +85,10 @@ Recent decisions affecting current work:
 - [Phase 03-08]: Circular photo cards using rounded-full + overflow-hidden with next/image fill
 - [Phase 03-08]: CredibilitySection uses bg-gray-950 for dark full-bleed dramatic layout
 - [Phase 03-08]: AboutSection bg-muted/30 for subtle distinction from benefits bg-muted/50
+- [Phase 03]: em-dashes replaced with colons, commas, periods, or parentheses depending on context throughout hero, session-intro, and benefits sections
+- [Phase 03-10]: cite element needs no dash prefix -- semantic HTML signals attribution
+- [Phase 03-10]: registration form uses single CardTitle heading, outer h2 removed for clarity
+- [Phase 03-10]: what-to-expect accent bar header matches TestimonialsSection/TeacherSection visual pattern
 
 ### Pending Todos
 
@@ -97,5 +103,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 03-08-PLAN.md (photo cards, dark credibility, AboutSection — gaps 14/16/17 closed) — Phase 03 fully complete
+Stopped at: Completed 03-10-PLAN.md (em-dash removal, registration heading fix, WhatToExpect header) — Phase 03 fully complete
 Resume file: None
