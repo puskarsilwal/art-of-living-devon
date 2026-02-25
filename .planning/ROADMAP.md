@@ -87,10 +87,13 @@ Plans:
   1. After submitting the registration form, visitor lands on a confirmation page showing the Zoom link and a working calendar-add button (ICS download and Google Calendar link)
   2. A real countdown timer on the landing page shows hours/minutes/seconds until the next scheduled intro talk session
   3. Visitor can select from 2-3 upcoming intro talk sessions with distinct dates and times before registering
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Extend session data model (ids, zoomUrl, dateISO) + countdown timer client component + hero wiring
+- [ ] 04-02-PLAN.md — Session picker UI + registration form wiring + server action redirect to confirmation
+- [ ] 04-03-PLAN.md — Confirmation page (Zoom link, Google Calendar, ICS download) + ICS Route Handler
+- [ ] 04-04-PLAN.md — Human verification of full end-to-end registration flow
 
 ### Phase 5: Course Landing Page
 **Goal**: Warm leads from the intro talk can learn everything about the Happiness Program and click through to officially enroll
@@ -186,7 +189,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 1. Project Scaffolding & Deploy | 1/1 | Complete    | 2026-02-25 |
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
 | 3. Intro Talk LP - Trust | 11/11 | Complete   | 2026-02-25 |
-| 4. Registration Flow | 0/1 | Not started | - |
+| 4. Registration Flow | 0/4 | Planned | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
 | 6. Homepage | 0/1 | Not started | - |
 | 7. Event Pages | 0/1 | Not started | - |
