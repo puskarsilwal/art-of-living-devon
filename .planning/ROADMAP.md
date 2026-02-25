@@ -65,15 +65,17 @@ Plans:
   3. Visitor sees teacher/host photo, name, and credentials in a profile section
   4. Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format
   5. Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page
-**Plans**: 6 plans
+**Plans**: 8 plans
 
 Plans:
 - [x] 03-01-PLAN.md — Testimonial + credibility data files and section components (replaces placeholder SocialProofSection)
 - [x] 03-02-PLAN.md — Teacher profile, what-to-expect, objections sections + page composition
 - [x] 03-03-PLAN.md — Gap closure: source stock images (testimonial avatars, teacher photo, lifestyle images) + update data files
 - [x] 03-04-PLAN.md — Gap closure: visual overhaul of all 5 trust sections (photos, alignment fixes, premium styling)
-- [ ] 03-05-PLAN.md — Gap closure: hero background image + benefits icon cards + CTA urgency (Gaps 6, 7, 9 partial)
-- [ ] 03-06-PLAN.md — Gap closure: registration form warmth + footer CTA image overlay + section rhythm CSS (Gaps 8, 9 partial, 10, 11)
+- [x] 03-05-PLAN.md — Gap closure: hero background image + benefits icon cards + CTA urgency (Gaps 6, 7, 9 partial)
+- [x] 03-06-PLAN.md — Gap closure: registration form warmth + footer CTA image overlay + section rhythm CSS (Gaps 8, 9 partial, 10, 11)
+- [ ] 03-07-PLAN.md — Gap closure round 2: hero 3-bullet points + SessionIntroSection + MediaLogosSection (Gaps 12, 13, 15)
+- [ ] 03-08-PLAN.md — Gap closure round 2: benefits circular photos + credibility dark redesign + AboutSection (Gaps 14, 16, 17)
 
 ### Phase 4: Registration Flow & Session Selection
 **Goal**: After registering, the visitor has everything they need to actually show up to the Zoom session, and can choose a session that fits their schedule
@@ -181,7 +183,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 |-------|----------------|--------|-----------|
 | 1. Project Scaffolding & Deploy | 1/1 | Complete    | 2026-02-25 |
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
-| 3. Intro Talk LP - Trust | 6/6 | Complete   | 2026-02-25 |
+| 3. Intro Talk LP - Trust | 6/8 | Gap closure | - |
 | 4. Registration Flow | 0/1 | Not started | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
 | 6. Homepage | 0/1 | Not started | - |
