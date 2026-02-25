@@ -64,11 +64,11 @@ Plans:
   3. Visitor sees teacher/host photo, name, and credentials in a profile section
   4. Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format
   5. Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md — Testimonial + credibility data files and section components (replaces placeholder SocialProofSection)
+- [ ] 03-02-PLAN.md — Teacher profile, what-to-expect, objections sections + page composition
 
 ### Phase 4: Registration Flow & Session Selection
 **Goal**: After registering, the visitor has everything they need to actually show up to the Zoom session, and can choose a session that fits their schedule
