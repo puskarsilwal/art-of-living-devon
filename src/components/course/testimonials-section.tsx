@@ -14,7 +14,7 @@ export function TestimonialsSection() {
             How is Art of Living Changing Lives?
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg">
-            Real transformations from Happiness Program participants
+            Real transformations from Art of Living Part 1 participants
           </p>
         </div>
 

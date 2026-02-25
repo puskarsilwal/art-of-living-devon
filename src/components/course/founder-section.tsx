@@ -28,7 +28,7 @@ export function FounderSection() {
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed mb-4">
               Sri Sri Ravi Shankar is a humanitarian, spiritual leader, and founder of the Art of
-              Living Foundation. In 1982, he developed Sudarshan Kriya — a powerful breathing
+              Living Foundation. In 1982, he developed Sudarshan Kriya, a powerful breathing
               technique that has since helped over 800 million people in 180 countries reduce
               stress, improve sleep, and find inner peace.
             </p>

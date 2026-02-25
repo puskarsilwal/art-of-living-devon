@@ -36,7 +36,7 @@ export function HeroSection() {
         </h1>
 
         <p className="text-white/85 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-          Learn Sudarshan Kriya (SKY Breath Meditation) — a powerful breathing
+          Learn Sudarshan Kriya (SKY Breath Meditation), a powerful breathing
           technique backed by 100+ peer-reviewed studies. 3 days. Life-changing
           results.
         </p>

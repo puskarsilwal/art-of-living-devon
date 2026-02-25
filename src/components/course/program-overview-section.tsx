@@ -11,7 +11,7 @@ const steps = [
     number: 2,
     title: "Experience Meditation",
     description:
-      "Access deep states of rest and clarity — effortlessly, even if you have never meditated before.",
+      "Access deep states of rest and clarity, effortlessly, even if you have never meditated before.",
   },
   {
     number: 3,
@@ -26,19 +26,19 @@ export function ProgramOverviewSection() {
     <section className="bg-background py-20 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
-          What is the Happiness Program?
+          What is the Art of Living Part 1?
         </h2>
 
         <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-10">
           <p>
-            The Happiness Program (Art of Living Part 1) is a transformative
+            Art of Living Part 1 is a transformative
             3-day course, offered 3 hours per day, by the Art of Living
-            Foundation — founded by Sri Sri Ravi Shankar in 1982. Over 40
+            Foundation, founded by Sri Sri Ravi Shankar in 1982. Over 40
             million people in 180 countries have taken this course.
           </p>
           <p>
             Each session combines Sudarshan Kriya (SKY Breath Meditation),
-            pranayama breathing exercises, guided yoga, and meditation — giving
+            pranayama breathing exercises, guided yoga, and meditation, giving
             you a complete toolkit for managing stress, improving sleep, and
             building inner resilience.
           </p>

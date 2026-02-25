@@ -14,7 +14,7 @@ export const courseTestimonials: Testimonial[] = [
     context: "Lawyer",
     quote:
       "I have been looking for this for 15 years! The techniques are truly a gift. When I practice them regularly, I feel great no matter what has happened during the day.",
-    highlight: "15 years of seeking — answered",
+    highlight: "15 years of seeking, finally answered",
     imagePath: "/images/course/testimonials/charlotte-puls.webp",
   },
   {

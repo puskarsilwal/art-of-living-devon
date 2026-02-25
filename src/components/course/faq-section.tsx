@@ -9,14 +9,14 @@ import {
 
 const faqs = [
   {
-    question: "How long is the Happiness Program?",
+    question: "How long is the Art of Living Part 1 course?",
     answer:
-      "The Happiness Program runs over 3 consecutive days, approximately 3 hours each day. Morning and evening sessions are available to suit your schedule. The total time commitment is around 9 hours, spread comfortably across 3 days.",
+      "The Art of Living Part 1 course runs over 3 consecutive days, approximately 3 hours each day. Morning and evening sessions are available to suit your schedule. The total time commitment is around 9 hours, spread comfortably across 3 days.",
   },
   {
     question: "How much does the course cost?",
     answer:
-      "The course fee varies by location and format. Visit the Art of Living registration page to see current pricing for Devon and Southwest courses. Financial assistance may be available — contact your local centre if the fee is a barrier.",
+      "The course fee varies by location and format. Visit the Art of Living registration page to see current pricing for Devon and Southwest courses. Financial assistance may be available. Contact your local centre if the fee is a barrier.",
   },
   {
     question: "Is it available online or in-person?",
@@ -26,7 +26,7 @@ const faqs = [
   {
     question: "Do I need any prior experience?",
     answer:
-      "No experience is needed. The Happiness Program is designed for complete beginners. You do not need any yoga, meditation, or breathwork background to attend. If you can breathe, you can learn SKY.",
+      "No experience is needed. The Art of Living Part 1 course is designed for complete beginners. You do not need any yoga, meditation, or breathwork background to attend. If you can breathe, you can learn SKY.",
   },
   {
     question: "What if I miss a session?",

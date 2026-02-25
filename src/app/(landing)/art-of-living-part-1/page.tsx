@@ -9,12 +9,13 @@ import { FounderSection } from "@/components/course/founder-section"
 import { TestimonialsSection } from "@/components/course/testimonials-section"
 import { NumbersSection } from "@/components/course/numbers-section"
 import { FaqSection } from "@/components/course/faq-section"
+import { VideoSection } from "@/components/course/video-section"
 import { FooterCta } from "@/components/course/footer-cta"
 
 export const metadata: Metadata = {
-  title: "Happiness Program | Art of Living Devon & Southwest",
+  title: "Art of Living Part 1 | Devon & Southwest",
   description:
-    "Transform stress into calm in 3 days. Learn Sudarshan Kriya (SKY Breath Meditation), pranayama, and yoga — backed by 100+ peer-reviewed studies. Available in Exeter, Devon and online.",
+    "Transform stress into calm in 3 days. Learn Sudarshan Kriya (SKY Breath Meditation), pranayama, and yoga, backed by 100+ peer-reviewed studies. Available in Exeter, Devon and online.",
   robots: { index: true, follow: true },
 }
 
@@ -27,18 +28,20 @@ export default function HappinessProgramPage() {
         2. Program Overview — 3-step journey at a glance
         3. Research Stats — scientific credibility
         4. Media Logos — press validation
-        5. Course Content — what you'll learn
-        6. Upcoming Dates — specific sessions with CTAs
-        7. Founder — organisational trust & mission
-        8. Testimonials — real student results
-        9. Numbers — global impact at scale
-        10. FAQ — remove remaining objections
-        11. Footer CTA — final conversion nudge
+        5. Video — external expert endorsement
+        6. Course Content — what you'll learn
+        7. Upcoming Dates — specific sessions with CTAs
+        8. Founder — organisational trust & mission
+        9. Testimonials — real student results
+        10. Numbers — global impact at scale
+        11. FAQ — remove remaining objections
+        12. Footer CTA — final conversion nudge
       */}
       <HeroSection />
       <ProgramOverviewSection />
       <ResearchStatsSection />
       <MediaLogosSection />
+      <VideoSection />
       <CourseContentSection />
       <UpcomingDatesSection />
       <FounderSection />

@@ -24,7 +24,7 @@ const learningModules = [
     icon: BookOpen,
     title: "Wisdom for Daily Life",
     description:
-      "Interactive sessions on practical tools for handling everyday challenges — relationships, emotions, and finding inner peace.",
+      "Interactive sessions on practical tools for handling everyday challenges: relationships, emotions, and finding inner peace.",
   },
 ]
 
@@ -41,7 +41,7 @@ export function CourseContentSection() {
             What You&apos;ll Learn in 3 Days
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-            3 sessions &times; 3 hours &mdash; a complete transformation toolkit
+            3 sessions &times; 3 hours. A complete transformation toolkit.
           </p>
         </div>
 
