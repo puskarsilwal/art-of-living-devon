@@ -65,13 +65,15 @@ Plans:
   3. Visitor sees teacher/host photo, name, and credentials in a profile section
   4. Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format
   5. Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page
-**Plans**: 4 plans
+**Plans**: 6 plans
 
 Plans:
 - [x] 03-01-PLAN.md — Testimonial + credibility data files and section components (replaces placeholder SocialProofSection)
 - [x] 03-02-PLAN.md — Teacher profile, what-to-expect, objections sections + page composition
-- [ ] 03-03-PLAN.md — Gap closure: source stock images (testimonial avatars, teacher photo, lifestyle images) + update data files
-- [ ] 03-04-PLAN.md — Gap closure: visual overhaul of all 5 trust sections (photos, alignment fixes, premium styling)
+- [x] 03-03-PLAN.md — Gap closure: source stock images (testimonial avatars, teacher photo, lifestyle images) + update data files
+- [x] 03-04-PLAN.md — Gap closure: visual overhaul of all 5 trust sections (photos, alignment fixes, premium styling)
+- [ ] 03-05-PLAN.md — Gap closure: hero background image + benefits icon cards + CTA urgency (Gaps 6, 7, 9 partial)
+- [ ] 03-06-PLAN.md — Gap closure: registration form warmth + footer CTA image overlay + section rhythm CSS (Gaps 8, 9 partial, 10, 11)
 
 ### Phase 4: Registration Flow & Session Selection
 **Goal**: After registering, the visitor has everything they need to actually show up to the Zoom session, and can choose a session that fits their schedule
