@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 6 in progress -- homepage; Plan 01 complete (SiteHeader/SiteFooter nav upgrade)
+**Current focus:** Phase 6 in progress -- homepage; Plan 02 complete (HeroSection + OfferingsSection)
 
 ## Current Position
 
 Phase: 6 of 10 (Homepage)
-Plan: 1 of 3 in current phase (01 done)
-Status: Phase 06 in progress — SiteHeader and SiteFooter upgraded with full navigation
-Last activity: 2026-02-25 -- Plan 06-01 complete: SiteHeader nav links + Register Free CTA; SiteFooter 3-column layout
+Plan: 2 of 3 in current phase (01, 02 done)
+Status: Phase 06 in progress — HeroSection and OfferingsSection built
+Last activity: 2026-02-25 -- Plan 06-02 complete: HeroSection (full-bleed hero, Devon/SW identity, 2 CTAs) + OfferingsSection (3 offering cards)
 
 Progress: [######░░░░] 62%
 
@@ -49,6 +49,7 @@ Progress: [######░░░░] 62%
 | Phase 05 P03 | 2 | 2 tasks | 3 files |
 | Phase 05 P05 | 5min | 2 tasks | 1 file |
 | Phase 06 P01 | 3min | 2 tasks | 2 files |
+| Phase 06 P02 | 1min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -127,6 +128,9 @@ Recent decisions affecting current work:
 - [Phase 05-05]: robots index+follow on /happiness-program — primary SEO target for the course
 - [Phase 06-01]: SiteHeader nav and CTA hidden on mobile — mobile users navigate via hero CTAs on page
 - [Phase 06-01]: Events link added to header/footer now with Phase 7 comment — anticipates /events route
+- [Phase 06-02]: Home hero reuses breathing-session.jpg for consistent meditation imagery across site
+- [Phase 06-02]: Offerings data inlined in OfferingsSection component (3 static items, no separate data module)
+- [Phase 06-02]: Phase 7 comment on /events href in OfferingsSection for forward compatibility
 
 ### Pending Todos
 

@@ -34,7 +34,7 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Homepage
 
-- [ ] **HOME-01**: Art of Living Devon/Southwest branded homepage serves as community hub
+- [x] **HOME-01**: Art of Living Devon/Southwest branded homepage serves as community hub
 - [x] **HOME-02**: Homepage links to intro talk page, course page, and upcoming events
 - [ ] **HOME-03**: Brief "About Art of Living" section with foundation credibility facts
 - [x] **HOME-04**: Blended branding — Art of Living official look (white, orange, peaceful imagery) with Devon/Southwest local warmth
@@ -125,7 +125,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | COURSE-03 | Phase 5 | Complete |
 | COURSE-04 | Phase 5 | Complete |
 | COURSE-05 | Phase 5 | Complete |
-| HOME-01 | Phase 6 | Pending |
+| HOME-01 | Phase 6 | Complete |
 | HOME-02 | Phase 6 | Complete |
 | HOME-03 | Phase 6 | Pending |
 | HOME-04 | Phase 6 | Complete |
