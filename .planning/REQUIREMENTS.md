@@ -11,13 +11,13 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **INTRO-01**: Visitor sees clear, benefit-driven headline and value proposition above the fold
 - [ ] **INTRO-02**: Visitor sees next intro talk date/time prominently displayed with timezone (GMT/BST)
-- [ ] **INTRO-03**: Visitor can register with name + email (phone optional) via minimal-friction form
+- [x] **INTRO-03**: Visitor can register with name + email (phone optional) via minimal-friction form
 - [ ] **INTRO-04**: Repeated CTA ("Save My Seat") appears in hero, after benefits, after social proof, and footer
 - [ ] **INTRO-05**: Page is mobile-first responsive (Facebook ad traffic is 80%+ mobile)
 - [ ] **INTRO-06**: Visitor sees social proof section with public testimonials from Art of Living participants
 - [ ] **INTRO-07**: Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries
 - [ ] **INTRO-08**: Visitor sees teacher/host photo, name, and credentials
-- [ ] **INTRO-09**: Page includes GDPR-compliant explicit consent checkbox (unticked), privacy policy link, and trust indicators
+- [x] **INTRO-09**: Page includes GDPR-compliant explicit consent checkbox (unticked), privacy policy link, and trust indicators
 - [ ] **INTRO-10**: After registration, visitor sees confirmation page with Zoom link and calendar add button (ICS/Google)
 - [ ] **INTRO-11**: Countdown timer shows real time remaining until next scheduled intro talk session
 - [ ] **INTRO-12**: Visitor can select from 2-3 upcoming intro talk sessions with date/time
@@ -108,13 +108,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | INTRO-01 | Phase 2 | Pending |
 | INTRO-02 | Phase 2 | Pending |
-| INTRO-03 | Phase 2 | Pending |
+| INTRO-03 | Phase 2 | Complete |
 | INTRO-04 | Phase 2 | Pending |
 | INTRO-05 | Phase 2 | Pending |
 | INTRO-06 | Phase 3 | Pending |
 | INTRO-07 | Phase 3 | Pending |
 | INTRO-08 | Phase 3 | Pending |
-| INTRO-09 | Phase 2 | Pending |
+| INTRO-09 | Phase 2 | Complete |
 | INTRO-10 | Phase 4 | Pending |
 | INTRO-11 | Phase 4 | Pending |
 | INTRO-12 | Phase 4 | Pending |

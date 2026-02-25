@@ -10,17 +10,17 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 2 of 10 (Intro Talk Landing Page - Core)
-Plan: 0 of 0 in current phase (awaiting planning)
-Status: Phase 1 complete, ready to plan Phase 2
-Last activity: 2026-02-24 -- Phase 1 complete: scaffolding deployed to art-of-living-devon.vercel.app
+Plan: 1 of 2 in current phase
+Status: Plan 02-01 complete, ready for Plan 02-02
+Last activity: 2026-02-25 -- Plan 02-01 complete: route groups and form infrastructure
 
-Progress: [#░░░░░░░░░] 10%
+Progress: [##░░░░░░░░] 15%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: ~25min
+- Total plans completed: 2
+- Average duration: ~14min
 - Total execution time: ~0.4 hours
 
 **By Phase:**
@@ -28,10 +28,11 @@ Progress: [#░░░░░░░░░] 10%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
+| 02-intro-talk-landing-page-core | 1/2 | ~2min | ~2min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (~25min)
-- Trend: baseline
+- Last 5 plans: 01-01 (~25min), 02-01 (~2min)
+- Trend: improving
 
 *Updated after each plan completion*
 
@@ -54,6 +55,9 @@ Recent decisions affecting current work:
 - [Phase 1]: OKLCH color system used for Tailwind v4 native compatibility
 - [Phase 1]: Privacy policy uses card-based layout with numbered sections for readability
 - [Phase 1]: Deployed via GitHub integration (Vercel auto-deploys on push to master)
+- [Phase 2]: Route group separation: (main) has header/footer, (landing) has none
+- [Phase 2]: Zod v4 uses message param instead of errorMap for z.literal validation
+- [Phase 2]: Server action pattern: FormData -> safeParse -> structured {success, message, errors} response
 
 ### Pending Todos
 
@@ -67,6 +71,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-24
-Stopped at: Completed 01-01-PLAN.md (Phase 1 complete)
+Last session: 2026-02-25
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None
