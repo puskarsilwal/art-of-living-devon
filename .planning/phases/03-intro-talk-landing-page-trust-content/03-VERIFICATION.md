@@ -1,7 +1,7 @@
 ---
 phase: 03-intro-talk-landing-page-trust-content
 verified: 2026-02-25T10:00:00Z
-status: passed
+status: gaps_found
 score: 5/5 success criteria verified
 re_verification: true
 previous_status: gaps_found
@@ -13,7 +13,43 @@ gaps_closed:
   - "Footer CTA uses meditation-group.jpg as background with rich gradient overlay — not a flat solid orange block"
   - "CTA buttons are now visually distinct: hero (solid primary + urgency sub-text), benefits (outline variant), footer (white on image background with different text)"
   - "globals.css has @layer utilities block with section rhythm classes for visual variety"
-gaps_remaining: []
+gaps_remaining:
+  - id: gap-12
+    title: "Hero copy is too vague — missing bullet points about what you'll learn"
+    section: hero-section
+    severity: high
+    observed: "Headline 'Discover the Breath That Changes Everything' is generic. Reference page has 3 specific bullet points inside the hero: what breathing you'll learn, how to manage your mind, and discovering effortless meditation. Our hero body copy is one generic sentence."
+    fix: "Update hero body copy to include 3 specific bullet points about what participants will learn in the session"
+  - id: gap-13
+    title: "Missing narrative session intro section (photo + description)"
+    section: missing
+    severity: high
+    observed: "Reference has a 'Breathe More, Stress Less' 2-column section directly after the hero — lifestyle photo on one side, descriptive text about what the workshop offers on the other. Our page jumps from hero straight to benefits icon cards with no narrative bridge. Cold traffic needs 'here is what this actually is' before they'll engage with specific benefits."
+    fix: "Create new SessionIntroSection component — 2-column layout (lifestyle photo + descriptive text with bullet points) inserted between HeroSection and BenefitsSection"
+  - id: gap-14
+    title: "Benefits section uses abstract icons — reference uses human circular photos"
+    section: benefits-section
+    severity: high
+    observed: "Our BenefitsSection shows 4 abstract lucide-react icon cards (Wind, Moon, Users, GraduationCap). The reference shows 3 circular photos of real people doing breathing practices with captions. Human photos communicate 'real people get results' far more powerfully than icons. We already have 3 lifestyle images on disk (breathing-session.jpg, meditation-group.jpg, teacher-guiding.jpg)."
+    fix: "Replace icon cards with 3 circular photo cards using existing images, matching reference's circular crop layout"
+  - id: gap-15
+    title: "Missing media / press logos section"
+    section: missing
+    severity: high
+    observed: "Reference has a dedicated 'We are backed by over 100 scientific studies and covered in top media publications' section showing CNN, Yoga magazine, Harvard Health Publishing, and The Washington Post logos. This is a massive credibility signal entirely absent from our page. No external validation is shown."
+    fix: "Create new MediaLogosSection component with press/media publication names displayed as styled text logos in a horizontal bar"
+  - id: gap-16
+    title: "Credibility section lacks dramatic visual impact"
+    section: credibility-section
+    severity: medium
+    observed: "Our CredibilitySection is bg-muted/50 with stats in cards — fine but forgettable. The reference has a dark full-bleed 2-column section: left side has a lifestyle image with bold credibility headline ('Backed by 100+ independent peer-reviewed journals — Science-Backed. Globally Practised. Life-Changing.'), right side has Yale research narrative text. Much more visually impactful and emotionally engaging."
+    fix: "Redesign CredibilitySection as a dark full-bleed 2-column section with lifestyle background image on left, stats + research narrative on right"
+  - id: gap-17
+    title: "Missing About the Art of Living section"
+    section: missing
+    severity: high
+    observed: "Reference has an 'About the Art of Living' section: 'For over 40 years, the Art of Living has shared powerful breath and meditation techniques...' with a photo. Cold Facebook traffic has NO idea who Art of Living is. Without an 'about us' section they're being asked to register for an event by a complete stranger. The teacher section covers the local teacher but not the organization itself."
+    fix: "Create new AboutSection component — organization backstory (40+ years, Sri Sri Ravi Shankar founding, volunteer non-profit, 180 countries) with lifestyle image placeholder"
 regressions: []
 human_verification:
   - test: "Hero section first impression for cold Facebook traffic"
