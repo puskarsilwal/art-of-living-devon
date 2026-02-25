@@ -134,3 +134,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Section rhythm — graduated background palettes for visual variety */
+  .section-warm-gradient {
+    background: linear-gradient(to bottom, oklch(1 0 0), oklch(0.98 0.01 60));
+  }
+  .section-cool-gradient {
+    background: linear-gradient(to bottom, oklch(0.97 0.005 260), oklch(1 0 0));
+  }
+  .section-primary-wash {
+    background: linear-gradient(135deg, oklch(0.99 0.005 55), oklch(0.97 0.01 55));
+  }
+}
