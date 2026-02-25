@@ -9,30 +9,30 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 2 of 10 (Intro Talk Landing Page - Core)
-Plan: 1 of 2 in current phase
-Status: Plan 02-01 complete, ready for Plan 02-02
-Last activity: 2026-02-25 -- Plan 02-01 complete: route groups and form infrastructure
+Phase: 2 of 10 (Intro Talk Landing Page - Core) -- COMPLETE
+Plan: 2 of 2 in current phase (all plans complete)
+Status: Phase 2 complete, ready for Phase 3
+Last activity: 2026-02-25 -- Plan 02-02 complete: intro talk landing page sections and registration form
 
-Progress: [##░░░░░░░░] 15%
+Progress: [##░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: ~14min
-- Total execution time: ~0.4 hours
+- Total plans completed: 3
+- Average duration: ~12min
+- Total execution time: ~0.6 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
-| 02-intro-talk-landing-page-core | 1/2 | ~2min | ~2min |
+| 02-intro-talk-landing-page-core | 2/2 | ~10min | ~5min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (~25min), 02-01 (~2min)
-- Trend: improving
+- Last 5 plans: 01-01 (~25min), 02-01 (~2min), 02-02 (~8min)
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -58,6 +58,9 @@ Recent decisions affecting current work:
 - [Phase 2]: Route group separation: (main) has header/footer, (landing) has none
 - [Phase 2]: Zod v4 uses message param instead of errorMap for z.literal validation
 - [Phase 2]: Server action pattern: FormData -> safeParse -> structured {success, message, errors} response
+- [Phase 2]: Card-based registration form for visual containment and focus
+- [Phase 2]: Smooth scroll behavior applied globally via globals.css
+- [Phase 2]: Credibility stats as social proof placeholder (180+ countries, millions, 50+ years)
 
 ### Pending Todos
 
@@ -72,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 02-01-PLAN.md
+Stopped at: Completed 02-02-PLAN.md (Phase 2 complete)
 Resume file: None

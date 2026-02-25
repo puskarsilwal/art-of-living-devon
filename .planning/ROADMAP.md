@@ -13,7 +13,7 @@ This roadmap converts 40 v1 requirements into 10 phases that deliver a complete 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Scaffolding & Deploy** - Scaffold Next.js project, deploy to Vercel free tier, create privacy policy page
-- [ ] **Phase 2: Intro Talk Landing Page - Core** - Hero section, registration form, repeated CTAs, mobile-first layout, GDPR consent
+- [x] **Phase 2: Intro Talk Landing Page - Core** - Hero section, registration form, repeated CTAs, mobile-first layout, GDPR consent
 - [ ] **Phase 3: Intro Talk Landing Page - Trust & Content** - Social proof, credibility stats, teacher profile, what-to-expect section, objection handling
 - [ ] **Phase 4: Registration Flow & Session Selection** - Confirmation page with Zoom link and calendar add, countdown timer, session date picker
 - [ ] **Phase 5: Course Landing Page** - Happiness Program details, benefits/format, research data, testimonials, link to official registration
@@ -51,8 +51,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Route group architecture, form dependencies, registration schema + server action
-- [ ] 02-02-PLAN.md — Intro talk landing page sections, registration form, 4 CTAs, mobile-first layout
+- [x] 02-01-PLAN.md — Route group architecture, form dependencies, registration schema + server action
+- [x] 02-02-PLAN.md — Intro talk landing page sections, registration form, 4 CTAs, mobile-first layout
 
 ### Phase 3: Intro Talk Landing Page - Trust & Content
 **Goal**: Cold Facebook traffic sees enough social proof and credibility to trust registering for an event from an organization they have never heard of
@@ -175,7 +175,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Scaffolding & Deploy | 0/1 | Complete    | 2026-02-25 |
-| 2. Intro Talk LP - Core | 0/2 | Not started | - |
+| 2. Intro Talk LP - Core | 2/2 | Complete    | 2026-02-25 |
 | 3. Intro Talk LP - Trust | 0/2 | Not started | - |
 | 4. Registration Flow | 0/1 | Not started | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
