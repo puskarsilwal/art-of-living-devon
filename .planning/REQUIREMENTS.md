@@ -20,7 +20,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **INTRO-09**: Page includes GDPR-compliant explicit consent checkbox (unticked), privacy policy link, and trust indicators
 - [ ] **INTRO-10**: After registration, visitor sees confirmation page with Zoom link and calendar add button (ICS/Google)
 - [x] **INTRO-11**: Countdown timer shows real time remaining until next scheduled intro talk session
-- [ ] **INTRO-12**: Visitor can select from 2-3 upcoming intro talk sessions with date/time
+- [x] **INTRO-12**: Visitor can select from 2-3 upcoming intro talk sessions with date/time
 - [x] **INTRO-13**: "What to expect" section explains the 60-min format step-by-step (breathing technique, meditation, Q&A)
 - [x] **INTRO-14**: Page addresses common objections ("No experience needed", "Free, no credit card required", "Camera on but no pressure")
 
@@ -117,7 +117,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INTRO-09 | Phase 2 | Complete |
 | INTRO-10 | Phase 4 | Pending |
 | INTRO-11 | Phase 4 | Complete |
-| INTRO-12 | Phase 4 | Pending |
+| INTRO-12 | Phase 4 | Complete |
 | INTRO-13 | Phase 3 | Complete |
 | INTRO-14 | Phase 3 | Complete |
 | COURSE-01 | Phase 5 | Pending |

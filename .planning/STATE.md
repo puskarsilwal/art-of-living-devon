@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 4 of 10 (Registration Flow & Session Selection)
-Plan: 1 of 4 in current phase
-Status: Phase 04 in progress — Plan 01 complete (session data model + countdown timer)
-Last activity: 2026-02-25 -- Plan 04-01 complete: extended intro-talks data model, CountdownTimer component, hero integration
+Plan: 2 of 4 in current phase
+Status: Phase 04 in progress — Plan 02 complete (session picker UI + registration redirect)
+Last activity: 2026-02-25 -- Plan 04-02 complete: SessionPicker component, hidden sessionId FormData input, server action redirect to /intro/confirmation
 
 Progress: [#####░░░░░] 47%
 
@@ -41,6 +41,7 @@ Progress: [#####░░░░░] 47%
 | Phase 03 P10 | 2min | 3 tasks | 6 files |
 | Phase 03 P11 | 3min | 5 tasks | 4 files |
 | Phase 04 P01 | 10min | 3 tasks | 3 files |
+| Phase 04 P02 | 8 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -97,6 +98,8 @@ Recent decisions affecting current work:
 - [Phase 04-01]: null-init useState<TimeLeft>(null) prevents SSR hydration mismatch — renders null before client hydration
 - [Phase 04-01]: introTalkSessions array with 3 sessions; nextIntroTalk preserved as introTalkSessions[0] for backward compat
 - [Phase 04-01]: Zoom URLs use PLACEHOLDER with TODO comment — real meeting IDs needed before go-live
+- [Phase 04]: SessionPicker state lives in RegistrationForm parent — single source of truth passed as props, persists through validation errors
+- [Phase 04]: redirect() placed outside try/catch in register.ts — Next.js NEXT_REDIRECT is a control-flow exception
 
 ### Pending Todos
 
@@ -111,5 +114,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 04-01-PLAN.md (session data model, CountdownTimer, hero integration) — Phase 04 Plan 01 complete
+Stopped at: Completed 04-02-PLAN.md (session picker UI, registration form wire-up, server action redirect) — Phase 04 Plan 02 complete
 Resume file: None

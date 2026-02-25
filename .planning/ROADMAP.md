@@ -189,7 +189,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 1. Project Scaffolding & Deploy | 1/1 | Complete    | 2026-02-25 |
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
 | 3. Intro Talk LP - Trust | 11/11 | Complete   | 2026-02-25 |
-| 4. Registration Flow | 1/4 | In Progress|  |
+| 4. Registration Flow | 2/4 | In Progress|  |
 | 5. Course Landing Page | 0/1 | Not started | - |
 | 6. Homepage | 0/1 | Not started | - |
 | 7. Event Pages | 0/1 | Not started | - |
