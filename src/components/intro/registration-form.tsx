@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { useActionState } from "react"
 import { registerForIntroTalk, type RegistrationState } from "@/actions/register"
 import { Button } from "@/components/ui/button"
@@ -7,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { SessionPicker } from "@/components/intro/session-picker"
 import Link from "next/link"
 
 const initialState: RegistrationState = {
@@ -19,6 +21,7 @@ export function RegistrationForm() {
     registerForIntroTalk,
     initialState
   )
+  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null)
 
   return (
     <section id="register" className="scroll-mt-8 px-4 py-12 sm:px-6 sm:py-16 lg:py-20 bg-gradient-to-b from-primary/5 via-primary/[0.03] to-background">
@@ -40,6 +43,17 @@ export function RegistrationForm() {
           </p>
         </div>
 
+        {/* Session Picker above the registration card */}
+        <SessionPicker
+          selectedId={selectedSessionId}
+          onSelect={setSelectedSessionId}
+        />
+        {state.errors?.sessionId && (
+          <p className="text-sm text-destructive mt-2">Please select a session to continue.</p>
+        )}
+
+        <div className="h-6" />
+
         <Card className="shadow-lg border-primary/10">
           <CardHeader>
             <CardTitle className="text-xl sm:text-2xl text-center">
@@ -48,6 +62,9 @@ export function RegistrationForm() {
           </CardHeader>
           <CardContent>
             <form action={formAction} className="space-y-4">
+              {/* Hidden sessionId input */}
+              <input type="hidden" name="sessionId" value={selectedSessionId ?? ""} />
+
               {/* Name */}
               <div className="space-y-2">
                 <Label htmlFor="name">Name *</Label>

@@ -1,5 +1,6 @@
 "use server"
 
+import { redirect } from "next/navigation"
 import { registrationSchema } from "@/lib/schemas/registration"
 
 export type RegistrationState = {
@@ -17,6 +18,7 @@ export async function registerForIntroTalk(
     email: formData.get("email"),
     phone: formData.get("phone") || "",
     consent: formData.get("consent") === "on",
+    sessionId: formData.get("sessionId") as string,
   }
 
   const result = registrationSchema.safeParse(raw)
@@ -32,8 +34,6 @@ export async function registerForIntroTalk(
   // TODO: Brevo integration in Phase 9
   console.log("New registration:", result.data)
 
-  return {
-    success: true,
-    message: "You're registered! We'll send you the Zoom details by email.",
-  }
+  // redirect() must be outside try/catch — it throws a NEXT_REDIRECT control-flow exception
+  redirect(`/intro/confirmation?session=${encodeURIComponent(result.data.sessionId)}`)
 }

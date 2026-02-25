@@ -16,6 +16,7 @@ export const registrationSchema = z.object({
     .literal(true, {
       message: "You must agree to receive event communications",
     }),
+  sessionId: z.string().min(1, "Please select a session"),
 })
 
 export type RegistrationInput = z.infer<typeof registrationSchema>
