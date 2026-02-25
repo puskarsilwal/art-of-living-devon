@@ -26,11 +26,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Part 1 Course Landing Page
 
-- [ ] **COURSE-01**: Visitor sees detailed Happiness Program / Part 1 course information and overview
+- [x] **COURSE-01**: Visitor sees detailed Happiness Program / Part 1 course information and overview
 - [ ] **COURSE-02**: Visitor sees course benefits, format (3 days, 3hrs/day), and what they'll learn (Sudarshan Kriya, pranayama, yoga)
-- [ ] **COURSE-03**: Visitor sees SKY Breath Meditation research data and credibility (Yale, Harvard, 100+ studies)
+- [x] **COURSE-03**: Visitor sees SKY Breath Meditation research data and credibility (Yale, Harvard, 100+ studies)
 - [ ] **COURSE-04**: CTA links to official Art of Living registration page for course enrollment
-- [ ] **COURSE-05**: Page includes testimonials from Part 1 course participants (sourced from public reviews)
+- [x] **COURSE-05**: Page includes testimonials from Part 1 course participants (sourced from public reviews)
 
 ### Homepage
 
@@ -120,11 +120,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INTRO-12 | Phase 4 | Complete |
 | INTRO-13 | Phase 3 | Complete |
 | INTRO-14 | Phase 3 | Complete |
-| COURSE-01 | Phase 5 | Pending |
+| COURSE-01 | Phase 5 | Complete |
 | COURSE-02 | Phase 5 | Pending |
-| COURSE-03 | Phase 5 | Pending |
+| COURSE-03 | Phase 5 | Complete |
 | COURSE-04 | Phase 5 | Pending |
-| COURSE-05 | Phase 5 | Pending |
+| COURSE-05 | Phase 5 | Complete |
 | HOME-01 | Phase 6 | Pending |
 | HOME-02 | Phase 6 | Pending |
 | HOME-03 | Phase 6 | Pending |

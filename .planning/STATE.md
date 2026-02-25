@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 3 complete -- ready for Phase 4
+**Current focus:** Phase 5 in progress -- course landing page data layer complete
 
 ## Current Position
 
-Phase: 4 of 10 (Registration Flow & Session Selection)
-Plan: 3 of 4 in current phase
-Status: Phase 04 in progress — Plan 03 complete (confirmation page + ICS calendar download)
-Last activity: 2026-02-25 -- Plan 04-03 complete: confirmation page Server Component, ICS Route Handler at /api/calendar/[sessionId], ics@3.8.1 installed
+Phase: 5 of 10 (Course Landing Page)
+Plan: 1 of 4 in current phase
+Status: Phase 05 in progress — Plan 01 complete (data modules, accordion, image assets)
+Last activity: 2026-02-25 -- Plan 05-01 complete: course-stats.ts, course-dates.ts, course-testimonials.ts, accordion component, 10 image assets
 
-Progress: [######░░░░] 53%
+Progress: [######░░░░] 56%
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Progress: [######░░░░] 53%
 | Phase 04 P01 | 10min | 3 tasks | 3 files |
 | Phase 04 P02 | 8 | 2 tasks | 4 files |
 | Phase 04 P03 | 6min | 2 tasks | 3 files |
+| Phase 05 P01 | 2min | 3 tasks | 14 files |
 
 ## Accumulated Context
 
@@ -105,6 +106,8 @@ Recent decisions affecting current work:
 - [Phase 04-03]: Content-Disposition attachment header required alongside Content-Type text/calendar — prevents browsers rendering ICS as text
 - [Phase 04-03]: notFound() for invalid session IDs on confirmation page — renders Next.js 404, not crash
 - [Phase 04-03]: Confirmation page uses noindex robots — post-registration pages excluded from search indexing
+- [Phase 05-01]: Reused Testimonial type import from testimonials.ts rather than duplicating — single source of truth for type
+- [Phase 05-01]: Course testimonials use course-specific image paths (/images/course/testimonials/) distinct from intro talk paths
 
 ### Pending Todos
 
@@ -119,5 +122,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 04-03-PLAN.md (confirmation page, ICS Route Handler, Google Calendar deep-link) — Phase 04 Plan 03 complete
+Stopped at: Completed 05-01-PLAN.md (data modules, accordion, image assets) — Phase 05 Plan 01 complete
 Resume file: None
