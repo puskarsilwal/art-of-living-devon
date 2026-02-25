@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 4 of 10 (Registration Flow & Session Selection)
-Plan: 2 of 4 in current phase
-Status: Phase 04 in progress — Plan 02 complete (session picker UI + registration redirect)
-Last activity: 2026-02-25 -- Plan 04-02 complete: SessionPicker component, hidden sessionId FormData input, server action redirect to /intro/confirmation
+Plan: 3 of 4 in current phase
+Status: Phase 04 in progress — Plan 03 complete (confirmation page + ICS calendar download)
+Last activity: 2026-02-25 -- Plan 04-03 complete: confirmation page Server Component, ICS Route Handler at /api/calendar/[sessionId], ics@3.8.1 installed
 
-Progress: [#####░░░░░] 47%
+Progress: [######░░░░] 53%
 
 ## Performance Metrics
 
@@ -42,6 +42,7 @@ Progress: [#####░░░░░] 47%
 | Phase 03 P11 | 3min | 5 tasks | 4 files |
 | Phase 04 P01 | 10min | 3 tasks | 3 files |
 | Phase 04 P02 | 8 | 2 tasks | 4 files |
+| Phase 04 P03 | 6min | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -100,6 +101,10 @@ Recent decisions affecting current work:
 - [Phase 04-01]: Zoom URLs use PLACEHOLDER with TODO comment — real meeting IDs needed before go-live
 - [Phase 04]: SessionPicker state lives in RegistrationForm parent — single source of truth passed as props, persists through validation errors
 - [Phase 04]: redirect() placed outside try/catch in register.ts — Next.js NEXT_REDIRECT is a control-flow exception
+- [Phase 04-03]: ICS download via /api/calendar/[sessionId] using ics npm package for RFC-5545 compliant calendar files
+- [Phase 04-03]: Content-Disposition attachment header required alongside Content-Type text/calendar — prevents browsers rendering ICS as text
+- [Phase 04-03]: notFound() for invalid session IDs on confirmation page — renders Next.js 404, not crash
+- [Phase 04-03]: Confirmation page uses noindex robots — post-registration pages excluded from search indexing
 
 ### Pending Todos
 
@@ -114,5 +119,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 04-02-PLAN.md (session picker UI, registration form wire-up, server action redirect) — Phase 04 Plan 02 complete
+Stopped at: Completed 04-03-PLAN.md (confirmation page, ICS Route Handler, Google Calendar deep-link) — Phase 04 Plan 03 complete
 Resume file: None
