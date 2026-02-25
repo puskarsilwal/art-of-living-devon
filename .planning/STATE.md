@@ -5,22 +5,22 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 4 (next phase after completing Phase 3)
+**Current focus:** Phase 3, Plan 4 (gap closure -- visual overhaul)
 
 ## Current Position
 
-Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content) -- COMPLETE
-Plan: 2 of 2 in current phase (all plans complete)
-Status: Phase 03 complete, ready for Phase 04
-Last activity: 2026-02-25 -- Plan 03-02 complete: teacher, what-to-expect, objections sections + full page composition
+Phase: 3 of 10 (Intro Talk Landing Page - Trust & Content)
+Plan: 4 of 4 in current phase
+Status: Executing Phase 03 gap closure plans
+Last activity: 2026-02-25 -- Plan 03-03 complete: 9 stock images downloaded + testimonials imagePath
 
 Progress: [###░░░░░░░] 30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: ~9min
+- Total plans completed: 6
+- Average duration: ~8min
 - Total execution time: ~0.7 hours
 
 **By Phase:**
@@ -29,10 +29,10 @@ Progress: [###░░░░░░░] 30%
 |-------|-------|-------|----------|
 | 01-project-scaffolding-deploy | 1/1 | ~25min | ~25min |
 | 02-intro-talk-landing-page-core | 2/2 | ~10min | ~5min |
-| 03-intro-talk-landing-page-trust-content | 2/2 | ~4min | ~2min |
+| 03-intro-talk-landing-page-trust-content | 3/4 | ~5min | ~2min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (~25min), 02-01 (~2min), 02-02 (~8min), 03-01 (~2min), 03-02 (~2min)
+- Last 5 plans: 02-01 (~2min), 02-02 (~8min), 03-01 (~2min), 03-02 (~2min), 03-03 (~1min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -67,6 +67,7 @@ Recent decisions affecting current work:
 - [Phase 3]: Vertical timeline layout for what-to-expect section (clearer progression than cards)
 - [Phase 3]: Replaced SocialProofSection import with direct CredibilitySection in page.tsx
 - [Phase 3]: Gradient div placeholder for teacher image with TODO for future swap
+- [Phase 03]: Used Unsplash direct URLs with crop params for pre-sized stock image downloads
 
 ### Pending Todos
 
@@ -81,5 +82,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 03-02-PLAN.md (Phase 03 complete)
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None
