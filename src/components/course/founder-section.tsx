@@ -1,0 +1,54 @@
+// TODO: Replace about-art-of-living.webp with Gurudev portrait photo when available
+import Image from "next/image"
+
+export function FounderSection() {
+  return (
+    <section className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20 bg-background">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+          {/* Left: ambient image */}
+          <div className="relative rounded-xl overflow-hidden shadow-xl">
+            <Image
+              src="/images/course/about-art-of-living.webp"
+              alt="Art of Living community gathering"
+              width={600}
+              height={400}
+              className="rounded-xl object-cover w-full"
+            />
+          </div>
+
+          {/* Right: founder content */}
+          <div>
+            <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
+              About the Founder
+            </p>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-4">
+              Sri Sri Ravi Shankar
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed mb-4">
+              Sri Sri Ravi Shankar is a humanitarian, spiritual leader, and founder of the Art of
+              Living Foundation. In 1982, he developed Sudarshan Kriya — a powerful breathing
+              technique that has since helped over 800 million people in 180 countries reduce
+              stress, improve sleep, and find inner peace.
+            </p>
+            <p className="text-muted-foreground text-base leading-relaxed mb-6">
+              He teaches that peace begins within each of us.
+            </p>
+
+            {/* Gurudev quote */}
+            <blockquote className="border-l-4 border-primary pl-5 py-2">
+              <p className="italic text-lg sm:text-xl text-foreground leading-relaxed mb-3">
+                &ldquo;The quality of our lives depends on the quality of our minds.&rdquo;
+              </p>
+              <cite className="text-sm font-semibold text-primary not-italic">
+                Sri Sri Ravi Shankar
+              </cite>
+            </blockquote>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
