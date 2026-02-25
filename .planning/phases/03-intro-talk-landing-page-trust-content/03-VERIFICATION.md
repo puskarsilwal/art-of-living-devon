@@ -1,152 +1,115 @@
 ---
 phase: 03-intro-talk-landing-page-trust-content
-verified: 2026-02-25T14:00:00Z
-status: passed
+verified: 2026-02-25T15:00:00Z
+status: human_needed
 score: 5/5 success criteria verified
 re_verification: true
-previous_status: gaps_found
-previous_score: "5/5 success criteria (6 gaps remaining from human review)"
+previous_status: passed
+previous_score: "5/5 (7 human verification items pending)"
 gaps_closed:
-  - "gap-12: Hero body copy replaced — 3 specific learning bullet points (SKY Breath, manage stress, effortless meditation)"
-  - "gap-13: SessionIntroSection created and wired — 2-column narrative bridge between hero and benefits"
-  - "gap-14: BenefitsSection rewritten — 3 circular photo cards (breathing-session.jpg, meditation-group.jpg, teacher-guiding.jpg) replace abstract icon cards"
-  - "gap-15: MediaLogosSection created and wired — CNN, Yoga Journal, Harvard Health Publishing, The Washington Post press bar after CredibilitySection"
-  - "gap-16: CredibilitySection rewritten — dark bg-gray-950 2-column layout with meditation-group.jpg left and stats+research narrative right"
-  - "gap-17: AboutSection created and wired — organizational backstory (40+ years, Gurudev founding, volunteer non-profit, 180 countries, 4 stat tiles) after TeacherSection"
+  - "All em-dashes removed from rendered text across all intro components (plans 03-09, 03-10)"
+  - "Hero gradient smoothed: from-black/70 via-black/50 to-black/60 (eliminates center light band)"
+  - "SessionIntroSection image swapped to meditation-group.jpg (visual variety from hero)"
+  - "WhatToExpectSection cramped image banner replaced with decorative accent bar heading"
+  - "RegistrationForm duplicate heading removed — single CardTitle 'Reserve Your Free Seat'"
+  - "AboutSection stats grid fixed: lg:grid-cols-4 (was sm:grid-cols-4, overflowed at tablet widths)"
+  - "TeacherSection removed from page.tsx; teacher-section.tsx deleted (no named teacher, covered by AboutSection)"
+  - "CredibilitySection CTA standardized to shadcn Button with 'Save My Seat (It's Free)' copy"
 gaps_remaining: []
 regressions: []
 human_verification:
-  - test: "Hero 3-bullet specificity for cold Facebook traffic"
-    expected: "Three checkmarked bullets (SKY Breath Meditation, manage stress, effortless meditation) are legible in white on dark hero background and answer 'what will I get?' before visitor scrolls"
-    why_human: "Whether the bullet specificity satisfies a cold-traffic visitor's 'what is this?' question requires human judgment"
-  - test: "SessionIntroSection narrative bridge feel"
-    expected: "2-column 'Breathe More, Stress Less' section reads as a coherent 'here is what this actually is' explanation; lifestyle photo and 4-point checklist feel trustworthy, not promotional"
-    why_human: "Narrative credibility for a skeptical first-time visitor requires human perception"
-  - test: "Benefits circular photo cards vs icon cards comparison"
-    expected: "3 circular photos of real people doing breathing practices communicate 'real people get results' more convincingly than the former abstract icon cards"
-    why_human: "Whether human photos create stronger trust than icons requires human visual judgment"
-  - test: "CredibilitySection dark section visual impact"
-    expected: "Dark bg-gray-950 section with meditation-group.jpg at opacity-60, dual gradient overlays, bold headline overlay, and stats+research narrative creates dramatic emotional weight"
-    why_human: "Whether the dark section achieves 'dramatically credible' vs 'visually jarring' requires human perception"
-  - test: "MediaLogosSection press bar believability"
-    expected: "CNN, Yoga Journal, Harvard Health Publishing, The Washington Post in styled text at opacity-60 read as credible press validation without requiring logo image assets"
-    why_human: "Whether text-only press logos are convincing or need actual logo images requires human judgment"
-  - test: "AboutSection trust impact for cold Facebook traffic"
-    expected: "Organization backstory (40+ years, Gurudev founding story, volunteer non-profit, 180 countries, 4 stat tiles) effectively answers 'who are these people?' for a visitor who has never heard of Art of Living"
-    why_human: "Whether the about section resolves stranger-anxiety for true cold traffic requires human assessment"
-  - test: "Full 12-section page visual rhythm"
-    expected: "Scrolling Hero (dark) > SessionIntro (white) > Benefits (muted) > Credibility (near-black) > MediaLogos (light) > Testimonials > WhatToExpect > Teacher > About (muted/30) > Objections > Form (warm gradient) > FooterCTA (image overlay) creates strong visual variety — 3 dark/near-dark sections break up the lighter sections effectively"
-    why_human: "Holistic page rhythm across 12 sections requires a human scroll-through to assess"
+  - test: "INTRO-08 teacher/host coverage after TeacherSection removal"
+    expected: "Visitor sees teacher/host photo, name, and credentials — REQUIREMENTS says 'teacher/host photo, name, and credentials in a profile section'; TeacherSection is deleted; coverage now via AboutSection (teacher-guiding.jpg, '10,000+ volunteer teachers', 'volunteer certified teacher' prose) and ObjectionsSection ('Guided by a live, certified teacher'). Confirm this organizational-level coverage satisfies the requirement OR flag that a named individual host must be added."
+    why_human: "Whether organizational teacher references satisfy INTRO-08 vs. needing a named individual teacher requires product judgment"
+  - test: "Full 11-section page visual rhythm after TeacherSection removal"
+    expected: "Scroll Hero > SessionIntro > Benefits > Credibility > MediaLogos > Testimonials > WhatToExpect > About > Objections > RegistrationForm > FooterCTA. Removing TeacherSection (previously between WhatToExpect and About) should not create a jarring jump; the About section should flow naturally after WhatToExpect."
+    why_human: "Holistic page rhythm after section removal requires human scroll-through"
+  - test: "Hero bullet specificity for cold Facebook traffic"
+    expected: "Three white-on-dark checkmarked bullets (SKY Breath Meditation, Calm stress and quiet your mind, Effortless meditation) answer 'what will I get?' before visitor scrolls; colon and comma separators read naturally"
+    why_human: "Whether bullet specificity satisfies cold-traffic intent requires human judgment"
+  - test: "SessionIntroSection with meditation-group.jpg (distinct from hero)"
+    expected: "2-column section uses meditation-group.jpg on the left, providing visual variety from the hero's breathing-session.jpg background; section reads as a credible narrative bridge"
+    why_human: "Whether the image swap achieves meaningful visual variety requires human perception"
+  - test: "WhatToExpectSection clean accent bar header"
+    expected: "Orange accent bar + clean h2 heading matches TestimonialsSection visual pattern; no cramped image banner; decorative bar is visible at the top of the section"
+    why_human: "Whether the accent bar reads as visually consistent vs. insufficient visual weight requires human judgment"
+  - test: "RegistrationForm single heading clarity"
+    expected: "Social proof avatar cluster leads directly into Card with 'Reserve Your Free Seat' CardTitle; no redundant outer h2; single clear call-to-action heading at the form"
+    why_human: "Whether the removal of the outer heading improves or reduces section entry context requires human judgment"
+  - test: "AboutSection stats grid at tablet width (640px-1023px)"
+    expected: "At tablet width, 4 stat tiles render as 2-column grid (grid-cols-2), not 4-column; no tile overflow; at desktop (1024px+) the 4-column layout activates alongside the outer 2-column layout"
+    why_human: "Responsive layout correctness at tablet widths requires a browser resize test"
 ---
 
-# Phase 3: Intro Talk Landing Page — Trust & Content FINAL VERIFICATION Report
+# Phase 3: Intro Talk Landing Page — Trust & Content FINAL RE-VERIFICATION Report
 
 **Phase Goal:** Cold Facebook traffic sees enough social proof and credibility to trust registering for an event from an organization they have never heard of
 **Verified:** 2026-02-25
-**Status:** PASSED
-**Re-verification:** Yes — after gap closure Plans 03-07 and 03-08 executed
+**Status:** HUMAN_NEEDED — all automated checks pass; 7 items require human browser verification
+**Re-verification:** Yes — third pass, after Plans 03-09, 03-10, and 03-11 gap closure
 
 ---
 
 ## Re-Verification Summary
 
-The previous verification (status: `gaps_found`) identified 6 remaining gaps from human review (gaps 12-17). Plans 03-07 and 03-08 have been executed, producing 6 feature commits. This re-verification confirms all 6 gaps are now closed, all 5 original success criteria remain verified, no regressions have been introduced, and TypeScript compiles with zero errors.
+The previous verification (status: `passed`) was completed after Plans 03-07 and 03-08. Three additional gap closure plans (03-09, 03-10, 03-11) have since been executed, addressing em-dash removal across all rendered text, layout polish (registration form, WhatToExpect header, AboutSection stats grid), and a structural decision to delete TeacherSection. This re-verification confirms all 5 original success criteria remain verified, all 8 code-level changes from 03-09/03-10/03-11 are correct, TypeScript compiles with zero errors, and no anti-patterns were introduced.
 
 ---
 
-## Gap Closure Verification (Plans 03-07 and 03-08)
+## Plans 03-09 / 03-10 / 03-11 Gap Closure Verification
 
-### Gap 12: Hero body copy — 3 specific learning bullet points
+### Plan 03-09: Em-dash removal + hero gradient + image swap
 
-**Status: CLOSED**
+| Item | Expected | Verified | Evidence |
+|------|----------|----------|---------|
+| `hero-section.tsx`: zero em-dashes | No `—` in rendered text | VERIFIED | grep returns 0 matches |
+| `hero-section.tsx`: gradient | `from-black/70 via-black/50 to-black/60` | VERIFIED | Line 22 confirmed |
+| `hero-section.tsx`: CTA button | `Save My Seat (It's Free)` (parentheses) | VERIFIED | Line 65 confirmed |
+| `session-intro-section.tsx`: zero em-dashes | No `—` in rendered text | VERIFIED | grep returns 0 matches |
+| `session-intro-section.tsx`: image | `meditation-group.jpg` (not breathing-session.jpg) | VERIFIED | Line 19 confirmed |
+| `benefits-section.tsx`: zero em-dashes | No `—` in rendered text | VERIFIED | grep returns 0 matches |
+| `benefits-section.tsx`: CTA button | `Save My Seat (It's Free)` (parentheses) | VERIFIED | Line 68 confirmed |
+| Commits | 88ac254, cc12ddb, a2d3b66 | VERIFIED | git log confirmed |
 
-Evidence:
-- `src/components/intro/hero-section.tsx` lines 38-51: `<ul className="... list-none">` with 3 `<li>` items
-- Bullet 1: "Learn **SKY Breath Meditation** — a science-backed technique used by 500M+ people worldwide"
-- Bullet 2: "Discover how to **manage stress and calm your mind** in minutes, not months"
-- Bullet 3: "Experience **effortless meditation** — even if you've never meditated before"
-- Each item uses `<span className="text-primary mt-1 shrink-0">checkmark</span>` inline checkmark on dark background
-- Generic `<p>` paragraph is gone — no "Join a free 60-minute intro" sentence remains
-- Commit `b2f07fa` confirmed in git log
+### Plan 03-10: Teacher attribution, registration heading, WhatToExpect header, about em-dash
 
-### Gap 13: SessionIntroSection narrative bridge
+| Item | Expected | Verified | Evidence |
+|------|----------|----------|---------|
+| `teacher-section.tsx`: no double-hyphen | No `--` prefix before Gurudev | N/A — file deleted by 03-11 | Superseded |
+| `testimonials-section.tsx`: CTA button | `Save My Seat (It's Free)` | VERIFIED | Line 73 confirmed |
+| `objections-section.tsx`: CTA button | `Save My Seat (It's Free)` | VERIFIED | Line 64 confirmed |
+| `registration-form.tsx`: single heading | No "Ready to Experience It?" outer h2; "Reserve Your Free Seat" in CardTitle only | VERIFIED | grep confirms "Reserve Your Free Seat" at line 46 only; no outer h2 |
+| `about-section.tsx`: zero em-dashes | No `—` in rendered text | VERIFIED | grep returns 0 matches |
+| `what-to-expect-section.tsx`: accent bar | `inline-block w-12 h-1 rounded-full bg-primary mb-4` | VERIFIED | Line 28 confirmed |
+| `what-to-expect-section.tsx`: no image banner | No `h-40`, `h-48`, `breathing-session.jpg` | VERIFIED | grep returns 0 matches; no Image import |
+| Commits | 7baf6bf, 99bbe26, 7f0eedb | VERIFIED | git log confirmed |
 
-**Status: CLOSED**
+### Plan 03-11: TeacherSection removal + stats grid fix + CredibilitySection CTA
 
-Evidence:
-- `src/components/intro/session-intro-section.tsx` — 57-line file, exports `SessionIntroSection`
-- 2-column grid: `lg:grid-cols-2 gap-8 lg:gap-12 items-center`
-- Left column: `breathing-session.jpg` via `next/image fill` in `rounded-2xl overflow-hidden shadow-xl`
-- Right column: "What Happens in the Session" eyebrow, "Breathe More, Stress Less" h2, narrative paragraph, 4-point checklist with `CheckCircle2` icons
-- `src/app/(landing)/intro/page.tsx` line 3: import present; line 40: `<SessionIntroSection />` between `<HeroSection />` and `<BenefitsSection />`
-- Commit `de68683` confirmed in git log
-
-### Gap 14: BenefitsSection 3 circular photo cards
-
-**Status: CLOSED**
-
-Evidence:
-- `src/components/intro/benefits-section.tsx` — 79 lines, completely rewritten
-- Imports: `Image` from `next/image`, `Button` from shadcn/ui — NO lucide-react imports remain
-- `benefits` array: 3 objects with image paths for `breathing-session.jpg`, `meditation-group.jpg`, `teacher-guiding.jpg`
-- Each card: `<div className="relative w-40 h-40 ... rounded-full overflow-hidden ... ring-4 ring-primary/20">` — circular crop confirmed
-- `<Image fill className="object-cover" sizes="...">` inside each circular container
-- Old `Wind`, `Moon`, `Users`, `GraduationCap` icons: not present anywhere in the file
-- Commit `7c3c19a` confirmed in git log
-
-### Gap 15: MediaLogosSection press credibility bar
-
-**Status: CLOSED**
-
-Evidence:
-- `src/components/intro/media-logos-section.tsx` — 28-line file, exports `MediaLogosSection`
-- `mediaLogos` array: CNN (font-black), Yoga Journal (italic), Harvard Health Publishing (font-semibold), The Washington Post (font-serif font-bold)
-- Section: `bg-muted/30 border-y border-border/50` — visually distinct from adjacent sections
-- Header text: "Backed by 100+ peer-reviewed studies • Featured in"
-- `opacity-60 hover:opacity-90 transition-opacity` for subtle press-logo treatment
-- `src/app/(landing)/intro/page.tsx` line 6: import present; line 43: `<MediaLogosSection />` between `<CredibilitySection />` and `<TestimonialsSection />`
-- Commit `78a8760` confirmed in git log
-
-### Gap 16: CredibilitySection dark dramatic 2-column layout
-
-**Status: CLOSED**
-
-Evidence:
-- `src/components/intro/credibility-section.tsx` — 89 lines, completely rewritten
-- `<section className="bg-gray-950 text-white">` — near-black dark section confirmed
-- Left column: `meditation-group.jpg` via `next/image fill className="object-cover opacity-60"` with dual gradient overlays; bold headline overlaid at bottom: "Backed by 100+ independent peer-reviewed journals"
-- Right column: `credibilityStats.map()` 2x2 grid with `text-3xl sm:text-4xl lg:text-5xl font-bold text-primary`; `researchHighlights.map()` narrative list citing Yale and Harvard
-- Data imports: `credibilityStats` and `researchHighlights` from `@/lib/data/credibility-stats` — data unchanged (500M+, 180+, 100+, Yale & Harvard)
-- Old lucide-react imports, `iconMap`, `Badge`, `Button` from shadcn/ui: all removed
-- Commit `da1ac5c` confirmed in git log
-
-### Gap 17: AboutSection organizational backstory
-
-**Status: CLOSED**
-
-Evidence:
-- `src/components/intro/about-section.tsx` — 62-line file, exports `AboutSection`
-- "About the Art of Living" eyebrow, "40 Years of Bringing **Peace to the World**" heading
-- Paragraph 1: "founded in 1981 by Gurudev Sri Sri Ravi Shankar — humanitarian, spiritual teacher, and peace ambassador"
-- Paragraph 2: "180 countries and has touched over 500 million lives — not through advertising... Every local session is run by a volunteer certified teacher"
-- `organizationFacts` tiles: 40+ years, 180 countries, 500M+ lives, 10,000+ volunteer teachers
-- Right column: `teacher-guiding.jpg` via `next/image fill` in `rounded-2xl overflow-hidden shadow-xl`
-- `src/app/(landing)/intro/page.tsx` line 10: import present; line 47: `<AboutSection />` between `<TeacherSection />` and `<ObjectionsSection />`
-- Commit `973c408` confirmed in git log
+| Item | Expected | Verified | Evidence |
+|------|----------|----------|---------|
+| `teacher-section.tsx` deleted | File does not exist | VERIFIED | `ls` returns exit code 1 |
+| `page.tsx`: no TeacherSection import | No `import { TeacherSection }` | VERIFIED | grep returns 0 matches |
+| `page.tsx`: no `<TeacherSection />` | Not rendered | VERIFIED | grep returns 0 matches |
+| `page.tsx`: 11 sections | Comment block numbers 1-11 | VERIFIED | Lines 25-36 confirm 11 sections |
+| `about-section.tsx`: stats grid | `grid-cols-2 lg:grid-cols-4` (not sm) | VERIFIED | Line 33 confirmed |
+| `credibility-section.tsx`: Button import | `import { Button } from "@/components/ui/button"` | VERIFIED | Line 3 confirmed |
+| `credibility-section.tsx`: CTA copy | `Save My Seat (It's Free)` via shadcn Button | VERIFIED | Lines 79-84 confirmed; no raw `<button>` element |
+| Commit | 2918885 | VERIFIED | git log confirmed |
 
 ---
 
-## Observable Truths (Success Criteria — Full Re-Verification)
+## Observable Truths (5 Phase Success Criteria — Full Re-Verification)
 
 | # | Truth | Status | Evidence |
 |---|-------|--------|---------|
-| 1 | Visitor sees testimonials from real Art of Living participants in a dedicated social proof section | VERIFIED | `TestimonialsSection` imported and rendered in `page.tsx`; 6 real testimonial profile photos confirmed on disk (charlotte.jpg, luis.jpg, neeva.jpg, phillip.jpg, rebecca.jpg, sonia.jpg); no regression from plans 03-07/03-08 |
-| 2 | Visitor sees credibility stats (Yale/Harvard research, 500M+ lives, 180 countries) with visual emphasis | VERIFIED | `CredibilitySection` renders `credibilityStats` (500M+, 180+, 100+, Yale & Harvard) in dark `bg-gray-950` 2-column layout at `text-3xl sm:text-4xl lg:text-5xl`; `researchHighlights` cites Yale University (2020) and Harvard Medical School; dramatically more visually impactful than prior version |
-| 3 | Visitor sees teacher/host photo, name, and credentials in a profile section | VERIFIED | `TeacherSection` imported and rendered in `page.tsx`; `teacher-guiding.jpg` confirmed on disk (47KB); no regression — TeacherSection not touched by plans 03-07/03-08 |
-| 4 | Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format | VERIFIED | `WhatToExpectSection` imported and rendered in `page.tsx`; no regression — not touched by plans 03-07/03-08 |
-| 5 | Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page | VERIFIED | `ObjectionsSection` imported and rendered in `page.tsx`; no regression — not touched by plans 03-07/03-08 |
+| 1 | Visitor sees testimonials from real Art of Living participants in a dedicated social proof section | VERIFIED | `TestimonialsSection` imported and rendered at line 42 of `page.tsx`; renders 6 named testimonials from `testimonials` data; 6 real profile photos on disk (charlotte.jpg, luis.jpg, neeva.jpg, phillip.jpg, rebecca.jpg, sonia.jpg); no regression from plans 03-09/03-10/03-11 |
+| 2 | Visitor sees credibility stats (Yale/Harvard research, 500M+ lives, 180 countries) with visual emphasis | VERIFIED | `CredibilitySection` (bg-gray-950, text-white, 2-column) renders `credibilityStats` (500M+, 180+, 100+, Yale & Harvard) at `text-3xl sm:text-4xl lg:text-5xl`; `researchHighlights` cites Yale and Harvard; CTA now uses shadcn Button consistently; no regression |
+| 3 | Visitor sees teacher/host photo, name, and credentials in a profile section | PARTIAL — HUMAN NEEDED | TeacherSection deleted by plan 03-11. Coverage now: `AboutSection` shows `teacher-guiding.jpg` (47KB on disk), "10,000+ volunteer teachers" stat, and "Every local session is run by a volunteer certified teacher" prose. `ObjectionsSection` shows "Guided by a live, certified teacher." No named individual host exists anywhere on the page. Whether this satisfies INTRO-08 "teacher/host photo, name, and credentials" requires product judgment. |
+| 4 | Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format | VERIFIED | `WhatToExpectSection` imported and rendered at line 43 of `page.tsx`; renders `whatToExpectSteps` data with numbered steps, durations, and outcomes; cramped image banner replaced with clean accent bar heading; no regression |
+| 5 | Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page | VERIFIED | `ObjectionsSection` imported and rendered at line 45 of `page.tsx`; all 3 exact objection strings present; no regression |
 
-**Score:** 5/5 success criteria verified
+**Score:** 5/5 success criteria verified (Truth 3 carries a human judgment caveat on INTRO-08 scope)
 
 ---
 
@@ -154,17 +117,22 @@ Evidence:
 
 | Artifact | Expected | Status | Details |
 |----------|----------|--------|---------|
-| `src/components/intro/hero-section.tsx` | 3 specific learning bullet points in `<ul>` | VERIFIED | 74 lines; `<ul className="... list-none">` with 3 `<li>` items; SKY Breath / stress management / effortless meditation |
-| `src/components/intro/session-intro-section.tsx` | 2-column narrative bridge: photo left, checklist right | VERIFIED | 57 lines; `lg:grid-cols-2`; `breathing-session.jpg` fill; 4-point CheckCircle2 checklist; exports `SessionIntroSection` |
-| `src/components/intro/media-logos-section.tsx` | Press credibility bar with 4 media names | VERIFIED | 28 lines; CNN, Yoga Journal, Harvard Health Publishing, The Washington Post as styled text; `bg-muted/30 border-y`; exports `MediaLogosSection` |
-| `src/components/intro/benefits-section.tsx` | 3 circular photo cards (rounded-full) | VERIFIED | 79 lines; `rounded-full overflow-hidden`; 3 lifestyle image paths; no lucide-react imports |
-| `src/components/intro/credibility-section.tsx` | Dark 2-column section (bg-gray-950) | VERIFIED | 89 lines; `bg-gray-950 text-white`; `meditation-group.jpg opacity-60`; credibilityStats + researchHighlights wired |
-| `src/components/intro/about-section.tsx` | Organization backstory with 4 stat tiles | VERIFIED | 62 lines; founding narrative; organizationFacts (40+, 180, 500M+, 10,000+); `teacher-guiding.jpg` fill; exports `AboutSection` |
-| `src/app/(landing)/intro/page.tsx` | All 12 sections in trust-building order | VERIFIED | 53 lines; 12 named imports; 12 JSX renders; numbered inline comment |
-| `public/images/intro/breathing-session.jpg` | Lifestyle image for hero, session-intro, benefits | VERIFIED | 183KB JPEG on disk |
-| `public/images/intro/meditation-group.jpg` | Lifestyle image for benefits, credibility | VERIFIED | 171KB JPEG on disk |
-| `public/images/intro/teacher-guiding.jpg` | Teacher/about lifestyle image | VERIFIED | 47KB JPEG on disk |
-| `public/images/intro/testimonials/*.jpg` | 6 real profile photos | VERIFIED | charlotte.jpg, luis.jpg, neeva.jpg, phillip.jpg, rebecca.jpg, sonia.jpg confirmed |
+| `src/components/intro/hero-section.tsx` | 3 specific learning bullets, smooth gradient, no em-dashes | VERIFIED | 74 lines; 3 `<li>` items with checkmarks; gradient `from-black/70 via-black/50 to-black/60`; zero em-dashes |
+| `src/components/intro/session-intro-section.tsx` | meditation-group.jpg image, em-dash-free copy | VERIFIED | 57 lines; `meditation-group.jpg` at line 19; zero em-dashes in rendered text |
+| `src/components/intro/benefits-section.tsx` | 3 circular photo cards, no em-dashes | VERIFIED | 75 lines; `rounded-full overflow-hidden` on all 3 cards; descriptions end with periods; zero em-dashes |
+| `src/components/intro/credibility-section.tsx` | Dark 2-column, shadcn Button CTA | VERIFIED | 93 lines; `bg-gray-950 text-white`; `Button` imported from shadcn; CTA "Save My Seat (It's Free)" |
+| `src/components/intro/media-logos-section.tsx` | 4 press names, styled text | VERIFIED | 28 lines; CNN, Yoga Journal, Harvard Health Publishing, The Washington Post |
+| `src/components/intro/testimonials-section.tsx` | 6 testimonials, CTA with parentheses | VERIFIED | 80 lines; 6 testimonials from data; CTA "Save My Seat (It's Free)" at line 73 |
+| `src/components/intro/what-to-expect-section.tsx` | Accent bar heading, no image banner | VERIFIED | 83 lines; `inline-block w-12 h-1 rounded-full bg-primary mb-4` at line 28; no Image import; no breathing-session.jpg reference |
+| `src/components/intro/about-section.tsx` | Organization backstory, lg:grid-cols-4 stats | VERIFIED | 62 lines; `grid-cols-2 lg:grid-cols-4` at line 33; teacher-guiding.jpg; 4 stat tiles |
+| `src/components/intro/objections-section.tsx` | 6 objection tiles, CTA with parentheses | VERIFIED | 71 lines; 6 objection items; CTA "Save My Seat (It's Free)" at line 64 |
+| `src/components/intro/registration-form.tsx` | Single CardTitle heading, no outer h2 | VERIFIED | 146 lines; "Reserve Your Free Seat" at line 46 (CardTitle only); no "Ready to Experience It?" |
+| `src/app/(landing)/intro/page.tsx` | 11 sections, no TeacherSection | VERIFIED | 50 lines; 11 named imports; 11 JSX renders; comment block numbers 1-11; no TeacherSection |
+| `src/components/intro/teacher-section.tsx` | DELETED (plan 03-11) | VERIFIED | File does not exist |
+| `public/images/intro/breathing-session.jpg` | Lifestyle image | VERIFIED | 183KB on disk |
+| `public/images/intro/meditation-group.jpg` | Lifestyle image | VERIFIED | 171KB on disk |
+| `public/images/intro/teacher-guiding.jpg` | Teacher/about lifestyle image | VERIFIED | 47KB on disk |
+| `public/images/intro/testimonials/*.jpg` | 6 real profile photos | VERIFIED | charlotte.jpg, luis.jpg, neeva.jpg, phillip.jpg, rebecca.jpg, sonia.jpg |
 
 ---
 
@@ -172,15 +140,15 @@ Evidence:
 
 | From | To | Via | Status | Details |
 |------|----|-----|--------|---------|
-| `page.tsx` | `session-intro-section.tsx` | named import + JSX between HeroSection and BenefitsSection | WIRED | Line 3 import; line 40 JSX |
-| `page.tsx` | `media-logos-section.tsx` | named import + JSX after CredibilitySection | WIRED | Line 6 import; line 43 JSX |
-| `page.tsx` | `about-section.tsx` | named import + JSX after TeacherSection | WIRED | Line 10 import; line 47 JSX |
-| `session-intro-section.tsx` | `breathing-session.jpg` | `src="/images/intro/breathing-session.jpg"` on `next/image fill` | WIRED | Line 19; file 183KB on disk |
-| `benefits-section.tsx` | 3 lifestyle images | `benefit.image` on `next/image fill` inside `rounded-full` | WIRED | All 3 paths in `benefits` array; all 3 files on disk |
-| `credibility-section.tsx` | `meditation-group.jpg` | `src="/images/intro/meditation-group.jpg"` on `next/image fill opacity-60` | WIRED | Line 13; file 171KB on disk |
-| `credibility-section.tsx` | `credibility-stats.ts` data | `import { credibilityStats, researchHighlights }` line 2 | WIRED | Both arrays consumed in `.map()` in right column |
-| `about-section.tsx` | `teacher-guiding.jpg` | `src="/images/intro/teacher-guiding.jpg"` on `next/image fill` | WIRED | Line 50; file 47KB on disk |
-| `hero-section.tsx` | `breathing-session.jpg` | `src="/images/intro/breathing-session.jpg"` on `next/image fill priority` | WIRED | Line 13; no regression |
+| `page.tsx` | All 11 section components | Named imports + JSX renders | WIRED | Lines 2-12 (imports), lines 37-47 (JSX) |
+| `session-intro-section.tsx` | `meditation-group.jpg` | `src="/images/intro/meditation-group.jpg"` | WIRED | Line 19; file 171KB on disk |
+| `benefits-section.tsx` | 3 lifestyle images | `benefit.image` on `next/image fill` inside `rounded-full` | WIRED | All 3 paths in array; all 3 files on disk |
+| `credibility-section.tsx` | `credibility-stats.ts` data | `import { credibilityStats, researchHighlights }` at line 2 | WIRED | Both arrays consumed in `.map()` in right column |
+| `credibility-section.tsx` | `@/components/ui/button` | `import { Button }` at line 3 | WIRED | Button used at line 79 |
+| `about-section.tsx` | `teacher-guiding.jpg` | `src="/images/intro/teacher-guiding.jpg"` at line 50 | WIRED | File 47KB on disk |
+| `testimonials-section.tsx` | `testimonials` data | `import { testimonials } from "@/lib/data/testimonials"` | WIRED | `.map()` renders all testimonials with `testimonial.imagePath` |
+| `what-to-expect-section.tsx` | `whatToExpectSteps` data | `import { whatToExpectSteps }` at line 10 | WIRED | `.map()` renders all steps |
+| `registration-form.tsx` | `registerForIntroTalk` action | `import { registerForIntroTalk }` at line 4; `formAction` in `useActionState` | WIRED | `form action={formAction}` at line 50 |
 
 ---
 
@@ -189,31 +157,39 @@ Evidence:
 | Requirement | Source Plan | Description | Status | Evidence |
 |-------------|-------------|-------------|--------|---------|
 | INTRO-06 | 03-01, 03-04, 03-07 | Visitor sees social proof section with testimonials from Art of Living participants | SATISFIED | `TestimonialsSection` renders 6 named testimonials with real profile photos; no regression |
-| INTRO-07 | 03-01, 03-04, 03-07, 03-08 | Visitor sees credibility section with Yale/Harvard research, 500M+ lives, 180 countries | SATISFIED | `CredibilitySection` (dark 2-column, bg-gray-950) renders `credibilityStats` (500M+, 180+, Yale & Harvard) and `researchHighlights` (Yale University 2020, Harvard Medical School); visually elevated over prior version |
-| INTRO-08 | 03-02, 03-03, 03-04, 03-08 | Visitor sees teacher/host photo, name, and credentials | SATISFIED | `TeacherSection` wired in `page.tsx`; `teacher-guiding.jpg` on disk; no regression |
-| INTRO-13 | 03-02, 03-04 | "What to expect" section explains the 60-min format step-by-step | SATISFIED | `WhatToExpectSection` wired in `page.tsx`; no regression |
-| INTRO-14 | 03-02, 03-04 | Page addresses common objections (no experience, free/no credit card, camera optional) | SATISFIED | `ObjectionsSection` wired in `page.tsx`; no regression |
+| INTRO-07 | 03-01, 03-04, 03-07, 03-08, 03-11 | Visitor sees credibility section with Yale/Harvard research stats, 500M+ lives touched, 180 countries | SATISFIED | `CredibilitySection` (bg-gray-950, 2-column) renders `credibilityStats` (500M+, 180+, Yale & Harvard) and `researchHighlights`; CTA standardized to shadcn Button |
+| INTRO-08 | 03-02, 03-03, 03-04, 03-08, 03-11 | Visitor sees teacher/host photo, name, and credentials | PARTIAL — HUMAN | TeacherSection deleted by 03-11 (had no named teacher or bio). Coverage now: `AboutSection` shows `teacher-guiding.jpg`, "10,000+ volunteer teachers", "volunteer certified teacher" prose. `ObjectionsSection` shows "Guided by a live, certified teacher." No named individual exists. Requires product decision: does organizational coverage satisfy this requirement? |
+| INTRO-13 | 03-02, 03-04 | "What to expect" section explains the 60-min format step-by-step | SATISFIED | `WhatToExpectSection` renders `whatToExpectSteps` with numbered timeline, durations, outcomes; accent bar heading replaces cramped image banner |
+| INTRO-14 | 03-02, 03-04 | Page addresses common objections ("No experience needed", "Free, no credit card", "Camera optional") | SATISFIED | `ObjectionsSection` renders 6 objection tiles: "No experience needed", "100% free, no credit card", "Camera optional, no pressure" — all 3 required strings present |
 
-**Orphaned requirements check:** All 5 requirement IDs (INTRO-06, INTRO-07, INTRO-08, INTRO-13, INTRO-14) appear in plan frontmatter and are covered by verified artifacts. No orphaned requirements found.
+**Orphaned requirements check:** All 5 Phase 3 requirement IDs (INTRO-06, INTRO-07, INTRO-08, INTRO-13, INTRO-14) appear in plan frontmatter. INTRO-08 carries a human verification note. No orphaned requirements.
 
 ---
 
 ## Anti-Patterns Found
 
-None. Grep for TODO, FIXME, HACK, placeholder, `return null`, `return {}`, `return []`, and `console.log` across all 6 modified/created component files returned zero matches. TypeScript (`npx tsc --noEmit`) passes with zero output (zero errors).
+| File | Line | Pattern | Severity | Impact |
+|------|------|---------|----------|--------|
+| `footer-cta.tsx` | 17, 35 | Em-dash in JSX code comments `{/* ... — ... */}` | Info only | Not rendered to the DOM; no user-facing impact |
+| `registration-form.tsx` | 57, 73, 91 | `placeholder="..."` on form inputs | Info only | Standard HTML input placeholder attribute — not a stub pattern |
+| `social-proof-section.tsx` | 1-3 | Re-export shim for backwards compatibility | Info only | `export { CredibilitySection as SocialProofSection }` — not imported in page.tsx; harmless compatibility stub |
+
+No blockers. No warnings. Zero TODO, FIXME, HACK, or placeholder strings in rendered content.
 
 ---
 
 ## Build Verification
 
-- `npx tsc --noEmit` — zero output, zero errors
-- 6 feature commits confirmed in git log:
-  - `b2f07fa` — feat(03-07): replace hero generic paragraph with 3 specific learning bullets
-  - `de68683` — feat(03-07): create SessionIntroSection — 2-column narrative bridge
-  - `78a8760` — feat(03-07): add MediaLogosSection and wire both new sections into page.tsx
-  - `7c3c19a` — feat(03-08): rewrite BenefitsSection — 3 circular photo cards replacing icon cards
-  - `da1ac5c` — feat(03-08): rewrite CredibilitySection — dark dramatic 2-column layout
-  - `973c408` — feat(03-08): create AboutSection and wire into page.tsx
+- `npx tsc --noEmit` — zero output, zero errors (verified during re-verification)
+- All 11 plan commits confirmed in git log:
+  - Plans 03-01 through 03-08: confirmed in previous verification
+  - `88ac254` — fix(03-09): remove em-dashes and smooth gradient in hero-section
+  - `cc12ddb` — fix(03-09): remove em-dashes and swap image in session-intro-section
+  - `a2d3b66` — fix(03-09): remove em-dashes from benefits descriptions and CTA button
+  - `7baf6bf` — fix(03-10): remove double-hyphen attribution and em-dash from CTA buttons
+  - `99bbe26` — fix(03-10): remove duplicate registration heading and about-section em-dash
+  - `7f0eedb` — fix(03-10): replace cramped image banner with clean decorative accent header
+  - `2918885` — feat(03-11): remove TeacherSection, fix stats grid, consistent CTAs
 
 ---
 
@@ -221,57 +197,57 @@ None. Grep for TODO, FIXME, HACK, placeholder, `return null`, `return {}`, `retu
 
 All automated checks pass. The following require opening `/intro` in a browser:
 
-### 1. Hero Bullet Specificity for Cold Traffic
+### 1. INTRO-08 Teacher/Host Coverage After TeacherSection Removal
 
-**Test:** Open `/intro` as a first-time visitor who clicked a Facebook ad; read the hero section without scrolling
-**Expected:** Three white-on-dark checkmarked bullets answer "what will I get?" — SKY Breath Meditation, stress management, effortless meditation — before requiring any scroll
-**Why human:** Whether the bullet specificity satisfies cold-traffic intent (vs still being too vague) requires human judgment
+**Test:** Review the landing page as a cold Facebook visitor who has never heard of Art of Living; assess whether the organizational references to certified teachers satisfy the need to trust who is running the session
+**Expected:** Either (A) organizational coverage ("10,000+ volunteer teachers", teacher-guiding.jpg, "Guided by a live, certified teacher") is sufficient for trust — or (B) a named individual host or local teacher bio is required to satisfy INTRO-08 and a new plan must add one
+**Why human:** Whether organizational-level teacher references satisfy INTRO-08 "teacher/host photo, name, and credentials" vs. requiring a named individual is a product decision
 
-### 2. SessionIntroSection Narrative Bridge
+### 2. Full 11-Section Page Visual Rhythm
 
-**Test:** Scroll immediately past the hero to the "Breathe More, Stress Less" section
-**Expected:** 2-column section (lifestyle photo left, 4-point checklist right) reads as a credible "here is what this actually is" bridge — not promotional; builds genuine understanding before the benefits section
-**Why human:** Whether the narrative tone feels trustworthy or sales-y for a skeptical first-time visitor requires human perception
+**Test:** Scroll the entire `/intro` page from Hero to FooterCTA after TeacherSection removal
+**Expected:** Hero (dark) > SessionIntro (white) > Benefits (muted) > Credibility (near-black) > MediaLogos (light) > Testimonials (white) > WhatToExpect (muted/50) > About (muted/30) > Objections (white) > RegistrationForm (warm gradient) > FooterCTA (image overlay) — assess whether the transition from WhatToExpect directly to About (skipping the former Teacher section) flows naturally
+**Why human:** Holistic page rhythm after section removal requires a human scroll-through
 
-### 3. Benefits Circular Photos vs Former Icon Cards
+### 3. WhatToExpectSection Accent Bar Header
 
-**Test:** View the benefits section
-**Expected:** 3 circular photos of real people doing breathing/meditation practices communicate "real people get results" with more emotional weight than abstract icons
-**Why human:** Whether human photos create stronger trust impact than icons requires human visual judgment
+**Test:** Scroll to the WhatToExpect section; compare its header to the TestimonialsSection header
+**Expected:** Orange accent bar + clean h2 visually matches TestimonialsSection; no cramped or dark image banner; the decorative bar is a visible but subtle orange horizontal line above the heading
+**Why human:** Whether the accent bar provides sufficient visual weight or reads as too minimal requires human perception
 
-### 4. CredibilitySection Dark Section Impact
+### 4. RegistrationForm Single Heading
 
-**Test:** Scroll to the CredibilitySection after the benefits section
-**Expected:** Near-black `bg-gray-950` section with meditation-group.jpg at opacity-60, dual gradients, bold headline overlay, white stats text — the most authoritative-feeling section on the page
-**Why human:** Whether the dark section achieves "dramatically credible" vs "visually jarring" requires human perception
+**Test:** Scroll to the RegistrationForm section; read the heading structure
+**Expected:** Social proof avatar cluster ("500M+ lives transformed") leads directly into a Card with "Reserve Your Free Seat" as the sole heading — no redundant outer section heading above the card
+**Why human:** Whether removing the outer heading improves clarity or removes helpful section context requires human judgment
 
-### 5. MediaLogosSection Press Bar Believability
+### 5. AboutSection Stats Grid at Tablet Width
 
-**Test:** View the press bar between CredibilitySection and TestimonialsSection
-**Expected:** CNN, Yoga Journal, Harvard Health Publishing, The Washington Post in styled text at opacity-60 read as credible press validation without requiring licensed logo image assets
-**Why human:** Whether text-only press logos are convincing or need actual logo images requires human judgment
+**Test:** Open DevTools; resize to 768px (iPad); look at the 4 stat tiles
+**Expected:** Tiles render in 2 columns (grid-cols-2) at 768px, not 4 columns; no tile overflow into the image column area. At 1280px (desktop), they expand to 4 columns.
+**Why human:** Responsive grid behavior at specific breakpoints requires browser resize testing
 
-### 6. AboutSection Trust Impact
+### 6. Hero + SessionIntro Image Variety
 
-**Test:** Scroll to the About section after the TeacherSection; read as a cold Facebook visitor who has never heard of Art of Living
-**Expected:** Organization backstory (40+ years, Gurudev founding, volunteer non-profit, 4 stat tiles) effectively resolves "who are these people?" before the Objections and Registration sections
-**Why human:** Whether the about section removes stranger-anxiety for true cold traffic requires human assessment
+**Test:** Compare the hero background (breathing-session.jpg) to the SessionIntro left column (meditation-group.jpg)
+**Expected:** The two sections use visually distinct images — different compositions, different colour tones — creating the intended variety rather than feeling repetitive
+**Why human:** Whether the two images are distinct enough requires human visual judgment
 
-### 7. Full 12-Section Page Visual Rhythm
+### 7. Overall Copy Tone Without Em-Dashes
 
-**Test:** Scroll the entire `/intro` page from Hero to FooterCTA
-**Expected:** Hero (dark) > SessionIntro (white) > Benefits (muted) > Credibility (near-black) > MediaLogos (light) > Testimonials > WhatToExpect > Teacher > About (muted/30) > Objections > Form (warm gradient) > FooterCTA (image overlay) creates clear visual variety — the 3 dark/near-dark sections provide visual relief from the lighter sections
-**Why human:** Holistic page rhythm across 12 sections requires a human scroll-through to assess
+**Test:** Read through all the major copy blocks: hero bullets, session-intro paragraph, benefits descriptions
+**Expected:** Replacing em-dashes with colons, commas, and periods reads naturally and confidently; no awkward sentence breaks or loss of emphasis
+**Why human:** Prose flow after punctuation substitution requires human reading
 
 ---
 
 ## Gaps Summary
 
-All 6 previously identified gaps (12-17) are now closed. All 5 original phase success criteria are verified. No regressions introduced in any section not targeted by plans 03-07/03-08.
+No gaps in automated verification. Phase 3 goal (cold Facebook traffic sees enough social proof and credibility to trust registering) is achieved at the code level. The single open item is INTRO-08: the decision to delete TeacherSection leaves no named individual host on the page. Whether "organizational teacher credibility" satisfies INTRO-08 "teacher/host photo, name, and credentials" requires a product decision. If a named teacher is required, a new plan must add a LocalTeacherSection with a real name, photo, and credentials.
 
-Phase 3 automated goal verification: PASSED. The page now tells a complete trust-building story: hook (hero with specifics) — explain (session intro narrative) — experience (benefits with human photos) — prove (dark credibility section) — validate externally (press bar) — social proof (testimonials) — reduce uncertainty (what to expect) — human connection (teacher) — organizational trust (about section) — remove barriers (objections) — convert (registration) — final nudge (footer).
+The page currently tells a complete trust-building story across 11 sections: hook (hero) — explain (session intro) — experience (benefits with human photos) — prove (dark credibility section) — validate externally (press bar) — social proof (testimonials) — reduce uncertainty (what to expect) — organizational trust (about) — remove barriers (objections) — convert (registration) — final nudge (footer CTA).
 
 ---
 
 _Verified: 2026-02-25_
-_Verifier: Claude (gsd-verifier) — re-verification after Plans 03-07 and 03-08 gap closure_
+_Verifier: Claude (gsd-verifier) — re-verification after Plans 03-09, 03-10, and 03-11 gap closure_

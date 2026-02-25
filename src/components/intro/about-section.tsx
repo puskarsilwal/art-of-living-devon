@@ -30,7 +30,7 @@ export function AboutSection() {
             </p>
 
             {/* Org fact grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {organizationFacts.map((fact) => (
                 <div key={fact.label} className="text-center rounded-xl bg-background p-4 shadow-sm border border-border/50">
                   <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">
