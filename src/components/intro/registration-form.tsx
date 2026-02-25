@@ -23,14 +23,6 @@ export function RegistrationForm() {
   return (
     <section id="register" className="scroll-mt-8 px-4 py-12 sm:px-6 sm:py-16 lg:py-20 bg-gradient-to-b from-primary/5 via-primary/[0.03] to-background">
       <div className="max-w-md mx-auto">
-        {/* Section heading */}
-        <div className="text-center mb-6">
-          <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
-            Ready to Experience It?
-          </h2>
-          <p className="text-muted-foreground text-sm mt-1">Join your free 60-minute session</p>
-        </div>
-
         {/* Social proof trust badge */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <div className="flex -space-x-2">

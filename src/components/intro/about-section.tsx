@@ -26,7 +26,7 @@ export function AboutSection() {
               Founded in 1981 by Gurudev Sri Sri Ravi Shankar, the Art of Living Foundation has grown from a small breathing programme into one of the world&apos;s largest volunteer-run non-profits.
             </p>
             <p className="text-muted-foreground text-base leading-relaxed mb-6">
-              Today we operate in 180 countries and have touched 500 million lives — through direct teaching and the genuine transformation people experience. Every local session is run by a volunteer certified teacher.
+              Today we operate in 180 countries and have touched 500 million lives through direct teaching and genuine personal transformation. Every local session is run by a volunteer certified teacher.
             </p>
 
             {/* Org fact grid */}
