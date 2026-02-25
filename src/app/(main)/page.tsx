@@ -1,26 +1,26 @@
-import Link from "next/link"
+import type { Metadata } from "next"
+import { HeroSection } from "@/components/home/hero-section"
+import { OfferingsSection } from "@/components/home/offerings-section"
+import { AboutSection } from "@/components/home/about-section"
+import { LocalGuidesSection } from "@/components/home/local-guides-section"
+import { FooterCta } from "@/components/home/footer-cta"
+
+export const metadata: Metadata = {
+  // Title omitted — root layout default "Art of Living Devon & Southwest" applies
+  // (avoids "Art of Living Devon & Southwest | Art of Living Devon & Southwest" duplication)
+  description:
+    "Join free intro talks and meditation courses in Devon and Southwest England. Discover SKY Breath Meditation, pranayama, and yoga with certified Art of Living teachers.",
+  robots: { index: true, follow: true },
+}
 
 export default function HomePage() {
   return (
-    <section className="container mx-auto flex flex-col items-center justify-center gap-8 px-4 py-16 text-center md:py-24">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-        Art of Living
-        <br />
-        <span className="text-primary">Devon &amp; Southwest</span>
-      </h1>
-      <p className="max-w-xl text-lg text-muted-foreground">
-        Discover breathing techniques, meditation, and yoga for a stress-free,
-        healthy life. Join our free intro talks and community events across Devon
-        and Southwest England.
-      </p>
-      <div className="flex flex-col gap-4 sm:flex-row">
-        <Link
-          href="/privacy-policy"
-          className="text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
-        >
-          Privacy Policy
-        </Link>
-      </div>
-    </section>
+    <>
+      <HeroSection />
+      <OfferingsSection />
+      <AboutSection />
+      <LocalGuidesSection />
+      <FooterCta />
+    </>
   )
 }
