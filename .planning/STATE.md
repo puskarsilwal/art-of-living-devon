@@ -111,6 +111,10 @@ Recent decisions affecting current work:
 - [Phase 04-03]: Confirmation page uses noindex robots — post-registration pages excluded from search indexing
 - [Phase 05-01]: Reused Testimonial type import from testimonials.ts rather than duplicating — single source of truth for type
 - [Phase 05-01]: Course testimonials use course-specific image paths (/images/course/testimonials/) distinct from intro talk paths
+- [Phase 05-02]: Hero eyebrow badge uses bg-white/20 with backdrop-blur-sm (same glass style as intro hero)
+- [Phase 05-02]: Program overview inline copy (no data module) — 3-step static flow fits directly in component
+- [Phase 05-02]: ResearchStatsSection uses bg-muted/30 to distinguish from adjacent white bg sections
+- [Phase 05-02]: MediaLogos opacity-70 hover:opacity-100 for subtle interactive quality without animation library
 - [Phase 05-03]: UpcomingDatesSection uses course.registrationUrl from data module — no hardcoded URLs in component (COURSE-04 satisfied)
 - [Phase 05-03]: FounderSection uses about-art-of-living.webp as ambient crowd/event image (no Gurudev portrait available — per RESEARCH.md pitfall note)
 - [Phase 05-03]: CourseContentSection CTA uses inline anchor styled as Button to avoid client-component overhead for a simple link
@@ -130,5 +134,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 05-03-PLAN.md (course content, upcoming dates, founder sections) — Phase 05 Plan 03 complete
+Stopped at: Completed 05-02-PLAN.md (hero, program overview, research stats, media logos) — Phase 05 Plan 02 complete
 Resume file: None
