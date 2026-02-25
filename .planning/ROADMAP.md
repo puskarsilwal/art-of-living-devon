@@ -65,11 +65,13 @@ Plans:
   3. Visitor sees teacher/host photo, name, and credentials in a profile section
   4. Visitor can read a step-by-step "What to expect" breakdown of the 60-minute intro talk format
   5. Common objections ("No experience needed", "Free, no credit card", "Camera optional") are addressed visibly on the page
-**Plans**: 2 plans
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Testimonial + credibility data files and section components (replaces placeholder SocialProofSection)
-- [ ] 03-02-PLAN.md — Teacher profile, what-to-expect, objections sections + page composition
+- [x] 03-01-PLAN.md — Testimonial + credibility data files and section components (replaces placeholder SocialProofSection)
+- [x] 03-02-PLAN.md — Teacher profile, what-to-expect, objections sections + page composition
+- [ ] 03-03-PLAN.md — Gap closure: source stock images (testimonial avatars, teacher photo, lifestyle images) + update data files
+- [ ] 03-04-PLAN.md — Gap closure: visual overhaul of all 5 trust sections (photos, alignment fixes, premium styling)
 
 ### Phase 4: Registration Flow & Session Selection
 **Goal**: After registering, the visitor has everything they need to actually show up to the Zoom session, and can choose a session that fits their schedule
@@ -175,9 +177,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Scaffolding & Deploy | 0/1 | Complete    | 2026-02-25 |
+| 1. Project Scaffolding & Deploy | 1/1 | Complete    | 2026-02-25 |
 | 2. Intro Talk LP - Core | 2/3 | Gap closure | - |
-| 3. Intro Talk LP - Trust | 0/2 | Not started | - |
+| 3. Intro Talk LP - Trust | 2/4 | Gap closure | - |
 | 4. Registration Flow | 0/1 | Not started | - |
 | 5. Course Landing Page | 0/1 | Not started | - |
 | 6. Homepage | 0/1 | Not started | - |
