@@ -1,4 +1,3 @@
-import Image from "next/image"
 import {
   Handshake,
   Brain,
@@ -26,22 +25,10 @@ export function WhatToExpectSection() {
       <div className="max-w-4xl mx-auto">
         {/* Header with lifestyle accent image */}
         <div className="text-center mb-10">
-          <div className="relative rounded-2xl overflow-hidden mb-6 max-w-2xl mx-auto">
-            <Image
-              src="/images/intro/breathing-session.jpg"
-              alt="Group breathing and meditation session"
-              width={1200}
-              height={400}
-              className="w-full h-40 sm:h-48 object-cover"
-              priority={false}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-muted/90 via-muted/40 to-transparent" />
-            <div className="absolute bottom-4 left-0 right-0">
-              <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl text-foreground">
-                What to Expect in 60 Minutes
-              </h2>
-            </div>
-          </div>
+          <div className="inline-block w-12 h-1 rounded-full bg-primary mb-4" />
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl mb-2">
+            What to Expect in 60 Minutes
+          </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
             A guided journey from understanding your mind to experiencing deep
             inner calm
