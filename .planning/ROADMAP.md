@@ -203,7 +203,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 4. Registration Flow | 3/4 | In Progress|  |
 | 5. Course Landing Page | 5/5 | Complete   | 2026-02-25 |
 | 6. Homepage | 4/4 | Complete   | 2026-02-26 |
-| 7. Event Pages | 1/5 | In Progress|  |
+| 7. Event Pages | 3/5 | In Progress|  |
 | 8. Analytics & Tracking | 0/1 | Not started | - |
 | 9. Email - Core Sequence | 0/2 | Not started | - |
 | 10. Email - Post-Event | 0/2 | Not started | - |

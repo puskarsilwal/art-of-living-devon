@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-26T14:11:45.483Z"
+last_updated: "2026-02-26T15:01:07.156Z"
 progress:
-  total_phases: 6
+  total_phases: 7
   completed_phases: 4
-  total_plans: 28
-  completed_plans: 26
+  total_plans: 33
+  completed_plans: 29
 ---
 
 # Project State
@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 7 in progress -- event pages; Plan 01 done (EventConfig data module + email opt-in stub action)
+**Current focus:** Phase 7 in progress -- event pages; Plan 02 done (EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection)
 
 ## Current Position
 
 Phase: 7 of 10 (Event Pages) — IN PROGRESS
-Plan: 1 of N in current phase (01 done)
-Status: Phase 07 plan 01 complete — EventConfig data module and subscribeToEventUpdates stub action created
-Last activity: 2026-02-26 -- Plan 07-01 complete: EventConfig type, sample Satsang event, and email opt-in stub action
+Plan: 2 of N in current phase (01 and 02 done)
+Status: Phase 07 plan 02 complete — 4 event page upper-half components created (hero, details bar, experience, explainer)
+Last activity: 2026-02-26 -- Plan 07-02 complete: EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection + satsang-hero.jpg
 
 Progress: [######░░░░] 65%
 
@@ -67,6 +67,8 @@ Progress: [######░░░░] 65%
 | Phase 06-homepage P03 | 2 | 2 tasks | 3 files |
 | Phase 06-homepage P04 | 5min | 2 tasks | 1 files |
 | Phase 07 P01 | 3min | 2 tasks | 2 files |
+| Phase 07 P03 | 4 | 2 tasks | 4 files |
+| Phase 07 P02 | 2 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -155,6 +157,9 @@ Recent decisions affecting current work:
 - [Phase 07-01]: brevoListId field defined but undefined in Phase 7 — slot reserved for Phase 9 Brevo per-event list wiring
 - [Phase 07-01]: EventTestimonial is a separate type from testimonials.ts Testimonial — includes highlight field for pull-quote display
 - [Phase 07-01]: price typed as string | null — null means contact us, string covers Free/paid/donation variants
+- [Phase 07]: EventEmailOptin uses native checkbox with accent-primary class per plan spec; Phase 9 can wire Brevo without JSX changes
+- [Phase 07]: No Brevo API calls in Phase 7 — stub action only (event-optin.ts) deferred to Phase 9
+- [Phase 07]: External CTA uses <a> not Next.js Link — registrationUrl is always external artofliving.org URL
 
 ### Pending Todos
 
@@ -169,5 +174,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 07-01-PLAN.md (EventConfig data module + email opt-in stub action)
+Stopped at: Completed 07-02-PLAN.md (EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection)
 Resume file: None
