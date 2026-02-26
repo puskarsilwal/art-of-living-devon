@@ -41,9 +41,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Satsang/Event Pages
 
-- [ ] **EVENT-01**: Reusable event page template for Satsang, Kirtan, and other community events
-- [ ] **EVENT-02**: Each event page displays date, time, location, description, and price if applicable
-- [ ] **EVENT-03**: Each event page has registration or ticket link (external or on-page form)
+- [x] **EVENT-01**: Reusable event page template for Satsang, Kirtan, and other community events
+- [x] **EVENT-02**: Each event page displays date, time, location, description, and price if applicable
+- [x] **EVENT-03**: Each event page has registration or ticket link (external or on-page form)
 
 ### Email Automation
 
@@ -129,9 +129,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HOME-02 | Phase 6 | Complete |
 | HOME-03 | Phase 6 | Complete |
 | HOME-04 | Phase 6 | Complete |
-| EVENT-01 | Phase 7 | Pending |
-| EVENT-02 | Phase 7 | Pending |
-| EVENT-03 | Phase 7 | Pending |
+| EVENT-01 | Phase 7 | Complete |
+| EVENT-02 | Phase 7 | Complete |
+| EVENT-03 | Phase 7 | Complete |
 | EMAIL-01 | Phase 9 | Pending |
 | EMAIL-02 | Phase 9 | Pending |
 | EMAIL-03 | Phase 9 | Pending |

@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 6 complete -- homepage; Plan 04 done (full homepage assembled and user-verified)
+**Current focus:** Phase 7 in progress -- event pages; Plan 01 done (EventConfig data module + email opt-in stub action)
 
 ## Current Position
 
-Phase: 6 of 10 (Homepage) — COMPLETE
-Plan: 4 of 4 in current phase (01, 02, 03, 04 done)
-Status: Phase 06 complete — full homepage at / assembled and verified
-Last activity: 2026-02-26 -- Plan 06-04 complete: homepage page.tsx assembled from all 5 sections, user-approved
+Phase: 7 of 10 (Event Pages) — IN PROGRESS
+Plan: 1 of N in current phase (01 done)
+Status: Phase 07 plan 01 complete — EventConfig data module and subscribeToEventUpdates stub action created
+Last activity: 2026-02-26 -- Plan 07-01 complete: EventConfig type, sample Satsang event, and email opt-in stub action
 
-Progress: [######░░░░] 62%
+Progress: [######░░░░] 65%
 
 ## Performance Metrics
 
@@ -66,6 +66,7 @@ Progress: [######░░░░] 62%
 | Phase 06 P03 | 2min | 2 tasks | 3 files |
 | Phase 06-homepage P03 | 2 | 2 tasks | 3 files |
 | Phase 06-homepage P04 | 5min | 2 tasks | 1 files |
+| Phase 07 P01 | 3min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -150,6 +151,10 @@ Recent decisions affecting current work:
 - [Phase 06-homepage]: AboutSection renders stats from credibilityStats data module (not inlined) — single source of truth for credibility numbers
 - [Phase 06-homepage]: FooterCta uses bg-primary with Button variant=secondary — matches Phase 05-04 course page footer pattern
 - [Phase 06-homepage]: Homepage page.tsx is a pure server-component assembler — zero client state, just imports and JSX composition
+- [Phase 07-01]: EventConfig.registrationUrl is external link (not Next.js route) — event registration handled by artofliving.org
+- [Phase 07-01]: brevoListId field defined but undefined in Phase 7 — slot reserved for Phase 9 Brevo per-event list wiring
+- [Phase 07-01]: EventTestimonial is a separate type from testimonials.ts Testimonial — includes highlight field for pull-quote display
+- [Phase 07-01]: price typed as string | null — null means contact us, string covers Free/paid/donation variants
 
 ### Pending Todos
 
@@ -164,5 +169,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 06-04-PLAN.md (Homepage assembly and user verification — Phase 06 complete)
+Stopped at: Completed 07-01-PLAN.md (EventConfig data module + email opt-in stub action)
 Resume file: None
