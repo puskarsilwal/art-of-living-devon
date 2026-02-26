@@ -1,23 +1,46 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
 
 export function FooterCta() {
   return (
-    <section className="py-16 sm:py-20 bg-primary">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-2xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">
-            Ready to Experience the Difference?
-          </h2>
-          <p className="text-white/90 mt-4 text-lg max-w-xl mx-auto">
-            Join a free 60-minute intro talk in Devon or Southwest England. No experience needed.
-          </p>
-          <Link href="/intro">
-            <Button size="lg" variant="secondary" className="mt-8 text-base px-8">
-              Register for a Free Intro Talk
-            </Button>
-          </Link>
-        </div>
+    <section className="relative overflow-hidden py-28 sm:py-36">
+      {/* Background photo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/intro/break-free.webp"
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+      {/* Primary colour overlay — brand colour without losing the photo entirely */}
+      <div className="absolute inset-0 z-10 bg-primary/85" />
+
+      <div className="relative z-20 max-w-3xl mx-auto px-6 sm:px-10 text-center">
+        <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-5">
+          Free · No experience needed · Devon &amp; Southwest
+        </p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+          One breath can
+          <br />
+          change everything.
+        </h2>
+        <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+          Join a free 60-minute intro talk and experience the SKY Breath Meditation technique that
+          has transformed millions of lives.
+        </p>
+        <Link href="/intro">
+          <Button
+            size="lg"
+            variant="secondary"
+            className="group text-base px-10 py-6 shadow-2xl"
+          >
+            Register for a Free Intro Talk
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </Link>
       </div>
     </section>
   )
