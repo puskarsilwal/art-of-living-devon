@@ -5,30 +5,40 @@ import { Card, CardContent } from "@/components/ui/card"
 
 function CourseDateCard({ course }: { course: CourseDate }) {
   return (
-    <Card className="hover:shadow-md transition-shadow">
-      <CardContent className="p-5">
-        <div className="flex items-start justify-between gap-4 mb-4">
+    <Card className="group border-2 border-border/50 hover:border-primary/40 shadow-sm hover:shadow-lg transition-all duration-200">
+      <CardContent className="p-6">
+        <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <p className="font-semibold text-base">
+            <p className="font-bold text-lg">
               {course.startDate} &ndash; {course.endDate}
             </p>
-            <p className="text-sm text-muted-foreground mt-0.5">{course.location}</p>
+            <p className="text-sm text-muted-foreground mt-1">{course.location}</p>
             <p className="text-sm text-muted-foreground">
               {course.time} {course.timezone}
             </p>
           </div>
-          <Badge variant="secondary">{course.format}</Badge>
+          <Badge
+            variant="secondary"
+            className="bg-primary/10 text-primary border-primary/20 font-semibold text-xs shrink-0"
+          >
+            {course.format}
+          </Badge>
         </div>
         {course.badge && (
-          <p className="text-xs font-medium text-primary mb-3">{course.badge}</p>
+          <p className="text-xs font-bold text-primary bg-primary/10 rounded-full px-3 py-1 inline-block mb-3">
+            {course.badge}
+          </p>
         )}
+        <div className="border-t border-border/40 my-4" />
         <a
           href={course.registrationUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="block"
         >
-          <Button className="w-full">Register Now</Button>
+          <Button className="w-full group-hover:bg-primary/90 transition-colors">
+            Register Now
+          </Button>
         </a>
       </CardContent>
     </Card>
@@ -37,14 +47,14 @@ function CourseDateCard({ course }: { course: CourseDate }) {
 
 export function UpcomingDatesSection() {
   return (
-    <section id="upcoming-dates" className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20 bg-muted/30">
+    <section id="upcoming-dates" className="bg-background py-20 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            Upcoming Courses
+          <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
+            Limited Seats Available
           </p>
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl mb-3">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-3">
             Upcoming Devon &amp; Southwest Courses
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
