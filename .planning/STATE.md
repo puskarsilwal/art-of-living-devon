@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-02-26T15:01:07.156Z"
+last_updated: "2026-02-26T15:05:05.567Z"
 progress:
   total_phases: 7
   completed_phases: 4
   total_plans: 33
-  completed_plans: 29
+  completed_plans: 30
 ---
 
 # Project State
@@ -69,6 +69,7 @@ Progress: [######░░░░] 65%
 | Phase 07 P01 | 3min | 2 tasks | 2 files |
 | Phase 07 P03 | 4 | 2 tasks | 4 files |
 | Phase 07 P02 | 2 | 2 tasks | 5 files |
+| Phase 07 P04 | 4 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -160,6 +161,8 @@ Recent decisions affecting current work:
 - [Phase 07]: EventEmailOptin uses native checkbox with accent-primary class per plan spec; Phase 9 can wire Brevo without JSX changes
 - [Phase 07]: No Brevo API calls in Phase 7 — stub action only (event-optin.ts) deferred to Phase 9
 - [Phase 07]: External CTA uses <a> not Next.js Link — registrationUrl is always external artofliving.org URL
+- [Phase 07]: Event detail page in (landing) route group — no nav, conversion funnel; events index in (main) — SiteHeader/SiteFooter inherited
+- [Phase 07]: params awaited as Promise in Next.js 16 — generateMetadata and EventPage both use await params
 
 ### Pending Todos
 
