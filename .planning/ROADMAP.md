@@ -137,10 +137,14 @@ Plans:
   1. A reusable event page template exists that can be duplicated for new events with minimal effort
   2. Each event page displays date, time, location, description, and price (if applicable)
   3. Each event page includes a registration or ticket link (external URL or on-page form)
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 07-01: TBD
+- [ ] 07-01-PLAN.md — EventConfig data module + email opt-in stub server action
+- [ ] 07-02-PLAN.md — Hero, Details Bar, Experience, Explainer section components
+- [ ] 07-03-PLAN.md — Video, Social Proof, Email Opt-in, Footer CTA section components
+- [ ] 07-04-PLAN.md — Dynamic /events/[slug] page + /events index page
+- [ ] 07-05-PLAN.md — Human visual verification checkpoint
 
 ### Phase 8: Analytics & Tracking
 **Goal**: Every registration is tracked end-to-end so Facebook ad spend can be attributed and pages share well on social media
@@ -199,7 +203,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | 4. Registration Flow | 3/4 | In Progress|  |
 | 5. Course Landing Page | 5/5 | Complete   | 2026-02-25 |
 | 6. Homepage | 4/4 | Complete   | 2026-02-26 |
-| 7. Event Pages | 0/1 | Not started | - |
+| 7. Event Pages | 0/5 | Planning complete | - |
 | 8. Analytics & Tracking | 0/1 | Not started | - |
 | 9. Email - Core Sequence | 0/2 | Not started | - |
 | 10. Email - Post-Event | 0/2 | Not started | - |
