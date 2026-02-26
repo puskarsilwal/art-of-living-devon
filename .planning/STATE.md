@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 7 in progress -- event pages; Plan 02 done (EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection)
+**Current focus:** Phase 7 in progress -- event pages; Plans 01, 02, 03 done (data module, upper sections, lower sections)
 
 ## Current Position
 
 Phase: 7 of 10 (Event Pages) — IN PROGRESS
-Plan: 2 of N in current phase (01 and 02 done)
-Status: Phase 07 plan 02 complete — 4 event page upper-half components created (hero, details bar, experience, explainer)
-Last activity: 2026-02-26 -- Plan 07-02 complete: EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection + satsang-hero.jpg
+Plan: 3 of 5 in current phase (01, 02, 03 done)
+Status: Phase 07 plan 03 complete — EventVideoSection, EventSocialProof, EventEmailOptin, EventFooterCta created
+Last activity: 2026-02-26 -- Plan 07-03 complete: four lower event page sections, GDPR opt-in form wired to stub action
 
 Progress: [######░░░░] 65%
 
@@ -174,5 +174,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 07-02-PLAN.md (EventHeroSection, EventDetailsBar, EventExperienceSection, EventExplainerSection)
+Stopped at: Completed 07-03-PLAN.md (EventVideoSection, EventSocialProof, EventEmailOptin, EventFooterCta)
 Resume file: None
