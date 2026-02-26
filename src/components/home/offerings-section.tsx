@@ -38,14 +38,14 @@ const offerings = [
 
 export function OfferingsSection() {
   return (
-    <section className="py-20 sm:py-28 bg-zinc-950">
+    <section className="py-20 sm:py-28 bg-gradient-to-b from-white via-amber-50/40 to-orange-50/30">
       <div className="max-w-7xl mx-auto px-6 sm:px-10">
         {/* Section header */}
         <div className="mb-14">
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">
             Where would you like to start?
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
             Your path begins here.
           </h2>
         </div>
@@ -56,7 +56,7 @@ export function OfferingsSection() {
             <Link
               key={offering.title}
               href={offering.href}
-              className="group relative overflow-hidden rounded-2xl min-h-[420px] flex flex-col justify-end cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl min-h-[420px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Photo background */}
               <div className="absolute inset-0 z-0">
@@ -68,8 +68,8 @@ export function OfferingsSection() {
                 />
               </div>
 
-              {/* Gradient overlay — bottom-heavy so text reads clearly */}
-              <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+              {/* Gradient overlay — warm amber tones instead of black */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-amber-950/85 via-amber-900/40 to-transparent" />
 
               {/* Card content */}
               <div className="relative z-20 p-7">
