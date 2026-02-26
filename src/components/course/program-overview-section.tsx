@@ -23,13 +23,18 @@ const steps = [
 
 export function ProgramOverviewSection() {
   return (
-    <section className="bg-background py-20 px-4 sm:px-6">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-6">
+    <section className="relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background py-24 px-4 sm:px-6">
+      {/* Decorative blurred circle */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden>
+        <div className="w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
           What is the Art of Living Part 1?
         </h2>
 
-        <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-10">
+        <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-12">
           <p>
             Art of Living Part 1 is a transformative
             3-day course, offered 3 hours per day, by the Art of Living
@@ -44,14 +49,17 @@ export function ProgramOverviewSection() {
           </p>
         </div>
 
-        {/* 3-step flow */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
+        {/* 3-step flow — elevated cards with decorative numbers */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
           {steps.map((step) => (
-            <div key={step.number} className="flex flex-col items-center text-center gap-3">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground text-lg font-bold shrink-0">
+            <div
+              key={step.number}
+              className="bg-background border border-border/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow text-left"
+            >
+              <div className="text-6xl font-black text-primary/15 leading-none mb-2 select-none">
                 {step.number}
               </div>
-              <h3 className="font-semibold text-foreground text-lg">
+              <h3 className="text-xl font-bold text-foreground mb-2">
                 {step.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
