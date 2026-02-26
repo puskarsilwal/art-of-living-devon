@@ -1,29 +1,23 @@
-import Image from "next/image"
 import { TrendingUp, TrendingDown } from "lucide-react"
 import { courseStats } from "@/lib/data/course-stats"
 
 export function ResearchStatsSection() {
   return (
-    <section className="relative overflow-hidden bg-gray-950 py-20 px-4 sm:px-6">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/course/sudarshan-kriya.webp"
-          alt=""
-          fill
-          className="object-cover opacity-10"
-        />
+    <section className="relative overflow-hidden bg-gradient-to-b from-amber-50 via-orange-50/50 to-white py-20 px-4 sm:px-6">
+      {/* Decorative radial glow */}
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        aria-hidden
+      >
+        <div className="w-[700px] h-[400px] rounded-full bg-primary/8 blur-3xl" />
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-950/80 via-gray-950/60 to-gray-950/90" />
-
       {/* Content */}
-      <div className="relative z-20 max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-white">
+      <div className="relative max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-foreground">
           Backed by 100+ Independent Studies
         </h2>
-        <p className="text-gray-400 text-base sm:text-lg mb-12">
+        <p className="text-muted-foreground text-base sm:text-lg mb-12">
           Peer-reviewed research from Yale, Harvard, AIIMS, and leading
           universities worldwide
         </p>
@@ -32,7 +26,7 @@ export function ResearchStatsSection() {
           {courseStats.map((stat) => (
             <div
               key={stat.label}
-              className="border border-white/10 rounded-xl p-5 bg-white/5 backdrop-blur-sm flex flex-col items-center"
+              className="border border-orange-100 rounded-xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col items-center"
             >
               {/* Percentage + icon on same row */}
               <div className="flex items-center justify-center gap-2 mb-2">
@@ -47,13 +41,13 @@ export function ResearchStatsSection() {
               </div>
 
               {/* Label */}
-              <p className="text-sm font-medium text-gray-300 leading-snug">
+              <p className="text-sm font-medium text-foreground leading-snug">
                 {stat.label}
               </p>
 
               {/* Timeframe (only if non-empty) */}
               {stat.timeframe && (
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-xs text-muted-foreground mt-1">
                   {stat.timeframe}
                 </p>
               )}
@@ -61,7 +55,7 @@ export function ResearchStatsSection() {
           ))}
         </div>
 
-        <p className="text-center mt-10 text-sm text-gray-500">
+        <p className="text-center mt-10 text-sm text-muted-foreground">
           Source: peer-reviewed journals including NIMHANS, Yale, AIIMS
         </p>
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const steps = [
@@ -34,7 +35,7 @@ export function ProgramOverviewSection() {
           What is the Art of Living Part 1?
         </h2>
 
-        <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-12">
+        <div className="space-y-4 text-muted-foreground text-base sm:text-lg leading-relaxed mb-10">
           <p>
             Art of Living Part 1 is a transformative
             3-day course, offered 3 hours per day, by the Art of Living
@@ -47,6 +48,18 @@ export function ProgramOverviewSection() {
             you a complete toolkit for managing stress, improving sleep, and
             building inner resilience.
           </p>
+        </div>
+
+        {/* Atmospheric photo */}
+        <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 mb-12 shadow-lg">
+          <Image
+            src="/images/intro/breathing-session.jpg"
+            alt="Participants in a breathing session"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
 
         {/* 3-step flow — elevated cards with decorative numbers */}

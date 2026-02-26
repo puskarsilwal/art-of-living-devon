@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Waves, Heart, Sun, BookOpen } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -43,6 +44,30 @@ export function CourseContentSection() {
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
             3 sessions &times; 3 hours. A complete transformation toolkit.
           </p>
+        </div>
+
+        {/* Photo strip — two atmospheric images side by side */}
+        <div className="grid grid-cols-2 gap-3 mb-10 rounded-2xl overflow-hidden h-52 sm:h-72">
+          <div className="relative overflow-hidden">
+            <Image
+              src="/images/intro/teacher-guiding.jpg"
+              alt="Teacher guiding a breathing session"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+          <div className="relative overflow-hidden">
+            <Image
+              src="/images/intro/meditation-group.jpg"
+              alt="Group meditation session"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 50vw, 40vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
         </div>
 
         {/* Learning modules grid */}
