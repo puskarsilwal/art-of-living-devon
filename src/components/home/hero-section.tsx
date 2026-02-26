@@ -56,7 +56,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <Link href="/happiness-program">
+            <Link href="/art-of-living-part-1">
               <Button
                 size="lg"
                 variant="ghost"

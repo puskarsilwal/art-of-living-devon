@@ -10,7 +10,7 @@ export function SiteFooter() {
           <Link href="/intro" className="underline-offset-4 hover:text-foreground hover:underline">
             Intro Talk
           </Link>
-          <Link href="/happiness-program" className="underline-offset-4 hover:text-foreground hover:underline">
+          <Link href="/art-of-living-part-1" className="underline-offset-4 hover:text-foreground hover:underline">
             Part 1 Course
           </Link>
           <Link href="/events" className="underline-offset-4 hover:text-foreground hover:underline">

@@ -19,7 +19,7 @@ export function SiteHeader() {
           <Link href="/intro" className="text-muted-foreground hover:text-foreground transition-colors">
             Intro Talk
           </Link>
-          <Link href="/happiness-program" className="text-muted-foreground hover:text-foreground transition-colors">
+          <Link href="/art-of-living-part-1" className="text-muted-foreground hover:text-foreground transition-colors">
             Part 1 Course
           </Link>
           <Link href="/events" className="text-muted-foreground hover:text-foreground transition-colors">

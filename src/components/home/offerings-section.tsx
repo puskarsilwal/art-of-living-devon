@@ -19,7 +19,7 @@ const offerings = [
     subtitle: "3 days. Life-changing.",
     description:
       "A science-backed journey into Sudarshan Kriya, pranayama, and yoga. Designed to clear stress at its root, not just manage it.",
-    href: "/happiness-program",
+    href: "/art-of-living-part-1",
     cta: "Explore the Course",
     image: "/images/intro/sudarshan-kriya.webp",
     accent: "from-black/80 to-black/40",
