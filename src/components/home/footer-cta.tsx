@@ -15,8 +15,9 @@ export function FooterCta() {
           className="object-cover object-center"
         />
       </div>
-      {/* Primary colour overlay — brand colour without losing the photo entirely */}
-      <div className="absolute inset-0 z-10 bg-primary/85" />
+      {/* Dark base + warm brand tint — lets the photo show through */}
+      <div className="absolute inset-0 z-10 bg-black/50" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-br from-orange-900/50 via-primary/30 to-amber-800/40" />
 
       <div className="relative z-20 max-w-3xl mx-auto px-6 sm:px-10 text-center">
         <p className="text-white/70 font-semibold text-sm uppercase tracking-widest mb-5">
