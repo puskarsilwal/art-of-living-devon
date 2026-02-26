@@ -18,7 +18,7 @@ export function NumbersSection() {
             src="/images/course/sudarshan-kriya.webp"
             alt="Art of Living community"
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-40"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/60 lg:bg-gradient-to-r lg:from-transparent lg:to-gray-950" />
@@ -27,7 +27,7 @@ export function NumbersSection() {
         {/* Right: heading + stats */}
         <div className="px-6 py-12 sm:px-10 sm:py-16 flex flex-col justify-center">
           <div className="inline-block w-12 h-1 rounded-full bg-primary mb-5" />
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
             Art of Living in Numbers
           </h2>
           <p className="text-gray-400 text-base mb-10">
@@ -36,8 +36,8 @@ export function NumbersSection() {
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="border-l-2 border-primary pl-4">
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-1 tabular-nums">
+              <div key={stat.label} className="border-l-4 border-primary pl-4">
+                <div className="text-4xl sm:text-5xl font-black text-white mb-1 tabular-nums">
                   {stat.number}
                 </div>
                 <div className="text-sm text-gray-400">{stat.label}</div>
