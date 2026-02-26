@@ -17,7 +17,7 @@ export function FooterCta() {
       {/* Background image layer */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/course/sudarshan-kriya.webp"
+          src="/images/course/footer-graduates.jpg"
           alt=""
           fill
           className="object-cover opacity-15 mix-blend-overlay"

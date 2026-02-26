@@ -1,13 +1,4 @@
-import { Card } from "@/components/ui/card"
 import { type EventTestimonial } from "@/lib/data/events"
-
-const credibilityLogos = [
-  { name: "CNN", className: "font-black text-2xl" },
-  { name: "Vogue", className: "font-light text-2xl tracking-widest uppercase" },
-  { name: "Harvard Health", className: "text-sm font-semibold" },
-  { name: "Yale", className: "text-lg font-bold italic" },
-  { name: "The Guardian", className: "font-bold text-lg" },
-]
 
 export function EventSocialProof({
   testimonials,
@@ -16,49 +7,82 @@ export function EventSocialProof({
 }) {
   const visibleTestimonials = testimonials?.slice(0, 3) ?? []
 
+  if (visibleTestimonials.length === 0) return null
+
   return (
-    <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        {/* Credibility logos */}
-        <p className="text-sm text-gray-500 text-center uppercase tracking-widest mb-8">
-          As featured in
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 mb-16">
-          {credibilityLogos.map((logo) => (
-            <span
-              key={logo.name}
-              className={`text-gray-400 hover:text-gray-600 transition-colors select-none ${logo.className}`}
-            >
-              {logo.name}
-            </span>
-          ))}
+    <section
+      className="py-20 sm:py-28 px-4 sm:px-6"
+      style={{ background: "#FEF0F5" }}
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <p
+            className="text-xs font-semibold uppercase mb-3"
+            style={{ color: "#C8386A", letterSpacing: "0.28em" }}
+          >
+            Community Voices
+          </p>
+          <h2
+            className="font-light text-gray-900"
+            style={{
+              fontFamily: 'var(--font-display, "Cormorant Garamond", Georgia, serif)',
+              fontSize: "clamp(2rem, 4vw, 2.8rem)",
+            }}
+          >
+            What Devon Participants Say
+          </h2>
         </div>
 
-        {/* Local testimonials */}
-        {visibleTestimonials.length > 0 && (
-          <>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-10">
-              What Devon Participants Say
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleTestimonials.map((testimonial) => (
-                <Card key={testimonial.name} className="p-6">
-                  {testimonial.highlight && (
-                    <p className="text-primary font-semibold italic text-base mb-3">
-                      &ldquo;{testimonial.highlight}&rdquo;
-                    </p>
-                  )}
-                  <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <p className="text-xs text-gray-500 font-medium uppercase tracking-wide">
-                    {testimonial.name}
-                  </p>
-                </Card>
-              ))}
+        {/* Testimonial cards */}
+        <div className="grid sm:grid-cols-3 gap-5">
+          {visibleTestimonials.map((t) => (
+            <div
+              key={t.name}
+              className="bg-white rounded-2xl p-7"
+              style={{
+                border: "1px solid rgba(200,56,106,0.12)",
+                boxShadow: "0 4px 24px rgba(200,56,106,0.06)",
+              }}
+            >
+              {/* Opening quote mark */}
+              <div
+                className="text-4xl font-serif leading-none mb-3 select-none"
+                style={{ color: "#C8386A", fontFamily: "Georgia, serif", opacity: 0.4 }}
+              >
+                &ldquo;
+              </div>
+
+              {t.highlight && (
+                <p
+                  className="font-normal italic mb-3"
+                  style={{
+                    color: "#C8386A",
+                    fontFamily: 'var(--font-display, "Cormorant Garamond", Georgia, serif)',
+                    fontSize: "1.15rem",
+                  }}
+                >
+                  {t.highlight}
+                </p>
+              )}
+
+              <p className="text-gray-600 text-sm leading-relaxed mb-5">{t.quote}</p>
+
+              <div className="flex items-center gap-2">
+                <div
+                  className="h-px flex-1"
+                  style={{ background: "rgba(200,56,106,0.15)" }}
+                />
+                <p
+                  className="text-[11px] font-medium uppercase"
+                  style={{ color: "rgba(0,0,0,0.35)", letterSpacing: "0.18em" }}
+                >
+                  {t.name}
+                </p>
+              </div>
             </div>
-          </>
-        )}
+          ))}
+        </div>
       </div>
     </section>
   )

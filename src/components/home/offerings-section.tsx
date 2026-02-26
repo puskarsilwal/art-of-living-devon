@@ -11,7 +11,7 @@ const offerings = [
       "Breathe differently. Leave lighter. Experience SKY Breath Meditation live and discover what 500 million people already know.",
     href: "/intro",
     cta: "Register Free",
-    image: "/images/intro/meditation-group.jpg",
+    image: "/images/intro/session-community.jpg",
     accent: "from-primary/80 to-primary/40",
   },
   {
@@ -31,7 +31,7 @@ const offerings = [
       "Meditate with your local Devon and Southwest community. Weekly sessions, special events, and the warmth of people on the same path.",
     href: "/events",
     cta: "See Events",
-    image: "/images/intro/teacher-guiding.jpg",
+    image: "/images/home/about-community.jpg",
     accent: "from-black/80 to-black/40",
   },
 ]

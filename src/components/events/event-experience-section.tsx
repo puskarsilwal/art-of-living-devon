@@ -16,50 +16,90 @@ export function EventExperienceSection({ event }: EventExperienceSectionProps) {
 
   const bodyText =
     event.longDescription ??
-    `${event.description} Come with an open heart and leave with a stillness that lingers. Whether you have meditated before or never closed your eyes in silence, the collective energy of the room holds you.`
+    `${event.description} Come with an open heart and leave with a stillness that lingers. Whether you have meditated before or never closed your eyes in silence, the collective energy of the room holds you. Satsang has been practised for thousands of years — a gathering in truth, where the ordinary falls away and something deeper is touched.`
 
   return (
-    <section className="bg-white py-16 sm:py-24 px-4 sm:px-6">
+    <section
+      className="py-20 sm:py-28 px-4 sm:px-6 overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #C8386A 0%, #8B2252 40%, #C84060 80%, #A02050 100%)",
+      }}
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: text content */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: text */}
           <div>
-            <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-3">
-              The Experience
+            <p
+              className="text-xs font-semibold uppercase mb-5"
+              style={{ color: "rgba(255,255,255,0.5)", letterSpacing: "0.28em" }}
+            >
+              What is Satsang
             </p>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h2
+              className="text-white font-light leading-tight mb-7"
+              style={{
+                fontFamily: 'var(--font-display, "Cormorant Garamond", Georgia, serif)',
+                fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
+              }}
+            >
               What Does {event.title} Feel Like?
             </h2>
 
-            <blockquote className="border-l-4 border-primary pl-6 mb-6">
-              <p className="text-gray-700 text-lg italic leading-relaxed">
+            {/* Pull quote */}
+            <blockquote className="mb-7 pl-5 border-l-2 border-white/30">
+              <p
+                className="italic font-light text-white/90"
+                style={{
+                  fontFamily: 'var(--font-display, "Cormorant Garamond", Georgia, serif)',
+                  fontSize: "clamp(1.15rem, 2vw, 1.45rem)",
+                }}
+              >
                 &ldquo;{pullQuote}&rdquo;
               </p>
             </blockquote>
 
-            <p className="text-gray-600 leading-relaxed mb-8">{bodyText}</p>
+            <p className="text-white/70 leading-relaxed mb-9 text-[0.95rem]">
+              {bodyText}
+            </p>
 
             <a
               href={event.registrationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md border border-primary text-primary font-semibold px-8 py-3 text-base hover:bg-primary/5 transition-colors"
             >
-              Join Us &mdash; {event.date}
+              <button
+                className="font-semibold px-9 py-3.5 rounded-full text-white text-sm transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  background: "rgba(255,255,255,0.14)",
+                  border: "1px solid rgba(255,255,255,0.3)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                Join Us &mdash; {event.date}
+              </button>
             </a>
           </div>
 
           {/* Right: image */}
-          <div className="relative h-64 sm:h-80 lg:h-full min-h-[300px] rounded-2xl overflow-hidden">
+          <div
+            className="relative rounded-2xl overflow-hidden shadow-2xl"
+            style={{ height: "clamp(320px, 45vw, 520px)" }}
+          >
             <Image
               src={event.heroImage}
               alt={`${event.title} atmosphere`}
               fill
               className="object-cover"
             />
-            {/* Subtle bottom gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/30 to-transparent" />
+            {/* Subtle vignette */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom right, transparent 50%, rgba(139,34,82,0.4) 100%)",
+              }}
+            />
           </div>
         </div>
       </div>

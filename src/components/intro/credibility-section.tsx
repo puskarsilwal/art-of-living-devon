@@ -11,7 +11,7 @@ export function CredibilitySection() {
           {/* Left column: lifestyle image with bold overlay headline */}
           <div className="relative min-h-[280px] lg:min-h-full overflow-hidden">
             <Image
-              src="/images/intro/meditation-group.jpg"
+              src="/images/course/group-breathwork.jpg"
               alt="Group meditating in an Art of Living session"
               fill
               className="object-cover opacity-60"

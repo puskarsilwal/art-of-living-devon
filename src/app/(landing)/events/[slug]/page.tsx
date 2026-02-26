@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation"
 import { getAllEvents, getEventBySlug } from "@/lib/data/events"
 import type { Metadata } from "next"
+import { Cormorant_Garamond } from "next/font/google"
 
-// Import all 8 section components
 import { EventHeroSection } from "@/components/events/event-hero-section"
 import { EventDetailsBar } from "@/components/events/event-details-bar"
 import { EventExperienceSection } from "@/components/events/event-experience-section"
@@ -11,6 +11,14 @@ import { EventVideoSection } from "@/components/events/event-video-section"
 import { EventSocialProof } from "@/components/events/event-social-proof"
 import { EventEmailOptin } from "@/components/events/event-email-optin"
 import { EventFooterCta } from "@/components/events/event-footer-cta"
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+})
 
 export async function generateStaticParams() {
   return getAllEvents().map((event) => ({ slug: event.slug }))
@@ -37,24 +45,20 @@ export default async function EventPage(
   if (!event) notFound()
 
   return (
-    <main>
-      {/* Conversion funnel order (per RESEARCH.md section order recommendation):
-          1. Hero — event name, date, primary CTA
-          2. Details bar — where/when/duration/price at a glance
-          3. Experience — "what it feels like" narrative + pull quote
-          4. Explainer — what is Satsang/Kirtan? removes uncertainty
-          5. Video — past event footage (conditional: only if videoUrl set)
-          6. Social proof — credibility logos + local testimonials
-          7. Email opt-in — lead capture (Brevo wired Phase 9)
-          8. Footer CTA — final register push
-      */}
+    <main className={cormorant.variable}>
+      {/* 1. Hero — photo, title, CTA, media logos */}
       <EventHeroSection event={event} />
-      <EventDetailsBar event={event} />
-      <EventExperienceSection event={event} />
+      {/* 2. "What You'll Experience" — 3 circular feature tiles */}
       <EventExplainerSection event={event} />
+      {/* 3. "Reserve Your Spot Now!" — dark navy detail strip */}
+      <EventDetailsBar event={event} />
+      {/* 4. "What is Satsang" — coral gradient, narrative + image */}
+      <EventExperienceSection event={event} />
+      {/* 5. Video (conditional) */}
       {event.videoUrl && <EventVideoSection videoUrl={event.videoUrl} />}
-      <EventSocialProof testimonials={event.testimonials} />
+      {/* 6. Email opt-in */}
       <EventEmailOptin event={event} />
+      {/* 8. Final CTA */}
       <EventFooterCta event={event} />
     </main>
   )

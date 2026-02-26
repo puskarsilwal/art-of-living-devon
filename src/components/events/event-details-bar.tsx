@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Calendar, Clock, MapPin, Ticket } from "lucide-react"
 import type { EventConfig } from "@/lib/data/events"
 
@@ -6,59 +7,81 @@ interface EventDetailsBarProps {
 }
 
 export function EventDetailsBar({ event }: EventDetailsBarProps) {
+  const isFree = event.price?.toLowerCase().startsWith("free") ?? false
+
+  const details = [
+    { icon: MapPin, label: "Where", value: event.location },
+    { icon: Calendar, label: "Date", value: event.date },
+    { icon: Clock, label: "Duration", value: event.duration },
+    { icon: Ticket, label: "Price", value: event.price ?? "Free" },
+  ]
+
   return (
-    <section className="bg-zinc-950 text-white py-8 px-4 sm:px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
-        {/* Date */}
-        <div className="flex flex-col items-center text-center gap-2">
-          <Calendar className="h-6 w-6 text-primary" />
-          <span className="text-xs text-white/50 uppercase tracking-widest">
-            Date
-          </span>
-          <span className="text-sm font-medium">{event.date}</span>
-        </div>
+    <section className="relative py-16 sm:py-20 px-4 sm:px-6 overflow-hidden">
+      {/* Background photo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={event.heroImage}
+          alt=""
+          fill
+          className="object-cover object-center"
+        />
+      </div>
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-10"
+        style={{ background: "rgba(10,9,30,0.82)" }}
+      />
 
-        {/* Time */}
-        <div className="flex flex-col items-center text-center gap-2">
-          <Clock className="h-6 w-6 text-primary" />
-          <span className="text-xs text-white/50 uppercase tracking-widest">
-            Time
-          </span>
-          <span className="text-sm font-medium">
-            {event.time} {event.timezone} &middot; {event.duration}
-          </span>
-        </div>
+      <div className="relative z-20 max-w-4xl mx-auto text-center">
+        <h2
+          className="text-white font-light mb-12"
+          style={{
+            fontFamily: 'var(--font-display, "Cormorant Garamond", Georgia, serif)',
+            fontSize: "clamp(2rem, 4vw, 2.8rem)",
+          }}
+        >
+          Reserve Your Spot Now
+        </h2>
 
-        {/* Location */}
-        <div className="flex flex-col items-center text-center gap-2">
-          <MapPin className="h-6 w-6 text-primary" />
-          <span className="text-xs text-white/50 uppercase tracking-widest">
-            Location
-          </span>
-          {event.locationMapUrl ? (
-            <a
-              href={event.locationMapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium hover:text-primary transition-colors"
+        {/* Detail pills */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-11">
+          {details.map(({ icon: Icon, label, value }) => (
+            <div
+              key={label}
+              className="rounded-2xl px-4 py-5 flex flex-col items-center gap-1.5"
+              style={{
+                background: "rgba(255,255,255,0.07)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
-              {event.location}
-            </a>
-          ) : (
-            <span className="text-sm font-medium">{event.location}</span>
-          )}
+              <span
+                className="text-[10px] uppercase font-medium"
+                style={{ color: "rgba(255,255,255,0.35)", letterSpacing: "0.22em" }}
+              >
+                {label}
+              </span>
+              <Icon className="h-4 w-4 my-0.5" style={{ color: "#C8386A" }} />
+              <span className="text-white text-sm font-medium leading-snug text-center">
+                {value}
+              </span>
+            </div>
+          ))}
         </div>
 
-        {/* Price */}
-        <div className="flex flex-col items-center text-center gap-2">
-          <Ticket className="h-6 w-6 text-primary" />
-          <span className="text-xs text-white/50 uppercase tracking-widest">
-            Price
-          </span>
-          <span className="text-sm font-medium">
-            {event.price ?? "Contact us"}
-          </span>
-        </div>
+        {/* CTA */}
+        <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+          <button
+            className="font-semibold px-12 py-4 rounded-full text-white text-base transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            style={{
+              background: "#C8386A",
+              boxShadow: "0 8px 40px rgba(200,56,106,0.5)",
+            }}
+          >
+            {isFree ? "Register Now — It's Free" : "Register Now"}
+          </button>
+        </a>
       </div>
     </section>
   )

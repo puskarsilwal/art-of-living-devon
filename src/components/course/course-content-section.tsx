@@ -50,7 +50,7 @@ export function CourseContentSection() {
         <div className="grid grid-cols-2 gap-3 mb-10 rounded-2xl overflow-hidden h-52 sm:h-72">
           <div className="relative overflow-hidden">
             <Image
-              src="/images/intro/teacher-guiding.jpg"
+              src="/images/course/teacher-class.jpg"
               alt="Teacher guiding a breathing session"
               fill
               className="object-cover"
@@ -60,7 +60,7 @@ export function CourseContentSection() {
           </div>
           <div className="relative overflow-hidden">
             <Image
-              src="/images/intro/meditation-group.jpg"
+              src="/images/course/group-breathwork.jpg"
               alt="Group meditation session"
               fill
               className="object-cover"

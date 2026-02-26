@@ -8,7 +8,7 @@ export function FooterCTA() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/intro/meditation-group.jpg"
+          src="/images/intro/session-community.jpg"
           alt=""
           fill
           className="object-cover"

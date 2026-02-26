@@ -7,7 +7,7 @@ export function AboutSection() {
       {/* Background image — creates depth and warmth */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/intro/about-art-of-living.webp"
+          src="/images/home/about-community.jpg"
           alt=""
           fill
           className="object-cover object-center"

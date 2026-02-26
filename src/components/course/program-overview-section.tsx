@@ -53,7 +53,7 @@ export function ProgramOverviewSection() {
         {/* Atmospheric photo */}
         <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 mb-12 shadow-lg">
           <Image
-            src="/images/intro/breathing-session.jpg"
+            src="/images/intro/hero-breathwork.jpg"
             alt="Participants in a breathing session"
             fill
             className="object-cover"

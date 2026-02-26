@@ -47,7 +47,7 @@ export function AboutSection() {
           {/* Right: lifestyle image */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl order-first lg:order-last">
             <Image
-              src="/images/intro/teacher-guiding.jpg"
+              src="/images/course/teacher-class.jpg"
               alt="Art of Living certified teacher guiding a breathing session"
               fill
               className="object-cover"

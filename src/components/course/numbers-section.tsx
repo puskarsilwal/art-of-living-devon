@@ -15,7 +15,7 @@ export function NumbersSection() {
         {/* Left: image — full strength, no dark overlay */}
         <div className="relative min-h-[300px] lg:min-h-full overflow-hidden">
           <Image
-            src="/images/course/sudarshan-kriya.webp"
+            src="/images/course/numbers-hands.jpg"
             alt="Art of Living community doing Sudarshan Kriya"
             fill
             className="object-cover"

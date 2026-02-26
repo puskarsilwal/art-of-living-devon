@@ -3,26 +3,26 @@ import { Button } from "@/components/ui/button"
 
 const benefits = [
   {
-    image: "/images/intro/breathing-session.jpg",
-    alt: "People learning SKY Breath Meditation in a group session",
+    image: "/images/intro/benefit-calm.jpg",
+    alt: "Person experiencing calm and relief after breathwork",
     caption: "SKY Breath Meditation",
     description: "Independently researched at leading universities. Feel a tangible shift in a single session.",
   },
   {
-    image: "/images/intro/meditation-group.jpg",
-    alt: "Group in a guided meditation during an Art of Living session",
+    image: "/images/intro/benefit-focus.jpg",
+    alt: "Woman in deep focused meditation",
     caption: "Guided Meditation",
     description: "Sink into deep rest and inner stillness. Often described as a bubble bath for the mind.",
   },
   {
-    image: "/images/intro/teacher-guiding.jpg",
-    alt: "Participant in deep rest during a guided Art of Living session",
+    image: "/images/intro/benefit-sleep.jpg",
+    alt: "Person experiencing deep restful sleep",
     caption: "Deep Rest & Better Sleep",
     description: "Settles the mind and restores natural energy without years of practice.",
   },
   {
-    image: "/images/intro/breathing-session.jpg",
-    alt: "Certified Art of Living teacher guiding participants",
+    image: "/images/intro/benefit-energy.jpg",
+    alt: "Person feeling energised and alive after practice",
     caption: "Expert Guidance",
     description: "Live certified teachers and a warm Devon & Southwest community behind you every step.",
   },

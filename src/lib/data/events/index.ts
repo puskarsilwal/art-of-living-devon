@@ -47,7 +47,7 @@ export const events: EventConfig[] = [
     // TODO: PLACEHOLDER — replace with real event URL before go-live
     registrationUrl: "https://www.artofliving.org/gb-en/events",
     // stock placeholder — see Task 2 in plan 02 for image sourcing
-    heroImage: "/images/events/satsang-hero.jpg",
+    heroImage: "/images/events/kirtan-evening.jpg",
     testimonials: [
       {
         name: "Sarah, Exeter",
