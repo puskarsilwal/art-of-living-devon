@@ -49,7 +49,7 @@ export function AboutSection() {
           </div>
           <div className="space-y-5 text-white/65 text-base leading-relaxed">
             <p>
-              Founded in 1981 by Sri Sri Ravi Shankar — known to millions as Gurudev — Art of
+              Founded in 1981 by Sri Sri Ravi Shankar (known to millions as Gurudev), Art of
               Living is a global non-profit with one mission: a stress-free, violence-free world.
             </p>
             <p>
@@ -60,7 +60,7 @@ export function AboutSection() {
             <p className="text-white/90 italic border-l-2 border-primary pl-4">
               &ldquo;When the breath is still, the mind is still.&rdquo;
               <span className="not-italic text-white/50 text-sm block mt-1">
-                — Sri Sri Ravi Shankar
+                Sri Sri Ravi Shankar
               </span>
             </p>
           </div>

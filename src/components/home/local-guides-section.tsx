@@ -42,12 +42,12 @@ export function LocalGuidesSection() {
               walked this path.
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-5">
-              Our teachers aren't instructors — they're practitioners who have lived these
+              Our teachers aren't just instructors. They're practitioners who have lived these
               practices for years. Every session in Devon and Southwest England is led by someone
               rigorously certified by the Art of Living Foundation.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Warm, unhurried, and deeply personal. Come as you are — no prior meditation
+              Warm, unhurried, and deeply personal. Come as you are. No prior meditation
               experience needed.
             </p>
             <Link href="/intro">
