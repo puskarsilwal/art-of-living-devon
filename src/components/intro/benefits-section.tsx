@@ -3,16 +3,16 @@ import { Button } from "@/components/ui/button"
 
 const benefits = [
   {
-    image: "/images/intro/benefit-calm.jpg",
-    alt: "Person experiencing calm and relief after breathwork",
-    caption: "Introduction to SKY Breathing Technique",
-    description: "Your first taste of the signature SKY technique. Even this intro session produces a tangible shift — researched at leading universities.",
+    image: "/images/intro/bhastrika.webp",
+    alt: "Group practising Bhastrika breathwork together",
+    caption: "Calming Breathwork",
+    description: "A breathing exercise you can feel working immediately. No experience needed.",
   },
   {
     image: "/images/intro/benefit-focus.jpg",
     alt: "Woman in deep focused meditation",
     caption: "Guided Meditation",
-    description: "A gentle teacher-led inward journey — different from SKY Breath. Quiets mental chatter and leaves you feeling like you've had a full night's rest.",
+    description: "Sink into stillness with a gentle teacher-led practice. Like a reset for the mind.",
   },
   {
     image: "/images/intro/benefit-sleep.jpg",
@@ -21,7 +21,7 @@ const benefits = [
     description: "Settles the mind and restores natural energy without years of practice.",
   },
   {
-    image: "/images/intro/benefit-energy.jpg",
+    image: "/images/intro/expert-guidance-circle.jpg",
     alt: "Person feeling energised and alive after practice",
     caption: "Expert Guidance",
     description: "Live certified teachers and a warm Devon & Southwest community behind you every step.",
@@ -54,7 +54,7 @@ export function BenefitsSection() {
                   sizes="(max-width: 640px) 160px, (max-width: 768px) 144px, 176px"
                 />
               </div>
-              <h3 className="font-semibold text-base sm:text-lg mb-2">
+              <h3 className="font-medium text-base sm:text-base mb-2">
                 {benefit.caption}
               </h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-xs">
