@@ -51,7 +51,7 @@ export function RegistrationForm() {
             ))}
           </div>
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">500M+</span> people practise worldwide
+            <span className="font-semibold text-foreground">800M+</span> people practise worldwide
           </p>
         </div>
 
@@ -129,16 +129,7 @@ export function RegistrationForm() {
               <div className="flex items-start gap-3">
                 <Checkbox id="consent" name="consent" required className="mt-1" />
                 <Label htmlFor="consent" className="text-sm leading-relaxed font-normal">
-                  I agree to receive event details and reminders by email. See
-                  our{" "}
-                  <Link
-                    href="/privacy-policy"
-                    target="_blank"
-                    className="underline text-primary"
-                  >
-                    Privacy Policy
-                  </Link>
-                  .
+                  I agree to receive event details and reminders by email. See our <Link href="/privacy-policy" target="_blank" className="underline text-primary">Privacy Policy</Link>.
                 </Label>
               </div>
               {state.errors?.consent && (
