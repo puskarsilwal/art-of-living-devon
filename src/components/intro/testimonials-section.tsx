@@ -8,15 +8,14 @@ export function TestimonialsSection() {
   return (
     <section className="px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className="max-w-4xl mx-auto">
-        {/* Section header with decorative accent */}
+        {/* Section header */}
         <div className="text-center mb-10">
-          <div className="inline-block w-12 h-1 rounded-full bg-primary mb-4" />
-          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl mb-2">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
+            Real Experiences
+          </p>
+          <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
             What People Are Saying
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg">
-            Real experiences from people just like you
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8">
