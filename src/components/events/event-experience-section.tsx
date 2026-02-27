@@ -87,7 +87,7 @@ export function EventExperienceSection({ event }: EventExperienceSectionProps) {
             style={{ height: "clamp(320px, 45vw, 520px)" }}
           >
             <Image
-              src={event.heroImage}
+              src={event.experienceImage ?? event.heroImage}
               alt={`${event.title} atmosphere`}
               fill
               className="object-cover"

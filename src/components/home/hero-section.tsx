@@ -69,7 +69,7 @@ export function HeroSection() {
 
           {/* Social proof micro-stat */}
           <p className="mt-8 text-sm text-white/50">
-            Taught in 180+ countries · 500M+ lives touched · Completely free to start
+            Taught in 180+ countries · 800M+ lives touched · Completely free to start
           </p>
         </div>
       </div>

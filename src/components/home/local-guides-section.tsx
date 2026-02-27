@@ -14,7 +14,7 @@ export function LocalGuidesSection() {
             <div className="absolute -top-4 -left-4 w-full h-full rounded-3xl bg-primary/10 -z-10" />
             <div className="relative h-80 sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/course/teacher-class.jpg"
+                src="/images/intro/teacher-guiding-session.jpg"
                 alt="Art of Living teacher guiding a meditation session"
                 fill
                 className="object-cover object-top"

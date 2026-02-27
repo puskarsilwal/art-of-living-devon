@@ -6,7 +6,7 @@ export type CredibilityStat = {
 }
 
 export const credibilityStats: CredibilityStat[] = [
-  { icon: "Users", number: "500M+", label: "Lives touched worldwide" },
+  { icon: "Users", number: "800M+", label: "Lives touched worldwide" },
   { icon: "Globe", number: "180+", label: "Countries" },
   { icon: "BookOpen", number: "100+", label: "Peer-reviewed studies" },
   {

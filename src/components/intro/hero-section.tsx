@@ -39,7 +39,7 @@ export function HeroSection() {
         <ul className="text-white/85 text-sm sm:text-base max-w-lg mx-auto mb-5 space-y-2.5 text-left list-none">
           <li className="flex items-center gap-2">
             <span className="text-primary shrink-0">✓</span>
-            <span><strong className="text-white">Discover SKY Breath Meditation</strong>, practised by 500M+ across 180 countries</span>
+            <span><strong className="text-white">Discover SKY Breath Meditation</strong>, practised by 800M+ across 180 countries</span>
           </li>
           <li className="flex items-center gap-2">
             <span className="text-primary shrink-0">✓</span>

@@ -21,6 +21,7 @@ export type EventConfig = {
   price: string | null // "£8" | "Free" | null means "contact us"
   registrationUrl: string // External link — NOT a Next.js route
   heroImage: string
+  experienceImage?: string // Optional second image for the "What does it feel like" section
   videoUrl?: string // youtube-nocookie.com embed URL (no autoplay)
   testimonials?: EventTestimonial[]
   brevoListId?: number // Reserved for Phase 9 — leave undefined in Phase 7
@@ -48,6 +49,7 @@ export const events: EventConfig[] = [
     registrationUrl: "https://www.artofliving.org/gb-en/events",
     // stock placeholder — see Task 2 in plan 02 for image sourcing
     heroImage: "/images/events/kirtan-evening.jpg",
+    experienceImage: "/images/events/satsang-experience.jpg",
     testimonials: [
       {
         name: "Sarah, Exeter",

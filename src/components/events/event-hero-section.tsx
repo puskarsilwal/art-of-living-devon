@@ -4,7 +4,7 @@ import type { EventConfig } from "@/lib/data/events"
 
 const mediaLogos = [
   { name: "CNN", src: "/images/course/cnn.svg", width: 56, height: 28 },
-  { name: "Harvard Health", src: "/images/course/harvard.webp", width: 88, height: 22 },
+  { name: "Harvard Health", src: "/images/course/harvard.webp", width: 120, height: 93 },
   { name: "Washington Post", src: "/images/course/washington-post.webp", width: 150, height: 26 },
   { name: "Yoga Journal", src: "/images/course/yoga-journal.webp", width: 110, height: 30 },
 ]
@@ -39,13 +39,13 @@ export function EventHeroSection({ event }: EventHeroSectionProps) {
         className="absolute inset-0 z-10"
         style={{
           background:
-            "linear-gradient(115deg, rgba(10,9,30,0.78) 0%, rgba(10,9,30,0.55) 40%, rgba(10,9,30,0.20) 70%, rgba(10,9,30,0.05) 100%)",
+            "linear-gradient(115deg, rgba(10,9,30,0.92) 0%, rgba(10,9,30,0.75) 40%, rgba(10,9,30,0.45) 70%, rgba(10,9,30,0.20) 100%)",
         }}
       />
       <div
         className="absolute inset-0 z-10"
         style={{
-          background: "linear-gradient(to top, rgba(10,9,30,0.60) 0%, transparent 45%)",
+          background: "linear-gradient(to top, rgba(10,9,30,0.80) 0%, transparent 50%)",
         }}
       />
 
@@ -92,17 +92,17 @@ export function EventHeroSection({ event }: EventHeroSectionProps) {
           <div className="flex flex-wrap gap-6 mb-11">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" style={{ color: "#C8386A" }} />
-              <span className="text-white/70 text-sm">{event.date}</span>
+              <span className="text-white/90 text-sm">{event.date}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-4 w-4" style={{ color: "#C8386A" }} />
-              <span className="text-white/70 text-sm">
+              <span className="text-white/90 text-sm">
                 {event.time} {event.timezone} · {event.duration}
               </span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" style={{ color: "#C8386A" }} />
-              <span className="text-white/70 text-sm">{event.location}</span>
+              <span className="text-white/90 text-sm">{event.location}</span>
             </div>
           </div>
 
@@ -125,15 +125,15 @@ export function EventHeroSection({ event }: EventHeroSectionProps) {
       <div
         className="relative z-20 py-5 px-6 border-t"
         style={{
-          background: "rgba(10,9,30,0.65)",
+          background: "rgba(255,255,255,0.95)",
           backdropFilter: "blur(16px)",
-          borderColor: "rgba(255,255,255,0.07)",
+          borderColor: "rgba(0,0,0,0.08)",
         }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             <span
-              className="text-white/30 text-[10px] uppercase"
+              className="text-black/40 text-[10px] uppercase"
               style={{ letterSpacing: "0.28em" }}
             >
               As seen in
@@ -145,7 +145,8 @@ export function EventHeroSection({ event }: EventHeroSectionProps) {
                 alt={logo.name}
                 width={logo.width}
                 height={logo.height}
-                className="object-contain brightness-0 invert opacity-45 hover:opacity-75 transition-opacity"
+                className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                style={{ height: "26px", width: "auto" }}
               />
             ))}
           </div>
