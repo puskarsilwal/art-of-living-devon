@@ -16,8 +16,8 @@ export function SessionIntroSection() {
           {/* Left: lifestyle photo */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
             <Image
-              src="/images/intro/session-community.jpg"
-              alt="Group in a guided Art of Living meditation session"
+              src="/images/home/hero-bg.jpg"
+              alt="Peaceful meditation landscape reflecting the calm you'll feel in the session"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
