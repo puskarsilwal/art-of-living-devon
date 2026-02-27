@@ -25,7 +25,7 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 Phase: 7 of 10 (Event Pages) — IN PROGRESS
 Plan: 3 of 5 in current phase (01, 02, 03 done)
 Status: Phase 07 plan 03 complete — EventVideoSection, EventSocialProof, EventEmailOptin, EventFooterCta created
-Last activity: 2026-02-26 - Completed quick task 1: enhance overall visual quality of course landing page - make it 10000x better visually
+Last activity: 2026-02-27 - Completed quick task 2: replace session photo with hero-bg.jpg and differentiate technique descriptions
 
 Progress: [######░░░░] 65%
 
@@ -173,6 +173,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | enhance overall visual quality of course landing page - make it 10000x better visually | 2026-02-26 | c5ae62f | [1-enhance-overall-visual-quality-of-course](./quick/1-enhance-overall-visual-quality-of-course/) |
+| 2 | replace session-intro photo with hero-bg.jpg and differentiate SKY/Meditation descriptions | 2026-02-27 | 6fccd30 | [2-replace-session-photo-with-hero-bg-jpg-a](./quick/2-replace-session-photo-with-hero-bg-jpg-a/) |
 
 ### Blockers/Concerns
 
