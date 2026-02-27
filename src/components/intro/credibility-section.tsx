@@ -4,26 +4,25 @@ import { Button } from "@/components/ui/button"
 
 export function CredibilitySection() {
   return (
-    <section className="bg-gray-950 text-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative text-white overflow-hidden">
+      {/* Full-section background image */}
+      <Image
+        src="/images/course/group-breathwork.jpg"
+        alt="Group meditating in an Art of Living session"
+        fill
+        className="object-cover opacity-50"
+        sizes="100vw"
+      />
+      {/* Single smooth overlay — dark everywhere, slightly lighter on left where image is focal */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-950/50 via-gray-950/65 to-gray-950/85" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[480px]">
 
-          {/* Left column: lifestyle image with bold overlay headline */}
-          <div className="relative min-h-[280px] lg:min-h-full overflow-hidden">
-            <Image
-              src="/images/course/group-breathwork.jpg"
-              alt="Group meditating in an Art of Living session"
-              fill
-              className="object-cover opacity-60"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            {/* Dark gradient to make text legible */}
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/80 via-gray-950/50 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-gray-950/20 lg:to-gray-950/80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent" />
-
-            {/* Overlay headline */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
-              <p className="text-primary text-sm font-semibold uppercase tracking-widest mb-2">
+          {/* Left column: overlay headline */}
+          <div className="relative min-h-[280px] lg:min-h-full flex flex-col justify-end">
+            <div className="relative p-6 sm:p-8 lg:p-10">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
                 Science-Backed. Globally Practised.
               </p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-white">
@@ -45,7 +44,7 @@ export function CredibilitySection() {
                   >
                     {stat.number}
                   </div>
-                  <div className="text-xs sm:text-sm text-gray-400 leading-snug">
+                  <div className="text-xs sm:text-sm text-white/70 leading-snug">
                     {stat.label}
                   </div>
                 </div>
@@ -57,14 +56,14 @@ export function CredibilitySection() {
 
             {/* Research highlights narrative */}
             <div className="space-y-4">
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-white/80 text-sm sm:text-base leading-relaxed">
                 Leading universities have independently confirmed SKY Breath Meditation&apos;s impact:
               </p>
               <ul className="space-y-2">
                 {researchHighlights.map((research) => (
                   <li key={research.institution} className="flex items-start gap-2">
                     <span className="text-primary shrink-0 mt-0.5">&#9658;</span>
-                    <span className="text-gray-300 text-sm leading-snug">
+                    <span className="text-white/80 text-sm leading-snug">
                       <strong className="text-white">{research.institution}:</strong>{" "}
                       {research.finding}
                     </span>
