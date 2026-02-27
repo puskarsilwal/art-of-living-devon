@@ -5,14 +5,14 @@ const benefits = [
   {
     image: "/images/intro/benefit-calm.jpg",
     alt: "Person experiencing calm and relief after breathwork",
-    caption: "SKY Breath Meditation",
-    description: "Independently researched at leading universities. Feel a tangible shift in a single session.",
+    caption: "Introduction to SKY Breathing Technique",
+    description: "Your first taste of the signature SKY technique. Even this intro session produces a tangible shift — researched at leading universities.",
   },
   {
     image: "/images/intro/benefit-focus.jpg",
     alt: "Woman in deep focused meditation",
     caption: "Guided Meditation",
-    description: "Sink into deep rest and inner stillness. Often described as a bubble bath for the mind.",
+    description: "A gentle teacher-led inward journey — different from SKY Breath. Quiets mental chatter and leaves you feeling like you've had a full night's rest.",
   },
   {
     image: "/images/intro/benefit-sleep.jpg",
