@@ -5,7 +5,6 @@ import { BenefitsSection } from "@/components/intro/benefits-section"
 import { CredibilitySection } from "@/components/intro/credibility-section"
 import { MediaLogosSection } from "@/components/intro/media-logos-section"
 import { TestimonialsSection } from "@/components/intro/testimonials-section"
-import { WhatToExpectSection } from "@/components/intro/what-to-expect-section"
 import { AboutSection } from "@/components/intro/about-section"
 import { RegistrationForm } from "@/components/intro/registration-form"
 import { FooterCTA } from "@/components/intro/footer-cta"
@@ -27,10 +26,9 @@ export default function IntroPage() {
         4. Credibility -quick stats (500M+ lives, Yale/Harvard research)
         5. Media Logos -external press validation
         6. Testimonials -real people confirm it works
-        7. What-to-Expect -reduce uncertainty about the session
-        8. About -organizational credibility and founding story
-        9. Registration -the ask
-        10. Footer CTA -final nudge
+        7. About -organizational credibility and founding story
+        8. Registration -the ask
+        9. Footer CTA -final nudge
       */}
       <HeroSection />
       <SessionIntroSection />
@@ -38,7 +36,6 @@ export default function IntroPage() {
       <CredibilitySection />
       <MediaLogosSection />
       <TestimonialsSection />
-      <WhatToExpectSection />
       <AboutSection />
       <RegistrationForm />
       <FooterCTA />
