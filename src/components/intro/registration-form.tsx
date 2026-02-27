@@ -128,9 +128,9 @@ export function RegistrationForm() {
               {/* GDPR Consent */}
               <div className="flex items-start gap-3">
                 <Checkbox id="consent" name="consent" required className="mt-1" />
-                <Label htmlFor="consent" className="text-sm leading-relaxed font-normal">
+                <label htmlFor="consent" className="text-sm leading-relaxed font-normal cursor-pointer">
                   I agree to receive event details and reminders by email. See our <Link href="/privacy-policy" target="_blank" className="underline text-primary">Privacy Policy</Link>.
-                </Label>
+                </label>
               </div>
               {state.errors?.consent && (
                 <p className="text-sm text-destructive">{state.errors.consent[0]}</p>
