@@ -28,7 +28,7 @@ async function sendBrevoConfirmation(data: {
 
   try {
     // Upsert contact
-    await fetch("https://api.brevo.com/v3/contacts", {
+    const contactRes = await fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers,
       body: JSON.stringify({
@@ -43,6 +43,10 @@ async function sendBrevoConfirmation(data: {
         },
       }),
     })
+    if (!contactRes.ok) {
+      const err = await contactRes.text()
+      console.error("Brevo contact error:", contactRes.status, err)
+    }
 
     // Send transactional confirmation email
     const htmlContent = `
@@ -65,16 +69,22 @@ async function sendBrevoConfirmation(data: {
 </html>
     `.trim()
 
-    await fetch("https://api.brevo.com/v3/smtp/email", {
+    const emailRes = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers,
       body: JSON.stringify({
-        sender: { name: "Art of Living UK", email: "puskarsilwal001@gmail.com" },
+        sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
         to: [{ email: data.email, name: data.name }],
         subject: `You're registered — Free Intro Talk on ${session.date}`,
         htmlContent,
       }),
     })
+    if (!emailRes.ok) {
+      const err = await emailRes.text()
+      console.error("Brevo email error:", emailRes.status, err)
+    } else {
+      console.log("Brevo email sent OK")
+    }
   } catch (err) {
     console.error("Brevo error:", err)
   }
