@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/remind-day-before",
+      "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/remind-hour-before",
+      "schedule": "0 17 * * *"
+    }
+  ]
+}
