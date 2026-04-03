@@ -54,17 +54,18 @@ async function sendBrevoConfirmation(data: {
 <html>
 <body style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <p>Hi ${firstName},</p>
-  <p>You're all set for the free Art of Living intro talk on <strong>${session.date}</strong> at <strong>${session.time} ${session.timezone}</strong>.</p>
+  <p>You're registered for the free Art of Living intro talk on <strong>${session.date}</strong> at <strong>${session.time} ${session.timezone}</strong>.</p>
+  <p>Add it to your calendar so you don't miss it — the Google Meet link is included inside:</p>
   <p style="margin: 24px 0;">
-    <a href="${session.meetUrl}"
+    <a href="${session.calendarLink}"
        style="background-color: #f97316; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">
-      Join via Google Meet
+      Add to Google Calendar
     </a>
   </p>
   <p style="font-size: 14px; color: #666;">
-    Add to Google Calendar: <a href="${session.calendarLink}">${session.calendarLink}</a>
+    Or join directly on the day: <a href="${session.meetUrl}">${session.meetUrl}</a>
   </p>
-  <p>See you there,<br>The Art of Living UK Team</p>
+  <p>See you there,<br>The Art of Living Devon Team</p>
 </body>
 </html>
     `.trim()
