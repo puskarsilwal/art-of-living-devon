@@ -13,28 +13,12 @@ interface Props {
   searchParams: Promise<{ session?: string }>
 }
 
-function buildGoogleCalendarUrl(session: (typeof introTalkSessions)[0]): string {
-  const startDate = new Date(session.dateISO)
-  const endDate = new Date(startDate.getTime() + 60 * 60 * 1000)
-  const fmt = (d: Date) =>
-    d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")
-  const params = new URLSearchParams({
-    action: "TEMPLATE",
-    text: session.title,
-    dates: `${fmt(startDate)}/${fmt(endDate)}`,
-    details: `Join via Zoom: ${session.zoomUrl}\n\nA free 60-minute introduction to the Art of Living and SKY Breath Meditation.`,
-    location: session.zoomUrl,
-  })
-  return `https://calendar.google.com/calendar/render?${params.toString()}`
-}
-
 export default async function ConfirmationPage({ searchParams }: Props) {
   const { session } = await searchParams
   const selectedSession = introTalkSessions.find(s => s.id === session)
 
   if (!selectedSession) notFound()
 
-  const googleCalendarUrl = buildGoogleCalendarUrl(selectedSession)
   const icsDownloadUrl = `/api/calendar/${selectedSession.id}`
 
   return (
@@ -63,11 +47,11 @@ export default async function ConfirmationPage({ searchParams }: Props) {
               <p className="text-muted-foreground">{selectedSession.time} {selectedSession.timezone} · {selectedSession.duration} · Online</p>
             </div>
 
-            {/* Join Zoom - most prominent element */}
+            {/* Join Google Meet - most prominent element */}
             <Button asChild size="lg" className="w-full mt-4 gap-2">
-              <a href={selectedSession.zoomUrl} target="_blank" rel="noopener noreferrer">
+              <a href={selectedSession.meetUrl} target="_blank" rel="noopener noreferrer">
                 <Video className="h-4 w-4" />
-                Join Zoom
+                Join via Google Meet
               </a>
             </Button>
             <p className="text-xs text-muted-foreground text-center">
@@ -81,7 +65,7 @@ export default async function ConfirmationPage({ searchParams }: Props) {
           <p className="text-sm font-medium">Add to your calendar</p>
           <div className="grid grid-cols-2 gap-3">
             <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <a href={googleCalendarUrl} target="_blank" rel="noopener noreferrer">
+              <a href={selectedSession.calendarLink} target="_blank" rel="noopener noreferrer">
                 <Calendar className="h-4 w-4" />
                 Google Calendar
               </a>

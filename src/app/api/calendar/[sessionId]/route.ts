@@ -23,9 +23,9 @@ export async function GET(
     ],
     startInputType: "utc",
     duration: { hours: 1 },
-    description: `Join via Zoom: ${session.zoomUrl}\n\nA free 60-minute introduction to SKY Breath Meditation and the Art of Living. No experience needed.`,
-    location: session.zoomUrl,
-    url: session.zoomUrl,
+    description: `Join via Google Meet: ${session.meetUrl}\n\nA free 60-minute introduction to SKY Breath Meditation and the Art of Living. No experience needed.`,
+    location: session.meetUrl,
+    url: session.meetUrl,
     status: "CONFIRMED",
     busyStatus: "BUSY",
   })

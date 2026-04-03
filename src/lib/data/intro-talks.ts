@@ -7,47 +7,37 @@ export type IntroTalkSession = {
   location: string
   duration: string
   dateISO: string
-  // TODO: Replace PLACEHOLDER with real Zoom meeting IDs before go-live
-  zoomUrl: string
+  meetUrl: string
+  calendarLink: string
   badge?: string
 }
 
 export const introTalkSessions: IntroTalkSession[] = [
   {
-    id: "2026-03-08-1000",
+    id: "2026-04-12-1900",
     title: "Free Intro to the Art of Living",
-    date: "Saturday 8 March 2026",
-    time: "10:00 AM",
-    timezone: "GMT",
-    location: "Online via Zoom",
+    date: "Sunday 12 April 2026",
+    time: "7:00 PM",
+    timezone: "BST",
+    location: "Online via Google Meet",
     duration: "60 minutes",
-    dateISO: "2026-03-08T10:00:00Z",
-    zoomUrl: "https://zoom.us/j/PLACEHOLDER",
+    dateISO: "2026-04-12T19:00:00+01:00",
+    meetUrl: "https://meet.google.com/guw-ybbe-ums",
+    calendarLink: "https://calendar.app.google/tiL5MaHgBRVVrKJJ9",
     badge: "Popular",
   },
   {
-    id: "2026-03-15-1000",
+    id: "2026-04-19-1900",
     title: "Free Intro to the Art of Living",
-    date: "Saturday 15 March 2026",
-    time: "10:00 AM",
-    timezone: "GMT",
-    location: "Online via Zoom",
+    date: "Sunday 19 April 2026",
+    time: "7:00 PM",
+    timezone: "BST",
+    location: "Online via Google Meet",
     duration: "60 minutes",
-    dateISO: "2026-03-15T10:00:00Z",
-    zoomUrl: "https://zoom.us/j/PLACEHOLDER",
-    badge: undefined,
-  },
-  {
-    id: "2026-03-22-1000",
-    title: "Free Intro to the Art of Living",
-    date: "Saturday 22 March 2026",
-    time: "10:00 AM",
-    timezone: "GMT",
-    location: "Online via Zoom",
-    duration: "60 minutes",
-    dateISO: "2026-03-22T10:00:00Z",
-    zoomUrl: "https://zoom.us/j/PLACEHOLDER",
-    badge: "Limited Spots",
+    dateISO: "2026-04-19T19:00:00+01:00",
+    meetUrl: "https://meet.google.com/ddn-irto-gfc",
+    calendarLink: "https://calendar.app.google/sacCLP4UzejV2w3cA",
+    badge: "Last Chance",
   },
 ]
 
