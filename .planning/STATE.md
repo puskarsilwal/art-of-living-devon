@@ -5,7 +5,7 @@ milestone_name: milestone
 status: completed
 stopped_at: Completed quick task 4 — remove WhatToExpectSection, fix TestimonialsSection typography
 last_updated: "2026-03-27T16:52:11.346Z"
-last_activity: "2026-04-03 - Completed quick task 260403-kfh: switch sessions from Zoom to Google Meet and wire Brevo API for confirmation emails"
+last_activity: "2026-04-04 - Completed quick task 260403-mvy: set up reminder emails day-before and hour-before via Vercel cron and Brevo API"
 progress:
   total_phases: 11
   completed_phases: 5
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 04 complete — Phase 9 (email automation / Brevo wiring) is next, pending domain purchase
+**Current focus:** Brevo wired and live. Confirmation email + organiser notification working. Reminder automation (day-before + hour-before) is next quick task.
 
 ## Current Position
 
-Phase: 04 complete — next is Phase 9 (email-automation-brevo)
-Plan: 4/4 complete in Phase 04 (registration-flow-session-selection)
-Status: Phase 04 fully verified and complete — session picker, registration form, confirmation page, calendar ICS download all working. Human verification passed 2026-03-27. Dev server confirmed running with `npm run dev -- --webpack` flag.
-Last activity: 2026-03-27 - Phase 04 human verification complete
+Phase: 07 in progress (1 plan remaining: 07-05 human verification)
+Phase 02: 1 plan remaining (02-03 gap closure)
+Status: Registration flow fully live on Vercel. Brevo confirmation email working. Phone mandatory. ICS calendar attachment in confirmation email. Organiser notified on each registration.
+Last activity: 2026-04-03 - Brevo wired, Google Meet links updated, confirmation page updated, phone made mandatory
 
-Next: Phase 9 (email automation / Brevo wiring) — blocked on domain purchase for DNS configuration
+Next: Quick task - set up reminder emails (day-before + hour-before) via Vercel cron + Brevo API
 
 Progress: [########░░] 80%
 
@@ -183,15 +183,17 @@ None yet.
 | 3 | fix intro page repetitive sections — remove duplicate 'Backed by' claim, normalize eyebrow typography | 2026-02-27 | 224d559 | [3-fix-intro-page-repetitive-sections-cohes](./quick/3-fix-intro-page-repetitive-sections-cohes/) |
 | 4 | remove WhatToExpectSection and fix TestimonialsSection typography to match page pattern | 2026-02-27 | b6da1f4 | [4-remove-whattoexpect-section-and-fix-test](./quick/4-remove-whattoexpect-section-and-fix-test/) |
 | 260403-kfh | switch sessions from Zoom to Google Meet and wire Brevo API for confirmation emails | 2026-04-03 | 43c6200 | [260403-kfh-switch-sessions-from-zoom-to-google-meet](./quick/260403-kfh-switch-sessions-from-zoom-to-google-meet/) |
+| 260403-mvy | set up reminder emails day-before and hour-before via Vercel cron and Brevo API | 2026-04-04 | cda7203 | [260403-mvy-set-up-reminder-emails-day-before-and-ho](./quick/260403-mvy-set-up-reminder-emails-day-before-and-ho/) |
 
 ### Blockers/Concerns
 
-- Domain not yet purchased -- blocks Phase 9 (email automation requires DNS configuration)
+- Domain not yet purchased -- Brevo sending works with Gmail for now, DNS auth deferred
 - Vercel Hobby plan commercial use classification needs confirmation with Devon/Southwest organizers
 - Art of Living brand asset permissions not yet confirmed
+- Brevo free plan sender is Gmail (puskarsilwal001@gmail.com) -- emails may land in spam for some recipients until a custom domain is added
 
 ## Session Continuity
 
-Last session: 2026-03-27
-Stopped at: Phase 04 human verification complete — all 4/4 plans done, flow approved
+Last session: 2026-04-03
+Stopped at: Brevo live, confirmation page updated, phone mandatory, reminders not yet set up
 Resume file: None
