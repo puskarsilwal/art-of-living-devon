@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation"
 import { registrationSchema } from "@/lib/schemas/registration"
 import { introTalkSessions } from "@/lib/data/intro-talks"
+import { createEvent } from "ics"
 
 export type RegistrationState = {
   success: boolean
@@ -48,44 +49,78 @@ async function sendBrevoConfirmation(data: {
       console.error("Brevo contact error:", contactRes.status, err)
     }
 
-    // Send transactional confirmation email
+    // Generate ICS attachment
+    const start = new Date(session.dateISO)
+    const { value: icsValue } = createEvent({
+      title: session.title,
+      start: [start.getUTCFullYear(), start.getUTCMonth() + 1, start.getUTCDate(), start.getUTCHours(), start.getUTCMinutes()],
+      startInputType: "utc",
+      duration: { hours: 1 },
+      description: `Join via Google Meet: ${session.meetUrl}\n\nA free 60-minute introduction to SKY Breath Meditation and the Art of Living. No experience needed.`,
+      location: session.meetUrl,
+      url: session.meetUrl,
+      status: "CONFIRMED",
+      busyStatus: "BUSY",
+    })
+
+    // Send transactional confirmation email with ICS attachment
     const htmlContent = `
 <!DOCTYPE html>
 <html>
 <body style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <p>Hi ${firstName},</p>
   <p>You're registered for the free Art of Living intro talk on <strong>${session.date}</strong> at <strong>${session.time} ${session.timezone}</strong>.</p>
-  <p>Add it to your calendar so you don't miss it — the Google Meet link is included inside:</p>
-  <p style="margin: 24px 0;">
-    <a href="${session.calendarLink}"
-       style="background-color: #f97316; color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block;">
-      Add to Google Calendar
-    </a>
-  </p>
-  <p style="font-size: 14px; color: #666;">
-    Or join directly on the day: <a href="${session.meetUrl}">${session.meetUrl}</a>
+  <p>The calendar invite is attached — open it to save the event and get your Google Meet link.</p>
+  <p style="font-size: 14px; color: #666; margin-top: 24px;">
+    Join directly on the day: <a href="${session.meetUrl}">${session.meetUrl}</a>
   </p>
   <p>See you there,<br>The Art of Living Devon Team</p>
 </body>
 </html>
     `.trim()
 
+    const emailPayload: Record<string, unknown> = {
+      sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
+      to: [{ email: data.email, name: data.name }],
+      subject: `You're registered — Free Intro Talk on ${session.date}`,
+      htmlContent,
+    }
+    if (icsValue) {
+      emailPayload.attachment = [{
+        name: `art-of-living-intro-${session.id}.ics`,
+        content: Buffer.from(icsValue).toString("base64"),
+      }]
+    }
+
     const emailRes = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers,
-      body: JSON.stringify({
-        sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
-        to: [{ email: data.email, name: data.name }],
-        subject: `You're registered — Free Intro Talk on ${session.date}`,
-        htmlContent,
-      }),
+      body: JSON.stringify(emailPayload),
     })
     if (!emailRes.ok) {
       const err = await emailRes.text()
       console.error("Brevo email error:", emailRes.status, err)
     } else {
-      console.log("Brevo email sent OK")
+      console.log("Brevo confirmation email sent OK")
     }
+
+    // Notify organiser of new registration
+    await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers,
+      body: JSON.stringify({
+        sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
+        to: [{ email: "puskarsilwal001@gmail.com", name: "Puskar" }],
+        subject: `New registration — ${data.name} (${session.date})`,
+        htmlContent: `
+<p><strong>New registration received</strong></p>
+<p><strong>Name:</strong> ${data.name}<br>
+<strong>Email:</strong> ${data.email}<br>
+<strong>Phone:</strong> ${data.phone || "—"}<br>
+<strong>Session:</strong> ${session.date} at ${session.time} ${session.timezone}</p>
+        `.trim(),
+      }),
+    })
   } catch (err) {
     console.error("Brevo error:", err)
   }
