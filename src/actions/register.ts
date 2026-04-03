@@ -71,7 +71,7 @@ async function sendBrevoConfirmation(data: {
 <body style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
   <p>Hi ${firstName},</p>
   <p>You're registered for the free Art of Living intro talk on <strong>${session.date}</strong> at <strong>${session.time} ${session.timezone}</strong>.</p>
-  <p>The calendar invite is attached — open it to save the event and get your Google Meet link.</p>
+  <p>The calendar invite is attached. Open it to save the event and get your Google Meet link.</p>
   <p style="font-size: 14px; color: #666; margin-top: 24px;">
     Join directly on the day: <a href="${session.meetUrl}">${session.meetUrl}</a>
   </p>
@@ -83,7 +83,7 @@ async function sendBrevoConfirmation(data: {
     const emailPayload: Record<string, unknown> = {
       sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
       to: [{ email: data.email, name: data.name }],
-      subject: `You're registered — Free Intro Talk on ${session.date}`,
+      subject: `You're registered: Free Intro Talk on ${session.date}`,
       htmlContent,
     }
     if (icsValue) {
@@ -112,12 +112,12 @@ async function sendBrevoConfirmation(data: {
       body: JSON.stringify({
         sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
         to: [{ email: "puskarsilwal001@gmail.com", name: "Puskar" }],
-        subject: `New registration — ${data.name} (${session.date})`,
+        subject: `New registration: ${data.name} (${session.date})`,
         htmlContent: `
 <p><strong>New registration received</strong></p>
 <p><strong>Name:</strong> ${data.name}<br>
 <strong>Email:</strong> ${data.email}<br>
-<strong>Phone:</strong> ${data.phone || "—"}<br>
+<strong>Phone:</strong> ${data.phone || "N/A"}<br>
 <strong>Session:</strong> ${session.date} at ${session.time} ${session.timezone}</p>
         `.trim(),
       }),
