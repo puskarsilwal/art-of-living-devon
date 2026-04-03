@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { CheckCircle, Video, Calendar } from "lucide-react"
+import { CheckCircle, Video, Calendar, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { introTalkSessions } from "@/lib/data/intro-talks"
@@ -36,6 +36,11 @@ export default async function ConfirmationPage({ searchParams }: Props) {
           <p className="text-muted-foreground">
             We look forward to seeing you at the intro talk.
           </p>
+          {/* Email confirmation notice */}
+          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-primary/5 rounded-lg px-4 py-3">
+            <Mail className="h-4 w-4 text-primary shrink-0" />
+            <p>A confirmation email with your joining link has been sent to your inbox.</p>
+          </div>
         </div>
 
         {/* Session details card */}
@@ -47,22 +52,38 @@ export default async function ConfirmationPage({ searchParams }: Props) {
               <p className="text-muted-foreground">{selectedSession.time} {selectedSession.timezone} · {selectedSession.duration} · Online</p>
             </div>
 
-            {/* Join Google Meet - most prominent element */}
+            {/* Join Google Meet */}
             <Button asChild size="lg" className="w-full mt-4 gap-2">
               <a href={selectedSession.meetUrl} target="_blank" rel="noopener noreferrer">
                 <Video className="h-4 w-4" />
                 Join via Google Meet
               </a>
             </Button>
-            <p className="text-xs text-muted-foreground text-center">
-              Save this link. You&apos;ll need it to join the session.
-            </p>
           </CardContent>
         </Card>
 
-        {/* Calendar add - side by side */}
+        {/* Next steps */}
+        <div className="text-left space-y-3">
+          <p className="text-sm font-semibold">Your next steps</p>
+          <ol className="space-y-3 text-sm text-muted-foreground">
+            <li className="flex gap-3">
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-semibold">1</span>
+              <span>Check your inbox for the confirmation email. It contains your joining link and a calendar file to save the event.</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-semibold">2</span>
+              <span>Save the event to your calendar so you get a reminder before the session starts.</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-semibold">3</span>
+              <span>On the day, join via the Google Meet link 2 to 3 minutes before 7:00 PM BST.</span>
+            </li>
+          </ol>
+        </div>
+
+        {/* Calendar add */}
         <div className="space-y-2">
-          <p className="text-sm font-medium">Add to your calendar</p>
+          <p className="text-sm font-medium">Save to your calendar</p>
           <div className="grid grid-cols-2 gap-3">
             <Button asChild variant="outline" size="sm" className="gap-1.5">
               <a href={selectedSession.calendarLink} target="_blank" rel="noopener noreferrer">
@@ -82,10 +103,10 @@ export default async function ConfirmationPage({ searchParams }: Props) {
           </p>
         </div>
 
-        {/* What to expect reassurance */}
+        {/* What to expect */}
         <div className="text-sm text-muted-foreground border-t pt-6">
           <p>
-            The session is 60 minutes online. You&apos;ll experience a guided breathing exercise,
+            The session is 60 minutes online. You will experience a guided breathing exercise,
             a short meditation, and have time for live Q&amp;A. Camera on but no pressure to participate actively.
           </p>
         </div>
