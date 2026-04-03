@@ -133,7 +133,7 @@ export async function registerForIntroTalk(
   const raw = {
     name: formData.get("name"),
     email: formData.get("email"),
-    phone: formData.get("phone") || "",
+    phone: formData.get("phone"),
     consent: formData.get("consent") === "on",
     sessionId: formData.get("sessionId") as string,
   }

@@ -10,8 +10,9 @@ export const registrationSchema = z.object({
     .min(1, "Please enter your email")
     .email("Please enter a valid email address"),
   phone: z
-    .union([z.string().max(20), z.literal("")])
-    .optional(),
+    .string()
+    .min(1, "Please enter your phone number")
+    .max(20),
   consent: z
     .literal(true, {
       message: "You must agree to receive event communications",

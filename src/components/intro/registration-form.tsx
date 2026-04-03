@@ -108,16 +108,15 @@ export function RegistrationForm() {
                 )}
               </div>
 
-              {/* Phone (optional) */}
+              {/* Phone (required) */}
               <div className="space-y-2">
-                <Label htmlFor="phone">
-                  Phone <span className="text-muted-foreground">(optional)</span>
-                </Label>
+                <Label htmlFor="phone">Phone *</Label>
                 <Input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="07xxx xxxxxx"
+                  placeholder="e.g. 07911 123456"
+                  required
                   className="h-12 text-base"
                 />
                 {state.errors?.phone && (
