@@ -2,13 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: unknown
-last_updated: "2026-02-26T15:05:05.567Z"
+status: completed
+stopped_at: Completed quick task 4 — remove WhatToExpectSection, fix TestimonialsSection typography
+last_updated: "2026-03-27T16:52:11.346Z"
+last_activity: "2026-04-03 - Completed quick task 260403-kfh: switch sessions from Zoom to Google Meet and wire Brevo API for confirmation emails"
 progress:
-  total_phases: 7
-  completed_phases: 4
+  total_phases: 11
+  completed_phases: 5
   total_plans: 33
-  completed_plans: 30
+  completed_plans: 31
+  percent: 65
 ---
 
 # Project State
@@ -18,16 +21,18 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Convert Facebook ad visitors into intro talk attendees, then nurture them toward enrolling in the full Art of Living Part 1 course
-**Current focus:** Phase 7 in progress -- event pages; Plans 01, 02, 03 done (data module, upper sections, lower sections)
+**Current focus:** Phase 04 complete — Phase 9 (email automation / Brevo wiring) is next, pending domain purchase
 
 ## Current Position
 
-Phase: 7 of 10 (Event Pages) — IN PROGRESS
-Plan: 3 of 5 in current phase (01, 02, 03 done)
-Status: Phase 07 plan 03 complete — EventVideoSection, EventSocialProof, EventEmailOptin, EventFooterCta created
-Last activity: 2026-02-27 - Completed quick task 4: remove WhatToExpectSection from intro page, fix TestimonialsSection typography to match page pattern
+Phase: 04 complete — next is Phase 9 (email-automation-brevo)
+Plan: 4/4 complete in Phase 04 (registration-flow-session-selection)
+Status: Phase 04 fully verified and complete — session picker, registration form, confirmation page, calendar ICS download all working. Human verification passed 2026-03-27. Dev server confirmed running with `npm run dev -- --webpack` flag.
+Last activity: 2026-03-27 - Phase 04 human verification complete
 
-Progress: [######░░░░] 65%
+Next: Phase 9 (email automation / Brevo wiring) — blocked on domain purchase for DNS configuration
+
+Progress: [########░░] 80%
 
 ## Performance Metrics
 
@@ -86,6 +91,7 @@ Recent decisions affecting current work:
 - [Revision]: Deploy to Vercel free tier with *.vercel.app URL (no custom domain yet)
 - [Revision]: Privacy policy kept in Phase 1 (just a page, no domain needed)
 - [Revision]: Email automation phases moved to end (Phases 9-10) pending domain purchase
+- [Phase 11 added]: Facebook Ad Creative & Campaign Setup — NanoBanana image generation + Hormozi hook copy + Facebook campaign structure (added 2026-03-27)
 - [Phase 1]: Inter font chosen for clean body text via next/font/google
 - [Phase 1]: OKLCH color system used for Tailwind v4 native compatibility
 - [Phase 1]: Privacy policy uses card-based layout with numbered sections for readability
@@ -176,6 +182,7 @@ None yet.
 | 2 | replace session-intro photo with hero-bg.jpg and differentiate SKY/Meditation descriptions | 2026-02-27 | 6fccd30 | [2-replace-session-photo-with-hero-bg-jpg-a](./quick/2-replace-session-photo-with-hero-bg-jpg-a/) |
 | 3 | fix intro page repetitive sections — remove duplicate 'Backed by' claim, normalize eyebrow typography | 2026-02-27 | 224d559 | [3-fix-intro-page-repetitive-sections-cohes](./quick/3-fix-intro-page-repetitive-sections-cohes/) |
 | 4 | remove WhatToExpectSection and fix TestimonialsSection typography to match page pattern | 2026-02-27 | b6da1f4 | [4-remove-whattoexpect-section-and-fix-test](./quick/4-remove-whattoexpect-section-and-fix-test/) |
+| 260403-kfh | switch sessions from Zoom to Google Meet and wire Brevo API for confirmation emails | 2026-04-03 | 43c6200 | [260403-kfh-switch-sessions-from-zoom-to-google-meet](./quick/260403-kfh-switch-sessions-from-zoom-to-google-meet/) |
 
 ### Blockers/Concerns
 
@@ -185,6 +192,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-27
-Stopped at: Completed quick task 4 — remove WhatToExpectSection, fix TestimonialsSection typography
+Last session: 2026-03-27
+Stopped at: Phase 04 human verification complete — all 4/4 plans done, flow approved
 Resume file: None
