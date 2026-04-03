@@ -22,8 +22,8 @@ export const introTalkSessions: IntroTalkSession[] = [
     location: "Online via Google Meet",
     duration: "60 minutes",
     dateISO: "2026-04-12T19:00:00+01:00",
-    meetUrl: "https://meet.google.com/guw-ybbe-ums",
-    calendarLink: "https://calendar.app.google/tiL5MaHgBRVVrKJJ9",
+    meetUrl: "https://meet.google.com/pms-isfg-fwi",
+    calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjJnYjFlY3AwaWYzdmhtaGJsOTF2aDZtYTEgcHVza2FyQHB1c2thcnNpbHdhbC5jb20&tmsrc=puskar%40puskarsilwal.com",
     badge: "Popular",
   },
   {
@@ -35,8 +35,8 @@ export const introTalkSessions: IntroTalkSession[] = [
     location: "Online via Google Meet",
     duration: "60 minutes",
     dateISO: "2026-04-19T19:00:00+01:00",
-    meetUrl: "https://meet.google.com/ddn-irto-gfc",
-    calendarLink: "https://calendar.app.google/sacCLP4UzejV2w3cA",
+    meetUrl: "https://meet.google.com/dua-kxwc-ers",
+    calendarLink: "https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MGRoNGw5b2RhczV1YjE1MGRmNTBiNmZnamkgcHVza2FyQHB1c2thcnNpbHdhbC5jb20&tmsrc=puskar%40puskarsilwal.com",
     badge: "Last Chance",
   },
 ]
