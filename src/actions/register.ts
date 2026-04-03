@@ -42,6 +42,7 @@ async function sendBrevoConfirmation(data: {
           SESSION_ID: data.sessionId,
           SESSION_DATE: session.date,
         },
+        ...(session.brevoListId ? { listIds: [session.brevoListId] } : {}),
       }),
     })
     if (!contactRes.ok) {
