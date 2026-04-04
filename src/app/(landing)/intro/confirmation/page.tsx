@@ -3,6 +3,7 @@ import { CheckCircle, Video, Calendar, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { introTalkSessions } from "@/lib/data/intro-talks"
+import { MetaPixelLead } from "@/components/meta-pixel-lead"
 
 export const metadata = {
   title: "You're Registered | Art of Living Devon & Southwest",
@@ -23,6 +24,7 @@ export default async function ConfirmationPage({ searchParams }: Props) {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-primary/5 via-background to-background flex items-start justify-center px-4 py-16 sm:py-24">
+      <MetaPixelLead />
       <div className="max-w-md w-full space-y-8 text-center">
 
         {/* Success icon + heading */}
