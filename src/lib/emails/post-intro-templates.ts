@@ -24,7 +24,7 @@ export type EmailType =
 const NEXT_INTRO_DATE = "Sunday 19 April 2026"
 const NEXT_INTRO_TIME = "7:00 PM BST"
 const NEXT_INTRO_MEET = "https://meet.google.com/dua-kxwc-ers"
-const COURSE_PAGE_URL = "https://artoflivingdevon.com/art-of-living-part-1"
+const COURSE_PAGE_URL = "https://art-of-living-devon.vercel.app/art-of-living-part-1"
 
 const courseBlock = `
   <div style="background: #fff7ed; border-left: 3px solid #f97316; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;">
