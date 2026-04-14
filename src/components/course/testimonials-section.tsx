@@ -25,18 +25,6 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* How Art of Living changes lives - video */}
-        <div className="relative rounded-2xl overflow-hidden mb-10 shadow-lg" style={{ paddingTop: "56.25%" }}>
-          <iframe
-            src="https://player.vimeo.com/video/475512556?h=6c76a7965e&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-            title="How Art of Living Changes Lives"
-          />
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {courseTestimonials.map((testimonial) => (
             <Card
