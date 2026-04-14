@@ -100,7 +100,7 @@ export function CourseContentSection() {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="https://www.artofliving.org/gb-en/courses/art-of-living-part-one"
+            href="https://aolreg.org/c/GBC1012472"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground shadow hover:bg-primary/90 transition-colors"

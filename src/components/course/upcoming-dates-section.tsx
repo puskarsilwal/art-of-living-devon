@@ -71,14 +71,14 @@ export function UpcomingDatesSection() {
 
         {/* Fallback note */}
         <p className="text-center text-sm text-muted-foreground">
-          Can&apos;t find a date that works? View all available courses at{" "}
+          Can&apos;t make May? Register for{" "}
           <a
-            href="https://www.artofliving.org/gb-en/courses/art-of-living-part-one"
+            href="https://aolreg.org/c/GBC1044098"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors"
           >
-            artofliving.org/gb-en
+            the September course
           </a>
         </p>
       </div>

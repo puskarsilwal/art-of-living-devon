@@ -1,5 +1,4 @@
-const REGISTER_URL =
-  "https://www.artofliving.org/gb-en/courses/art-of-living-part-one"
+const REGISTER_URL = "https://aolreg.org/c/GBC1012472"
 
 export function VideoSection() {
   return (

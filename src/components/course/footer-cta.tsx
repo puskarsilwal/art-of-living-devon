@@ -41,7 +41,7 @@ export function FooterCta() {
         </p>
 
         <a
-          href="https://www.artofliving.org/gb-en/courses/art-of-living-part-one"
+          href="https://aolreg.org/c/GBC1012472"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -10,37 +10,26 @@ export type CourseDate = {
   badge?: string
 }
 
-// TODO: Update with confirmed Devon/Southwest course dates before go-live
 export const courseDates: CourseDate[] = [
   {
-    id: "2026-04-11-exeter",
-    format: "In-person",
-    location: "Exeter, Devon",
-    startDate: "11 April 2026",
-    endDate: "13 April 2026",
-    time: "10:00 AM – 1:00 PM",
+    id: "2026-05-08-online",
+    format: "Online",
+    location: "Online via Google Meet",
+    startDate: "8 May 2026",
+    endDate: "10 May 2026",
+    time: "7:00 PM – 10:00 PM",
     timezone: "BST",
-    registrationUrl: "https://www.artofliving.org/gb-en/courses/art-of-living-part-one",
+    registrationUrl: "https://aolreg.org/c/GBC1012472",
     badge: "Next Available",
   },
   {
-    id: "2026-05-09-online",
+    id: "2026-09-25-online",
     format: "Online",
-    location: "Online (Zoom)",
-    startDate: "9 May 2026",
-    endDate: "11 May 2026",
+    location: "Online via Google Meet",
+    startDate: "25 September 2026",
+    endDate: "27 September 2026",
     time: "7:00 PM – 10:00 PM",
     timezone: "BST",
-    registrationUrl: "https://www.artofliving.org/gb-en/courses/art-of-living-part-one",
-  },
-  {
-    id: "2026-06-06-exeter",
-    format: "In-person",
-    location: "Exeter, Devon",
-    startDate: "6 June 2026",
-    endDate: "8 June 2026",
-    time: "10:00 AM – 1:00 PM",
-    timezone: "BST",
-    registrationUrl: "https://www.artofliving.org/gb-en/courses/art-of-living-part-one",
+    registrationUrl: "https://aolreg.org/c/GBC1044098",
   },
 ]

@@ -3,8 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 
-const REGISTER_URL =
-  "https://www.artofliving.org/gb-en/courses/art-of-living-part-one"
+const REGISTER_URL = "https://aolreg.org/c/GBC1012472"
 
 const trustSignals = [
   "100+ peer-reviewed studies",
