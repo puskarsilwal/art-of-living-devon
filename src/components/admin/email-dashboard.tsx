@@ -90,19 +90,28 @@ export default function EmailDashboard({
     setStates(prev => ({ ...prev, [sessionId]: { ...prev[sessionId], ...update } }))
   }
 
-  async function loadContacts(session: IntroTalkSession) {
+  async function loadContacts(session: IntroTalkSession, silent = false) {
     if (!session.brevoListId) return
-    updateState(session.id, { loading: true, result: null, enrollResult: null })
+    if (!silent) updateState(session.id, { loading: true, result: null, enrollResult: null })
     try {
       const res = await fetch(`/api/admin/contacts?listId=${session.brevoListId}`, {
         headers: { "x-admin-key": adminKey },
       })
       const data = await res.json()
       const contacts: Contact[] = data.contacts ?? []
+
+      // Pre-select the enroll dropdown to match whatever sequence most contacts are already in
+      const seqCounts: Record<string, number> = {}
+      for (const c of contacts) {
+        if (c.sequence) seqCounts[c.sequence] = (seqCounts[c.sequence] ?? 0) + 1
+      }
+      const dominantSeq = Object.entries(seqCounts).sort((a, b) => b[1] - a[1])[0]?.[0] as SequenceType | undefined
+
       updateState(session.id, {
         contacts,
         selected: new Set(contacts.map((c: Contact) => c.email)),
         loading: false,
+        ...(dominantSeq ? { enrollSequence: dominantSeq } : {}),
       })
     } catch {
       updateState(session.id, { loading: false })
@@ -184,6 +193,8 @@ export default function EmailDashboard({
       })
       const data = await res.json()
       updateState(session.id, { enrolling: false, enrollResult: data })
+      // Refresh contact list so sequence status columns update immediately
+      if (data.enrolled > 0) await loadContacts(session, true)
     } catch {
       updateState(session.id, { enrolling: false })
     }
