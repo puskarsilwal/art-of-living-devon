@@ -14,7 +14,7 @@ const courseBlock = `
       <a href="https://aolreg.org/c/GBC1044098" style="color: #f97316; font-weight: 600;">Register for September</a>
     </p>
     <p style="margin: 14px 0 0 0; font-size: 13px; color: #92400e;">
-      3 sessions &times; 3 hours each &bull; Online &bull; Certified instructors
+      3 sessions &bull; In-person, Exeter &bull; Certified instructors
     </p>
   </div>
 `

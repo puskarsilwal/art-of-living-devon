@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 const trustSignals = [
   "No prior experience needed",
-  "Online and In-Person options",
+  "In-Person, Exeter Devon",
   "44 years, 180 countries",
 ]
 
@@ -55,7 +55,7 @@ export function FooterCta() {
         </a>
 
         <p className="mt-6 text-sm text-primary-foreground/70">
-          Free to register &bull; No experience needed &bull; Online &amp; In-Person available
+          Free to register &bull; No experience needed &bull; In-Person, Exeter
         </p>
 
         {/* Trust signals */}
