@@ -1,89 +1,44 @@
-export type EmailType = "attended" | "missed" | "nurture-1" | "nurture-2" | "nurture-3"
+export type EmailType =
+  // Attended April 12 → nurture to May 8 course (send ~every 5 days)
+  | "attended-1-welcome"
+  | "attended-2-science"
+  | "attended-3-transformation"
+  | "attended-4-social-proof"
+  | "attended-5-final-push"
+  // Missed April 12 → nudge to April 19 intro talk
+  | "missed-1-invite"
+  | "missed-2-three-day"
+  | "missed-3-day-before"
+  | "missed-4-day-of"
+  // Ongoing nurture (any list, evergreen)
+  | "nurture-evergreen-1"
+  | "nurture-evergreen-2"
 
+const NEXT_INTRO_DATE = "Sunday 19 April 2026"
+const NEXT_INTRO_TIME = "7:00 PM BST"
+const NEXT_INTRO_MEET = "https://meet.google.com/dua-kxwc-ers"
 const COURSE_PAGE_URL = "https://artoflivingdevon.com/art-of-living-part-1"
 
 const courseBlock = `
   <div style="background: #fff7ed; border-left: 3px solid #f97316; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;">
     <p style="font-weight: 600; margin: 0 0 12px 0; font-size: 15px;">Upcoming Part 1 Course dates:</p>
-    <p style="margin: 0 0 2px 0;"><strong>May 8, 9 &amp; 10, 2026</strong></p>
+    <p style="margin: 0 0 2px 0;"><strong>May 8, 9 &amp; 10, 2026</strong> &bull; St Sidwell's Community Centre, Exeter</p>
     <p style="margin: 0 0 14px 0; font-size: 14px;">
-      <a href="https://aolreg.org/c/GBC1012472" style="color: #f97316; font-weight: 600;">Register for May</a>
+      <a href="https://aolreg.org/c/GBC1012472" style="color: #f97316; font-weight: 600;">Register for May &rarr;</a>
     </p>
-    <p style="margin: 0 0 2px 0;"><strong>September 25, 26 &amp; 27, 2026</strong></p>
+    <p style="margin: 0 0 2px 0;"><strong>September 25, 26 &amp; 27, 2026</strong> &bull; Exeter, Devon</p>
     <p style="margin: 0; font-size: 14px;">
-      <a href="https://aolreg.org/c/GBC1044098" style="color: #f97316; font-weight: 600;">Register for September</a>
-    </p>
-    <p style="margin: 14px 0 0 0; font-size: 13px; color: #92400e;">
-      3 sessions &bull; In-person, Exeter &bull; Certified instructors
+      <a href="https://aolreg.org/c/GBC1044098" style="color: #f97316; font-weight: 600;">Register for September &rarr;</a>
     </p>
   </div>
 `
 
-const whatYouLearnBlock = `
-  <div style="margin: 20px 0;">
-    <p style="font-weight: 600; margin: 0 0 12px 0;">What you will learn over 3 days:</p>
-    <table style="width: 100%; border-collapse: collapse;">
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; vertical-align: top; width: 28px;">
-          <span style="color: #f97316; font-size: 18px;">&#9670;</span>
-        </td>
-        <td style="padding: 10px 0 10px 10px; border-bottom: 1px solid #f0f0f0;">
-          <strong>Sudarshan Kriya (SKY Breath)</strong><br>
-          <span style="font-size: 14px; color: #555;">The signature technique. A clinically researched rhythm of breath that releases stress at the cellular level.</span>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; vertical-align: top;">
-          <span style="color: #f97316; font-size: 18px;">&#9670;</span>
-        </td>
-        <td style="padding: 10px 0 10px 10px; border-bottom: 1px solid #f0f0f0;">
-          <strong>Pranayama (Breathing Exercises)</strong><br>
-          <span style="font-size: 14px; color: #555;">Ancient yogic breathing practices including Bhastrika, Ujjayi, and Nadi Shodhana to energise and calm the nervous system.</span>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; vertical-align: top;">
-          <span style="color: #f97316; font-size: 18px;">&#9670;</span>
-        </td>
-        <td style="padding: 10px 0 10px 10px; border-bottom: 1px solid #f0f0f0;">
-          <strong>Yoga &amp; Meditation</strong><br>
-          <span style="font-size: 14px; color: #555;">Gentle sequences and guided meditation to quiet the mind and re-energise the body. No prior experience needed.</span>
-        </td>
-      </tr>
-      <tr>
-        <td style="padding: 10px 0; vertical-align: top;">
-          <span style="color: #f97316; font-size: 18px;">&#9670;</span>
-        </td>
-        <td style="padding: 10px 0 10px 10px;">
-          <strong>Wisdom for Daily Life</strong><br>
-          <span style="font-size: 14px; color: #555;">Practical tools for handling relationships, emotions, and everyday challenges with more ease.</span>
-        </td>
-      </tr>
-    </table>
-  </div>
-`
-
-const statsBlock = `
-  <div style="background: #f9f9f9; border-radius: 8px; padding: 16px 20px; margin: 20px 0;">
-    <p style="font-weight: 600; margin: 0 0 12px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: #777;">Backed by 100+ peer-reviewed studies</p>
-    <div style="display: grid; gap: 8px;">
-      <div style="display: flex; gap: 12px; align-items: baseline;">
-        <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">60%</span>
-        <span style="font-size: 14px; color: #555;">reduction in stress hormone cortisol within 3 months</span>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: baseline;">
-        <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">37%</span>
-        <span style="font-size: 14px; color: #555;">increase in calm within 4 weeks</span>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: baseline;">
-        <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">31%</span>
-        <span style="font-size: 14px; color: #555;">reduction in insomnia</span>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: baseline;">
-        <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">34%</span>
-        <span style="font-size: 14px; color: #555;">reduction in depression within 4 weeks</span>
-      </div>
-    </div>
+const nextIntroBlock = `
+  <div style="background: #fff7ed; border-left: 3px solid #f97316; padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0;">
+    <p style="font-weight: 600; margin: 0 0 8px 0; font-size: 15px;">Next Free Intro Talk</p>
+    <p style="margin: 0 0 4px 0;"><strong>${NEXT_INTRO_DATE}</strong> at ${NEXT_INTRO_TIME}</p>
+    <p style="margin: 0 0 12px 0; font-size: 14px; color: #555;">Online via Google Meet &bull; 60 minutes &bull; Free</p>
+    <a href="${NEXT_INTRO_MEET}" style="display: inline-block; background: #f97316; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">Join Google Meet &rarr;</a>
   </div>
 `
 
@@ -93,7 +48,7 @@ const wrapper = (body: string) => `<!DOCTYPE html>
   ${body}
   <div style="border-top: 1px solid #eee; margin-top: 32px; padding-top: 16px; font-size: 12px; color: #aaa; text-align: center;">
     Art of Living Devon &amp; Southwest &bull;
-    <a href="${COURSE_PAGE_URL}" style="color: #f97316; text-decoration: none;">View the full course page</a>
+    <a href="${COURSE_PAGE_URL}" style="color: #f97316; text-decoration: none;">View course page</a>
   </div>
 </body>
 </html>`
@@ -103,138 +58,269 @@ export function getEmailContent(
   firstName: string
 ): { subject: string; htmlContent: string } {
 
-  if (type === "attended") {
+  // ─── ATTENDED SEQUENCE ──────────────────────────────────────────────────────
+
+  if (type === "attended-1-welcome") {
     return {
       subject: "Thank you for joining - here is your next step",
       htmlContent: wrapper(`
         <p>Hi ${firstName},</p>
-        <p>It was great having you at the intro talk. I hope you got a real feel for what SKY Breath Meditation can do and left with a sense of what is possible.</p>
+        <p>It was great having you at the intro talk. I hope you left with a real sense of what is possible.</p>
         <p>The <strong>Part 1 Course</strong> is where the full transformation begins. Over three days you will learn the complete SKY Breath technique, experience guided meditations, and leave with a daily practice you can carry for life.</p>
-
-        ${whatYouLearnBlock}
-
+        <p>The course covers:</p>
+        <ul style="padding-left: 20px; line-height: 2;">
+          <li><strong>Sudarshan Kriya (SKY Breath)</strong> - the signature technique, clinically researched</li>
+          <li><strong>Pranayama</strong> - ancient breathing practices to energise and calm the nervous system</li>
+          <li><strong>Yoga and Meditation</strong> - no prior experience needed</li>
+          <li><strong>Wisdom for Daily Life</strong> - practical tools for relationships and emotions</li>
+        </ul>
         <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
-          "Within three days I started experiencing a deep shift within myself from anxiousness to peace, from sadness to joy. I find myself more and more centered in the joy and clarity of a calm and peaceful existence."
-          <br><br>
-          <span style="font-style: normal; font-size: 13px; color: #888;">Glenn-Douglas Haig, CEO</span>
+          "Within three days I started experiencing a deep shift from anxiousness to peace, from sadness to joy."
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Glenn-Douglas Haig, CEO</span>
         </blockquote>
-
         ${courseBlock}
-
-        <p>The May batch is filling up, so if that date works for you I would recommend securing your spot soon. You can also <a href="${COURSE_PAGE_URL}" style="color: #f97316;">read more about the course here</a> before registering.</p>
-        <p>If you have any questions, just reply to this email. Happy to help.</p>
+        <p>The May batch is filling up. If you have questions before registering, just reply to this email.</p>
         <p>Warm regards,<br>The Art of Living Devon Team</p>
       `),
     }
   }
 
-  if (type === "missed") {
+  if (type === "attended-2-science") {
     return {
-      subject: "Sorry we missed you - here is what is next",
+      subject: "The science behind what you experienced",
       htmlContent: wrapper(`
         <p>Hi ${firstName},</p>
-        <p>We missed you at the intro talk! Life gets busy, I completely understand.</p>
-        <p>There will be another free intro session coming up and I would love for you to join. It is a relaxed, no-commitment hour where you get a real sense of what SKY Breath Meditation is about.</p>
-        <p>In the meantime, here is a little more about what the <strong>Part 1 Course</strong> actually involves:</p>
-
-        ${whatYouLearnBlock}
-
-        ${statsBlock}
-
-        <p>And here are the upcoming course dates when you are ready:</p>
-
+        <p>If you are curious about the science behind what you felt at the intro talk, here is what the research shows.</p>
+        <p>SKY Breath Meditation has been studied at Yale, Harvard, Stanford, and in over 100 peer-reviewed studies. The results are consistent:</p>
+        <div style="background: #f9f9f9; border-radius: 8px; padding: 16px 20px; margin: 20px 0;">
+          <div style="display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px;">
+            <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">60%</span>
+            <span style="font-size: 14px; color: #555;">reduction in the stress hormone cortisol within 3 months</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px;">
+            <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">37%</span>
+            <span style="font-size: 14px; color: #555;">increase in calm within 4 weeks</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: baseline; margin-bottom: 10px;">
+            <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">34%</span>
+            <span style="font-size: 14px; color: #555;">reduction in depression within 4 weeks</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: baseline;">
+            <span style="color: #f97316; font-size: 20px; font-weight: 700; min-width: 48px;">31%</span>
+            <span style="font-size: 14px; color: #555;">reduction in insomnia</span>
+          </div>
+        </div>
+        <p>The reason it works is that SKY uses specific breath rhythms to directly regulate the autonomic nervous system. It is not relaxation through effort - it is a physiological reset.</p>
+        <p>The intro talk gave you a glimpse. The Part 1 Course is where you learn the full technique and make it yours.</p>
         ${courseBlock}
-
-        <p>I will be in touch with the next intro talk date soon. Or if you already know you would like to join, you can <a href="${COURSE_PAGE_URL}" style="color: #f97316;">read more about the course here</a>.</p>
         <p>Warm regards,<br>The Art of Living Devon Team</p>
       `),
     }
   }
 
-  if (type === "nurture-1") {
+  if (type === "attended-3-transformation") {
+    return {
+      subject: "What life actually looks like after the course",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>People often come to the Part 1 Course looking for stress relief. What they leave with tends to surprise them.</p>
+        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
+          "I used to be so tense. I would get so angry, shouting, screaming. Now when I realise I am getting tense, I just breathe and I calm down. I am much more focused and much more productive."
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Mawahib Shaibani, Financial Advisor</span>
+        </blockquote>
+        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
+          "After 90 days, I felt my stress was markedly reduced. Now I would not stop doing it because I would not want to revert to the levels of stress I had at the time."
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Dr. Joe Rod, Cardiologist</span>
+        </blockquote>
+        <p>The technique takes about 20 minutes a day. Most people notice a shift within the first week of daily practice.</p>
+        <p>The May course is the next opportunity to learn it properly, with a certified instructor:</p>
+        ${courseBlock}
+        <p>Warm regards,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  if (type === "attended-4-social-proof") {
+    return {
+      subject: "800 million people can't be wrong",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>SKY Breath Meditation has been taught to over 800 million people across 180 countries over 44 years. It is one of the most widely practised breathing techniques in the world.</p>
+        <p>It has been featured in Forbes, the Wall Street Journal, the BBC, and recommended by doctors, therapists, and executives.</p>
+        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
+          "I have been looking for this for 15 years. The techniques are truly a gift. When I practice them regularly, I feel great no matter what has happened during the day."
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Charlotte Puls, Lawyer</span>
+        </blockquote>
+        <p>The May course in Exeter is one of the few opportunities to learn this in person locally. Spots are limited.</p>
+        ${courseBlock}
+        <p>You can also <a href="${COURSE_PAGE_URL}" style="color: #f97316;">read more about what the course involves here</a>.</p>
+        <p>Warm regards,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  if (type === "attended-5-final-push") {
+    return {
+      subject: "Course starts in 2 days - last chance to join",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>The May Part 1 Course starts this Friday and I wanted to reach out one last time in case you have been on the fence.</p>
+        <p>Three days. A technique you will use every day for the rest of your life. Taught in person by a certified instructor in Exeter.</p>
+        <p>If not May, the next available date is September - which is a long time to wait if you are ready now.</p>
+        ${courseBlock}
+        <p>If you have any questions before registering, reply to this email right now. Happy to help.</p>
+        <p>Warm regards,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  // ─── MISSED SEQUENCE → APRIL 19 ─────────────────────────────────────────────
+
+  if (type === "missed-1-invite") {
+    return {
+      subject: "Missed the intro talk? There is another one on 19 April",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>We missed you at the intro talk last Sunday! No worries at all.</p>
+        <p>There is another free session happening on <strong>${NEXT_INTRO_DATE} at ${NEXT_INTRO_TIME}</strong>. It is the same relaxed, no-commitment hour where you get to experience a breathing exercise and see what SKY Breath Meditation is all about.</p>
+        <p>No preparation needed. Just show up.</p>
+        ${nextIntroBlock}
+        <p>Hope to see you there.</p>
+        <p>Warm regards,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  if (type === "missed-2-three-day") {
+    return {
+      subject: "3 days to go - free intro talk this Sunday",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>Just a heads up that the free intro talk is coming up <strong>this Sunday, 19 April at 7:00 PM BST</strong>.</p>
+        <p>It is 60 minutes online. You will experience a guided breathing exercise, a short meditation, and have the chance to ask questions live. No pressure to participate - just come and see.</p>
+        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
+          "About 30 days after doing the techniques very regularly, I just got so happy for no reason. And I had not experienced that in a long time."
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Phillip Mertz, Investment Manager</span>
+        </blockquote>
+        ${nextIntroBlock}
+        <p>See you Sunday,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  if (type === "missed-3-day-before") {
+    return {
+      subject: "Tomorrow at 7 PM - free intro talk",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>Just a reminder that the free intro talk is <strong>tomorrow, Sunday 19 April at 7:00 PM BST</strong>.</p>
+        <p>It runs for 60 minutes online and covers:</p>
+        <ul style="padding-left: 20px; line-height: 2;">
+          <li>A live breathwork experience you can feel working immediately</li>
+          <li>A short guided meditation</li>
+          <li>An introduction to SKY Breath Meditation and the Part 1 Course</li>
+          <li>Live Q&amp;A with the instructor</li>
+        </ul>
+        ${nextIntroBlock}
+        <p>See you tomorrow,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  if (type === "missed-4-day-of") {
+    return {
+      subject: "Tonight at 7 PM - the intro talk is on",
+      htmlContent: wrapper(`
+        <p>Hi ${firstName},</p>
+        <p>Just a quick note that the free intro talk is <strong>tonight at 7:00 PM BST</strong>. It is not too late to join.</p>
+        <p>Click below to open Google Meet a couple of minutes before 7 PM. Camera on is fine but no pressure to participate.</p>
+        ${nextIntroBlock}
+        <p>See you tonight,<br>The Art of Living Devon Team</p>
+      `),
+    }
+  }
+
+  // ─── EVERGREEN NURTURE ───────────────────────────────────────────────────────
+
+  if (type === "nurture-evergreen-1") {
     return {
       subject: "What happens when you breathe properly for 21 days",
       htmlContent: wrapper(`
         <p>Hi ${firstName},</p>
         <p>Most people go their entire lives breathing at about 20% capacity. Shallow, fast, unconscious breathing that keeps the nervous system in a low-level stress state.</p>
-        <p>SKY Breath Meditation works differently. It uses specific rhythms of breath to reset the nervous system from the inside, reducing cortisol, improving sleep, and creating a baseline calm that does not depend on your circumstances.</p>
-
-        ${statsBlock}
-
+        <p>SKY Breath Meditation uses specific rhythms of breath to reset the nervous system from the inside, reducing cortisol, improving sleep, and creating a baseline calm that does not depend on your circumstances.</p>
         <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
           "About 30 days after doing the techniques very regularly, I just got so happy for no reason. And I had not experienced that in a long time."
-          <br><br>
-          <span style="font-style: normal; font-size: 13px; color: #888;">Phillip Mertz, Investment Manager</span>
+          <br><span style="font-style: normal; font-size: 13px; color: #888;">Phillip Mertz, Investment Manager</span>
         </blockquote>
-
-        <p>Thousands of people have called it the most impactful thing they have done for their mental health. If you have been on the fence, the next batch is coming up:</p>
-
         ${courseBlock}
-
-        <p>You can also <a href="${COURSE_PAGE_URL}" style="color: #f97316;">read more about the course here</a>. Reply with any questions.</p>
         <p>Warm regards,<br>The Art of Living Devon Team</p>
       `),
     }
   }
 
-  if (type === "nurture-2") {
-    return {
-      subject: `"I didn't think breathing could change anything"`,
-      htmlContent: wrapper(`
-        <p>Hi ${firstName},</p>
-        <p>That is what a lot of people say before the course. And it is fair. It sounds almost too simple.</p>
-        <p>But here is what the research shows: SKY Breath Meditation has been studied at Yale, Harvard, and Stanford. It consistently reduces anxiety, improves sleep quality, and increases energy, not through willpower or mindset shifts, but through direct physiological change.</p>
-
-        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
-          "I used to be so tense. I would be getting so angry, shouting, screaming. Now when I realize I am getting tense, I just breathe and I calm down. I am much more focused and much more productive."
-          <br><br>
-          <span style="font-style: normal; font-size: 13px; color: #888;">Mawahib Shaibani, Financial Advisor</span>
-        </blockquote>
-
-        <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
-          "After 90 days of doing this, I felt my stress was markedly reduced. Now I would not stop doing it because I would not want to revert to the levels of stress I had at the time."
-          <br><br>
-          <span style="font-style: normal; font-size: 13px; color: #888;">Dr. Joe Rod, Cardiologist</span>
-        </blockquote>
-
-        <p>If you have been curious but not quite ready, that is okay. But when you are, here is where to go:</p>
-
-        ${courseBlock}
-
-        <p><a href="${COURSE_PAGE_URL}" style="color: #f97316;">See the full course page here.</a></p>
-        <p>Warm regards,<br>The Art of Living Devon Team</p>
-      `),
-    }
-  }
-
-  // nurture-3
+  // nurture-evergreen-2
   return {
     subject: "The May batch is almost full",
     htmlContent: wrapper(`
       <p>Hi ${firstName},</p>
       <p>Just a quick note that the May course is filling up and I do not want you to miss it if you have been thinking about joining.</p>
-      <p>Here is a reminder of what the three days include:</p>
-
-      ${whatYouLearnBlock}
-
+      <p>Three days. A technique you will use for the rest of your life. Backed by research, taught by a certified instructor in Exeter.</p>
       <blockquote style="border-left: 3px solid #f97316; padding-left: 16px; margin: 20px 0; color: #555; font-style: italic;">
-        "I have been looking for this for 15 years! The techniques are truly a gift. When I practice them regularly, I feel great no matter what has happened during the day."
-        <br><br>
-        <span style="font-style: normal; font-size: 13px; color: #888;">Charlotte Puls, Lawyer</span>
+        "I have been looking for this for 15 years. The techniques are truly a gift."
+        <br><span style="font-style: normal; font-size: 13px; color: #888;">Charlotte Puls, Lawyer</span>
       </blockquote>
-
       ${courseBlock}
-
-      <p>Happy to answer anything before you register. Just hit reply. Or <a href="${COURSE_PAGE_URL}" style="color: #f97316;">read more about the course here.</a></p>
+      <p>Happy to answer anything before you register. Just hit reply.</p>
       <p>Warm regards,<br>The Art of Living Devon Team</p>
     `),
   }
 }
 
+// Labels grouped for the admin UI
+export const EMAIL_GROUPS: Array<{
+  label: string
+  description: string
+  types: EmailType[]
+}> = [
+  {
+    label: "Attended April 12 - Course Nurture",
+    description: "Send one every ~5 days leading up to May 8",
+    types: [
+      "attended-1-welcome",
+      "attended-2-science",
+      "attended-3-transformation",
+      "attended-4-social-proof",
+      "attended-5-final-push",
+    ],
+  },
+  {
+    label: "Missed April 12 - Lead to April 19",
+    description: "Send in sequence over the next 5 days",
+    types: [
+      "missed-1-invite",
+      "missed-2-three-day",
+      "missed-3-day-before",
+      "missed-4-day-of",
+    ],
+  },
+  {
+    label: "Evergreen Nurture",
+    description: "Use any time for warm contacts",
+    types: ["nurture-evergreen-1", "nurture-evergreen-2"],
+  },
+]
+
 export const EMAIL_TYPE_LABELS: Record<EmailType, string> = {
-  attended: "Attended Follow-up",
-  missed: "Missed Follow-up",
-  "nurture-1": "Nurture 1: Breathing for 21 days",
-  "nurture-2": "Nurture 2: I didn't think breathing could change anything",
-  "nurture-3": "Nurture 3: May batch is almost full",
+  "attended-1-welcome":       "1. Welcome + course intro (send now)",
+  "attended-2-science":       "2. The science behind it (send Apr 16)",
+  "attended-3-transformation":"3. Transformation stories (send Apr 22)",
+  "attended-4-social-proof":  "4. 800M people (send Apr 29)",
+  "attended-5-final-push":    "5. Course starts in 2 days (send May 6)",
+  "missed-1-invite":          "1. Missed you - join Apr 19 (send now)",
+  "missed-2-three-day":       "2. 3 days to go (send Apr 16)",
+  "missed-3-day-before":      "3. Tomorrow at 7 PM (send Apr 18)",
+  "missed-4-day-of":          "4. Tonight at 7 PM (send Apr 19)",
+  "nurture-evergreen-1":      "Evergreen: Breathing for 21 days",
+  "nurture-evergreen-2":      "Evergreen: May batch almost full",
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { IntroTalkSession } from "@/lib/data/intro-talks"
-import { EmailType, EMAIL_TYPE_LABELS } from "@/lib/emails/post-intro-templates"
+import { EmailType, EMAIL_TYPE_LABELS, EMAIL_GROUPS } from "@/lib/emails/post-intro-templates"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -20,15 +20,11 @@ interface SessionState {
   result: { sent: number; total: number; errors?: string[] } | null
 }
 
-const EMAIL_TYPES: EmailType[] = ["attended", "missed", "nurture-1", "nurture-2", "nurture-3"]
-
-const TYPE_COLORS: Record<EmailType, string> = {
-  attended: "bg-green-50 border-green-200 text-green-800 hover:bg-green-100 disabled:hover:bg-green-50",
-  missed: "bg-amber-50 border-amber-200 text-amber-800 hover:bg-amber-100 disabled:hover:bg-amber-50",
-  "nurture-1": "bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100 disabled:hover:bg-blue-50",
-  "nurture-2": "bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100 disabled:hover:bg-blue-50",
-  "nurture-3": "bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100 disabled:hover:bg-blue-50",
-}
+const GROUP_COLORS = [
+  { btn: "bg-green-50 border-green-200 text-green-800 hover:bg-green-100", header: "bg-green-50 border-green-200" },
+  { btn: "bg-amber-50 border-amber-200 text-amber-800 hover:bg-amber-100", header: "bg-amber-50 border-amber-200" },
+  { btn: "bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100",   header: "bg-blue-50 border-blue-200"   },
+]
 
 export default function EmailDashboard({
   sessions,
@@ -90,14 +86,15 @@ export default function EmailDashboard({
 
   async function sendEmail(session: IntroTalkSession, emailType: EmailType) {
     const state = states[session.id]
-    const selectedEmails = Array.from(state.selected)
-    if (selectedEmails.length === 0) {
+    const selectedContacts = (state.contacts ?? []).filter((c: Contact) => state.selected.has(c.email))
+
+    if (selectedContacts.length === 0) {
       alert("No contacts selected.")
       return
     }
 
     const confirmed = window.confirm(
-      `Send "${EMAIL_TYPE_LABELS[emailType]}" to ${selectedEmails.length} selected contact${selectedEmails.length !== 1 ? "s" : ""}?`
+      `Send "${EMAIL_TYPE_LABELS[emailType]}" to ${selectedContacts.length} selected contact${selectedContacts.length !== 1 ? "s" : ""}?`
     )
     if (!confirmed) return
 
@@ -105,14 +102,8 @@ export default function EmailDashboard({
     try {
       const res = await fetch("/api/admin/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-admin-key": adminKey,
-        },
-        body: JSON.stringify({
-          contacts: (state.contacts ?? []).filter((c: Contact) => state.selected.has(c.email)),
-          emailType,
-        }),
+        headers: { "Content-Type": "application/json", "x-admin-key": adminKey },
+        body: JSON.stringify({ contacts: selectedContacts, emailType }),
       })
       const data = await res.json()
       updateState(session.id, { sending: null, result: data })
@@ -146,14 +137,8 @@ export default function EmailDashboard({
                     {session.time} {session.timezone} · {session.location}
                   </p>
                 </div>
-
                 {hasListId ? (
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => loadContacts(session)}
-                    disabled={state.loading}
-                  >
+                  <Button variant="outline" size="sm" onClick={() => loadContacts(session)} disabled={state.loading}>
                     {state.loading ? "Loading..." : state.contacts !== null ? "Refresh" : "Load contacts"}
                   </Button>
                 ) : (
@@ -164,7 +149,6 @@ export default function EmailDashboard({
               {/* Contact list with checkboxes */}
               {contacts.length > 0 && (
                 <div className="border border-border rounded-lg overflow-hidden">
-                  {/* Select all row */}
                   <div className="flex items-center justify-between px-3 py-2 bg-muted/50 border-b border-border">
                     <label className="flex items-center gap-2 cursor-pointer select-none">
                       <input
@@ -179,22 +163,16 @@ export default function EmailDashboard({
                       </span>
                     </label>
                     {selectedCount > 0 && (
-                      <span className="text-xs font-medium text-primary">
-                        {selectedCount} selected
-                      </span>
+                      <span className="text-xs font-medium text-primary">{selectedCount} selected</span>
                     )}
                   </div>
-
-                  {/* Contact rows */}
                   <div className="max-h-52 overflow-y-auto divide-y divide-border/50">
                     {contacts.map(c => {
                       const isSelected = state.selected.has(c.email)
                       return (
                         <label
                           key={c.email}
-                          className={`flex items-center gap-3 px-3 py-2.5 cursor-pointer transition-colors ${
-                            isSelected ? "bg-primary/5" : "hover:bg-muted/30"
-                          }`}
+                          className={`flex items-center gap-3 px-3 py-2.5 cursor-pointer transition-colors ${isSelected ? "bg-primary/5" : "hover:bg-muted/30"}`}
                         >
                           <input
                             type="checkbox"
@@ -215,24 +193,32 @@ export default function EmailDashboard({
                 <p className="text-sm text-muted-foreground">No contacts in this list yet.</p>
               )}
 
-              {/* Send buttons - only show after contacts loaded */}
+              {/* Email groups - only show after contacts loaded */}
               {contacts.length > 0 && (
-                <div className="space-y-2">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                <div className="space-y-4">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                     Send to {selectedCount} selected contact{selectedCount !== 1 ? "s" : ""}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {EMAIL_TYPES.map(type => (
-                      <button
-                        key={type}
-                        onClick={() => sendEmail(session, type)}
-                        disabled={state.sending !== null || selectedCount === 0}
-                        className={`text-sm px-3 py-1.5 rounded-md border font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${TYPE_COLORS[type]}`}
-                      >
-                        {state.sending === type ? "Sending..." : EMAIL_TYPE_LABELS[type]}
-                      </button>
-                    ))}
-                  </div>
+                  {EMAIL_GROUPS.map((group, gi) => (
+                    <div key={group.label} className={`rounded-lg border p-4 space-y-3 ${GROUP_COLORS[gi].header}`}>
+                      <div>
+                        <p className="text-sm font-semibold">{group.label}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{group.description}</p>
+                      </div>
+                      <div className="flex flex-col gap-2">
+                        {group.types.map(type => (
+                          <button
+                            key={type}
+                            onClick={() => sendEmail(session, type)}
+                            disabled={state.sending !== null || selectedCount === 0}
+                            className={`text-left text-sm px-3 py-2 rounded-md border font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${GROUP_COLORS[gi].btn}`}
+                          >
+                            {state.sending === type ? "Sending..." : EMAIL_TYPE_LABELS[type]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
 
