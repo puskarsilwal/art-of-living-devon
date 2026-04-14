@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 const steps = [
@@ -39,7 +38,7 @@ export function ProgramOverviewSection() {
           <p>
             Art of Living Part 1 is a transformative
             3-day course, offered 3 hours per day, by the Art of Living
-            Foundation, founded by Sri Sri Ravi Shankar in 1982. Over 40
+            Foundation, founded by Sri Sri Ravi Shankar in 1982. Over 800
             million people in 180 countries have taken this course.
           </p>
           <p>
@@ -50,16 +49,16 @@ export function ProgramOverviewSection() {
           </p>
         </div>
 
-        {/* Atmospheric photo */}
-        <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 mb-12 shadow-lg">
-          <Image
-            src="/images/intro/hero-breathwork.jpg"
-            alt="Participants in a breathing session"
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
+        {/* SKY Breath video */}
+        <div className="relative rounded-2xl overflow-hidden mb-12 shadow-lg" style={{ paddingTop: "56.25%" }}>
+          <iframe
+            src="https://player.vimeo.com/video/854478087?badge=0&autopause=0&player_id=0&app_id=58479"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+            title="SKY by Gurudev"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
 
         {/* 3-step flow — elevated cards with decorative numbers */}

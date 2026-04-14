@@ -80,7 +80,7 @@ export function HeroSection() {
         </div>
 
         <p className="mt-4 text-sm text-white/60">
-          Free to register &bull; St Sidwell&apos;s Community Centre, Exeter &bull; In-Person
+          St Sidwell&apos;s Community Centre, Exeter &bull; In-Person
         </p>
       </div>
     </section>

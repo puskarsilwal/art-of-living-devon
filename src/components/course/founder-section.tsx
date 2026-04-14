@@ -16,7 +16,7 @@ export function FounderSection() {
           {/* Left: ambient image */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-border/40">
             <Image
-              src="/images/course/about-art-of-living.webp"
+              src="/images/intro/about-art-of-living.webp"
               alt="Art of Living teacher guiding a student"
               width={600}
               height={400}
