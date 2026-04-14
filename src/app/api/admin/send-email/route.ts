@@ -3,22 +3,6 @@ import { EmailType, getEmailContent } from "@/lib/emails/post-intro-templates"
 
 export const runtime = "nodejs"
 
-async function fetchBrevoContacts(
-  listId: number
-): Promise<Array<{ email: string; attributes: Record<string, string> }>> {
-  const res = await fetch(
-    `https://api.brevo.com/v3/contacts/lists/${listId}/contacts?limit=500`,
-    {
-      headers: {
-        "api-key": process.env.BREVO_API_KEY!,
-        "Content-Type": "application/json",
-      },
-    }
-  )
-  if (!res.ok) return []
-  const data = await res.json()
-  return data.contacts ?? []
-}
 
 export async function POST(request: Request) {
   const adminSecret = process.env.ADMIN_SECRET
@@ -29,17 +13,19 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json()
-  const { listId, emailType } = body as { listId: number; emailType: EmailType }
-
-  if (!listId || !emailType) {
-    return NextResponse.json({ error: "Missing listId or emailType" }, { status: 400 })
+  const { contacts: selectedContacts, emailType } = body as {
+    contacts: Array<{ email: string; name: string }>
+    emailType: EmailType
   }
 
-  const contacts = await fetchBrevoContacts(listId)
-
-  if (contacts.length === 0) {
-    return NextResponse.json({ sent: 0, message: "No contacts found in list" })
+  if (!selectedContacts?.length || !emailType) {
+    return NextResponse.json({ error: "Missing contacts or emailType" }, { status: 400 })
   }
+
+  const contacts = selectedContacts.map(c => ({
+    email: c.email,
+    attributes: { FIRSTNAME: c.name } as Record<string, string>,
+  }))
 
   let sent = 0
   const errors: string[] = []
