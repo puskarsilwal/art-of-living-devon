@@ -24,6 +24,7 @@ interface SessionState {
   sending: EmailType | null
   enrolling: boolean
   enrollSequence: SequenceType
+  enrollStartDate: string
   result: { sent: number; total: number; errors?: string[] } | null
   enrollResult: { enrolled: number; total: number; errors?: string[] } | null
   showOneOff: boolean
@@ -77,6 +78,7 @@ export default function EmailDashboard({
         sending: null,
         enrolling: false,
         enrollSequence: "attended",
+        enrollStartDate: new Date(s.dateISO).toISOString().slice(0, 10),
         result: null,
         enrollResult: null,
         showOneOff: false,
@@ -169,7 +171,7 @@ export default function EmailDashboard({
 
     const seqLabel = SEQUENCE_LABELS[state.enrollSequence]
     const confirmed = window.confirm(
-      `Enroll ${selectedContacts.length} contact${selectedContacts.length !== 1 ? "s" : ""} in: ${seqLabel}?\n\nThe cron job will send the first email at 9 AM UTC today (or tomorrow if it already ran).`
+      `Enroll ${selectedContacts.length} contact${selectedContacts.length !== 1 ? "s" : ""} in: ${seqLabel}\nSequence starts from: ${state.enrollStartDate}\n\nOverdue emails send at the next 9 AM UTC cron run.`
     )
     if (!confirmed) return
 
@@ -178,7 +180,7 @@ export default function EmailDashboard({
       const res = await fetch("/api/admin/enroll", {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-admin-key": adminKey },
-        body: JSON.stringify({ contacts: selectedContacts, sequence: state.enrollSequence }),
+        body: JSON.stringify({ contacts: selectedContacts, sequence: state.enrollSequence, startDate: state.enrollStartDate }),
       })
       const data = await res.json()
       updateState(session.id, { enrolling: false, enrollResult: data })
@@ -275,8 +277,8 @@ export default function EmailDashboard({
                 <div className="rounded-lg border border-border bg-muted/30 p-4 space-y-3">
                   <p className="text-sm font-semibold">Enroll in automated sequence</p>
                   <p className="text-xs text-muted-foreground">
-                    The cron job runs daily at 9 AM UTC and sends the next email when it is due.
-                    Enrolling again resets the sequence from step 1.
+                    The cron runs daily at 9 AM UTC. Set the start date to the session date so
+                    email timing stays on track even if you enroll late.
                   </p>
                   <div className="flex items-center gap-3 flex-wrap">
                     <select
@@ -288,6 +290,15 @@ export default function EmailDashboard({
                         <option key={seq} value={seq}>{SEQUENCE_LABELS[seq]}</option>
                       ))}
                     </select>
+                    <div className="flex items-center gap-2">
+                      <label className="text-xs text-muted-foreground whitespace-nowrap">Start from:</label>
+                      <input
+                        type="date"
+                        value={state.enrollStartDate}
+                        onChange={e => updateState(session.id, { enrollStartDate: e.target.value })}
+                        className="text-sm border border-border rounded-md px-3 py-1.5 bg-background"
+                      />
+                    </div>
                     <Button
                       size="sm"
                       onClick={() => enrollContacts(session)}

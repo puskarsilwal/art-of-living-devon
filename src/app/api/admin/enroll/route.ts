@@ -68,9 +68,10 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json()
-  const { contacts, sequence } = body as {
+  const { contacts, sequence, startDate } = body as {
     contacts: Array<{ email: string; name: string }>
     sequence: SequenceType
+    startDate?: string
   }
 
   if (!contacts?.length || !sequence) {
@@ -84,7 +85,11 @@ export async function POST(request: Request) {
   // Ensure attributes exist in Brevo (no-op if already created)
   await ensureBrevoAttributes()
 
-  const today = new Date().toISOString().slice(0, 10) // "YYYY-MM-DD"
+  // Use provided startDate so late enrollments stay on schedule.
+  // Falls back to today if not supplied.
+  const today = (startDate && /^\d{4}-\d{2}-\d{2}$/.test(startDate))
+    ? startDate
+    : new Date().toISOString().slice(0, 10)
 
   let enrolled = 0
   const errors: string[] = []
