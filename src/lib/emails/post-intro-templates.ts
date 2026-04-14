@@ -33,7 +33,7 @@ const courseBlock = `
     <p style="margin: 0 0 14px 0; font-size: 14px;">
       <a href="https://aolreg.org/c/GBC1012472" style="color: #f97316; font-weight: 600;">Register for May &rarr;</a>
     </p>
-    <p style="margin: 0 0 2px 0;"><strong>September 25, 26 &amp; 27, 2026</strong> &bull; Exeter, Devon</p>
+    <p style="margin: 0 0 2px 0;"><strong>September 25, 26 &amp; 27, 2026</strong> &bull; St Sidwell's Community Centre, Exeter</p>
     <p style="margin: 0; font-size: 14px;">
       <a href="https://aolreg.org/c/GBC1044098" style="color: #f97316; font-weight: 600;">Register for September &rarr;</a>
     </p>

@@ -25,10 +25,10 @@ export const courseDates: CourseDate[] = [
   {
     id: "2026-09-25-exeter",
     format: "In-person",
-    location: "Exeter, Devon",
+    location: "St Sidwell's Community Centre, Exeter",
     startDate: "25 September 2026",
     endDate: "27 September 2026",
-    time: "TBC",
+    time: "Fri 6–9 PM, Sat–Sun 10:30 AM–1:30 PM",
     timezone: "BST",
     registrationUrl: "https://aolreg.org/c/GBC1044098",
   },
