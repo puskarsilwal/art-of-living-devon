@@ -4,35 +4,29 @@ export const runtime = "nodejs"
 
 export type SequenceType = "attended" | "missed" | "cold"
 
-// Ensure custom Brevo attributes exist. Brevo returns 400 if the attribute
-// already exists - that is fine, we ignore it.
+// Ensure custom Brevo attributes exist.
+// Correct endpoint: POST /v3/contacts/attributes/normal/{attributeName}
+// Brevo returns 400 if the attribute already exists - that is fine, we ignore it.
 async function ensureBrevoAttributes() {
-  const attrs: Array<{ name: string; type: "text" | "number" }> = [
+  const attrs: Array<{ name: string; type: "text" | "float" }> = [
     { name: "SEQUENCE", type: "text" },
     { name: "SEQ_START", type: "text" },
-    { name: "SEQ_STEP", type: "number" },
+    { name: "SEQ_STEP", type: "float" },
     { name: "SEQ_LAST_SENT", type: "text" },
   ]
 
-  const brevoTypeMap: Record<string, string> = {
-    text: "TEXT",
-    number: "NUMBER",
-  }
-
   for (const attr of attrs) {
-    await fetch("https://api.brevo.com/v3/contacts/attributes/normal", {
-      method: "POST",
-      headers: {
-        "api-key": process.env.BREVO_API_KEY!,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        attribute: {
-          attributeName: attr.name,
-          attributeType: brevoTypeMap[attr.type],
+    await fetch(
+      `https://api.brevo.com/v3/contacts/attributes/normal/${attr.name}`,
+      {
+        method: "POST",
+        headers: {
+          "api-key": process.env.BREVO_API_KEY!,
+          "Content-Type": "application/json",
         },
-      }),
-    })
+        body: JSON.stringify({ type: attr.type }),
+      }
+    )
     // Ignore errors - attribute may already exist
   }
 }
