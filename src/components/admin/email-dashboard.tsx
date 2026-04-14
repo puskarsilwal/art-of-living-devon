@@ -23,10 +23,12 @@ interface SessionState {
   loading: boolean
   sending: EmailType | null
   enrolling: boolean
+  cancelling: boolean
   enrollSequence: SequenceType
   enrollStartDate: string
   result: { sent: number; total: number; errors?: string[] } | null
   enrollResult: { enrolled: number; total: number; errors?: string[] } | null
+  cancelResult: { cancelled: number; total: number; errors?: string[] } | null
   showOneOff: boolean
 }
 
@@ -77,10 +79,12 @@ export default function EmailDashboard({
         loading: false,
         sending: null,
         enrolling: false,
+        cancelling: false,
         enrollSequence: "attended",
         enrollStartDate: new Date(s.dateISO).toISOString().slice(0, 10),
         result: null,
         enrollResult: null,
+        cancelResult: null,
         showOneOff: false,
       }])
     )
@@ -200,6 +204,36 @@ export default function EmailDashboard({
     }
   }
 
+  async function cancelSequence(session: IntroTalkSession) {
+    const state = states[session.id]
+    const selectedContacts = (state.contacts ?? []).filter((c: Contact) => state.selected.has(c.email))
+    const enrolled = selectedContacts.filter(c => c.sequence)
+
+    if (enrolled.length === 0) {
+      alert("None of the selected contacts are enrolled in a sequence.")
+      return
+    }
+
+    const confirmed = window.confirm(
+      `Cancel sequence for ${enrolled.length} contact${enrolled.length !== 1 ? "s" : ""}? They will stop receiving automated emails.`
+    )
+    if (!confirmed) return
+
+    updateState(session.id, { cancelling: true, cancelResult: null })
+    try {
+      const res = await fetch("/api/admin/unenroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-key": adminKey },
+        body: JSON.stringify({ contacts: enrolled }),
+      })
+      const data = await res.json()
+      updateState(session.id, { cancelling: false, cancelResult: data })
+      if (data.cancelled > 0) await loadContacts(session, true)
+    } catch {
+      updateState(session.id, { cancelling: false })
+    }
+  }
+
   return (
     <div className="space-y-6">
       {sessions.map(session => {
@@ -313,11 +347,20 @@ export default function EmailDashboard({
                     <Button
                       size="sm"
                       onClick={() => enrollContacts(session)}
-                      disabled={state.enrolling || selectedCount === 0}
+                      disabled={state.enrolling || state.cancelling || selectedCount === 0}
                     >
                       {state.enrolling
                         ? "Enrolling..."
                         : `Enroll ${selectedCount} contact${selectedCount !== 1 ? "s" : ""}`}
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => cancelSequence(session)}
+                      disabled={state.cancelling || state.enrolling || selectedCount === 0}
+                      className="text-red-600 border-red-200 hover:bg-red-50"
+                    >
+                      {state.cancelling ? "Cancelling..." : "Cancel sequence"}
                     </Button>
                   </div>
                   {state.enrollResult && (
@@ -329,6 +372,17 @@ export default function EmailDashboard({
                       {state.enrollResult.errors
                         ? `Enrolled ${state.enrollResult.enrolled} of ${state.enrollResult.total}. Failed: ${state.enrollResult.errors.join(", ")}`
                         : `Enrolled ${state.enrollResult.enrolled} contact${state.enrollResult.enrolled !== 1 ? "s" : ""}. First email sends at next 9 AM UTC cron run.`}
+                    </div>
+                  )}
+                  {state.cancelResult && (
+                    <div className={`rounded-md px-3 py-2 text-sm font-medium ${
+                      state.cancelResult.errors
+                        ? "bg-amber-50 text-amber-800 border border-amber-200"
+                        : "bg-green-50 text-green-800 border border-green-200"
+                    }`}>
+                      {state.cancelResult.errors
+                        ? `Cancelled ${state.cancelResult.cancelled} of ${state.cancelResult.total}. Failed: ${state.cancelResult.errors.join(", ")}`
+                        : `Cancelled sequence for ${state.cancelResult.cancelled} contact${state.cancelResult.cancelled !== 1 ? "s" : ""}.`}
                     </div>
                   )}
                 </div>
