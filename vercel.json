@@ -7,6 +7,10 @@
     {
       "path": "/api/cron/remind-hour-before",
       "schedule": "0 17 * * *"
+    },
+    {
+      "path": "/api/cron/send-sequences",
+      "schedule": "0 9 * * *"
     }
   ]
 }

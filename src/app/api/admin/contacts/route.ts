@@ -40,6 +40,9 @@ export async function GET(request: Request) {
     contacts: contacts.map(c => ({
       email: c.email,
       name: c.attributes?.FIRSTNAME || "",
+      sequence: c.attributes?.SEQUENCE || "",
+      seqStep: c.attributes?.SEQ_STEP != null ? Number(c.attributes.SEQ_STEP) : undefined,
+      seqStart: c.attributes?.SEQ_START || "",
     })),
   })
 }

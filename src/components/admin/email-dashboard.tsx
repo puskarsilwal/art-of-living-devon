@@ -7,9 +7,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
+type SequenceType = "attended" | "missed" | "cold"
+
 interface Contact {
   email: string
   name: string
+  sequence?: string
+  seqStep?: number
+  seqStart?: string
 }
 
 interface SessionState {
@@ -17,7 +22,11 @@ interface SessionState {
   selected: Set<string>
   loading: boolean
   sending: EmailType | null
+  enrolling: boolean
+  enrollSequence: SequenceType
   result: { sent: number; total: number; errors?: string[] } | null
+  enrollResult: { enrolled: number; total: number; errors?: string[] } | null
+  showOneOff: boolean
 }
 
 const GROUP_COLORS = [
@@ -28,6 +37,30 @@ const GROUP_COLORS = [
   { btn: "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100",   header: "bg-slate-50 border-slate-200"   },
 ]
 
+const SEQUENCE_LABELS: Record<SequenceType, string> = {
+  attended: "Attended - 5 emails over 24 days",
+  missed:   "Missed - 4 emails over 5 days",
+  cold:     "Cold - 6 emails over 26 days",
+}
+
+const SEQUENCE_LENGTHS: Record<SequenceType, number> = {
+  attended: 5,
+  missed:   4,
+  cold:     6,
+}
+
+function seqStatusLabel(contact: Contact): { label: string; color: string } {
+  const seq = contact.sequence
+  if (!seq) return { label: "None", color: "text-muted-foreground" }
+
+  const step = contact.seqStep ?? 0
+  const total = SEQUENCE_LENGTHS[seq as SequenceType] ?? 0
+  const seqLabel = seq.charAt(0).toUpperCase() + seq.slice(1)
+
+  if (step >= total) return { label: `${seqLabel} - Done`, color: "text-green-700" }
+  return { label: `${seqLabel} - step ${step}/${total}`, color: "text-orange-700" }
+}
+
 export default function EmailDashboard({
   sessions,
   adminKey,
@@ -37,7 +70,17 @@ export default function EmailDashboard({
 }) {
   const [states, setStates] = useState<Record<string, SessionState>>(
     Object.fromEntries(
-      sessions.map(s => [s.id, { contacts: null, selected: new Set(), loading: false, sending: null, result: null }])
+      sessions.map(s => [s.id, {
+        contacts: null,
+        selected: new Set(),
+        loading: false,
+        sending: null,
+        enrolling: false,
+        enrollSequence: "attended",
+        result: null,
+        enrollResult: null,
+        showOneOff: false,
+      }])
     )
   )
 
@@ -47,7 +90,7 @@ export default function EmailDashboard({
 
   async function loadContacts(session: IntroTalkSession) {
     if (!session.brevoListId) return
-    updateState(session.id, { loading: true, result: null })
+    updateState(session.id, { loading: true, result: null, enrollResult: null })
     try {
       const res = await fetch(`/api/admin/contacts?listId=${session.brevoListId}`, {
         headers: { "x-admin-key": adminKey },
@@ -68,7 +111,7 @@ export default function EmailDashboard({
     setStates(prev => {
       const next = new Set(prev[sessionId].selected)
       next.has(email) ? next.delete(email) : next.add(email)
-      return { ...prev, [sessionId]: { ...prev[sessionId], selected: next, result: null } }
+      return { ...prev, [sessionId]: { ...prev[sessionId], selected: next, result: null, enrollResult: null } }
     })
   }
 
@@ -81,6 +124,7 @@ export default function EmailDashboard({
           ...prev[sessionId],
           selected: allSelected ? new Set() : new Set(contacts.map(c => c.email)),
           result: null,
+          enrollResult: null,
         },
       }
     })
@@ -111,6 +155,35 @@ export default function EmailDashboard({
       updateState(session.id, { sending: null, result: data })
     } catch {
       updateState(session.id, { sending: null })
+    }
+  }
+
+  async function enrollContacts(session: IntroTalkSession) {
+    const state = states[session.id]
+    const selectedContacts = (state.contacts ?? []).filter((c: Contact) => state.selected.has(c.email))
+
+    if (selectedContacts.length === 0) {
+      alert("No contacts selected.")
+      return
+    }
+
+    const seqLabel = SEQUENCE_LABELS[state.enrollSequence]
+    const confirmed = window.confirm(
+      `Enroll ${selectedContacts.length} contact${selectedContacts.length !== 1 ? "s" : ""} in: ${seqLabel}?\n\nThe cron job will send the first email at 9 AM UTC today (or tomorrow if it already ran).`
+    )
+    if (!confirmed) return
+
+    updateState(session.id, { enrolling: true, enrollResult: null })
+    try {
+      const res = await fetch("/api/admin/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-key": adminKey },
+        body: JSON.stringify({ contacts: selectedContacts, sequence: state.enrollSequence }),
+      })
+      const data = await res.json()
+      updateState(session.id, { enrolling: false, enrollResult: data })
+    } catch {
+      updateState(session.id, { enrolling: false })
     }
   }
 
@@ -171,6 +244,7 @@ export default function EmailDashboard({
                   <div className="max-h-52 overflow-y-auto divide-y divide-border/50">
                     {contacts.map(c => {
                       const isSelected = state.selected.has(c.email)
+                      const status = seqStatusLabel(c)
                       return (
                         <label
                           key={c.email}
@@ -182,8 +256,9 @@ export default function EmailDashboard({
                             onChange={() => toggleContact(session.id, c.email)}
                             className="h-4 w-4 accent-primary cursor-pointer shrink-0"
                           />
-                          <span className="text-sm font-medium min-w-[100px]">{c.name || "—"}</span>
-                          <span className="text-sm text-muted-foreground">{c.email}</span>
+                          <span className="text-sm font-medium min-w-[100px]">{c.name || "-"}</span>
+                          <span className="text-sm text-muted-foreground flex-1">{c.email}</span>
+                          <span className={`text-xs font-medium ${status.color} shrink-0`}>{status.label}</span>
                         </label>
                       )
                     })}
@@ -195,36 +270,89 @@ export default function EmailDashboard({
                 <p className="text-sm text-muted-foreground">No contacts in this list yet.</p>
               )}
 
-              {/* Email groups - only show after contacts loaded */}
+              {/* Enroll in sequence - only show after contacts loaded */}
               {contacts.length > 0 && (
-                <div className="space-y-4">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Send to {selectedCount} selected contact{selectedCount !== 1 ? "s" : ""}
+                <div className="rounded-lg border border-border bg-muted/30 p-4 space-y-3">
+                  <p className="text-sm font-semibold">Enroll in automated sequence</p>
+                  <p className="text-xs text-muted-foreground">
+                    The cron job runs daily at 9 AM UTC and sends the next email when it is due.
+                    Enrolling again resets the sequence from step 1.
                   </p>
-                  {EMAIL_GROUPS.map((group, gi) => (
-                    <div key={group.label} className={`rounded-lg border p-4 space-y-3 ${GROUP_COLORS[gi].header}`}>
-                      <div>
-                        <p className="text-sm font-semibold">{group.label}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5">{group.description}</p>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        {group.types.map(type => (
-                          <button
-                            key={type}
-                            onClick={() => sendEmail(session, type)}
-                            disabled={state.sending !== null || selectedCount === 0}
-                            className={`text-left text-sm px-3 py-2 rounded-md border font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${GROUP_COLORS[gi].btn}`}
-                          >
-                            {state.sending === type ? "Sending..." : EMAIL_TYPE_LABELS[type]}
-                          </button>
-                        ))}
-                      </div>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <select
+                      value={state.enrollSequence}
+                      onChange={e => updateState(session.id, { enrollSequence: e.target.value as SequenceType })}
+                      className="text-sm border border-border rounded-md px-3 py-1.5 bg-background"
+                    >
+                      {(Object.keys(SEQUENCE_LABELS) as SequenceType[]).map(seq => (
+                        <option key={seq} value={seq}>{SEQUENCE_LABELS[seq]}</option>
+                      ))}
+                    </select>
+                    <Button
+                      size="sm"
+                      onClick={() => enrollContacts(session)}
+                      disabled={state.enrolling || selectedCount === 0}
+                    >
+                      {state.enrolling
+                        ? "Enrolling..."
+                        : `Enroll ${selectedCount} contact${selectedCount !== 1 ? "s" : ""}`}
+                    </Button>
+                  </div>
+                  {state.enrollResult && (
+                    <div className={`rounded-md px-3 py-2 text-sm font-medium ${
+                      state.enrollResult.errors
+                        ? "bg-amber-50 text-amber-800 border border-amber-200"
+                        : "bg-green-50 text-green-800 border border-green-200"
+                    }`}>
+                      {state.enrollResult.errors
+                        ? `Enrolled ${state.enrollResult.enrolled} of ${state.enrollResult.total}. Failed: ${state.enrollResult.errors.join(", ")}`
+                        : `Enrolled ${state.enrollResult.enrolled} contact${state.enrollResult.enrolled !== 1 ? "s" : ""}. First email sends at next 9 AM UTC cron run.`}
                     </div>
-                  ))}
+                  )}
                 </div>
               )}
 
-              {/* Result banner */}
+              {/* One-off sends - collapsible */}
+              {contacts.length > 0 && (
+                <div className="space-y-3">
+                  <button
+                    className="text-xs font-semibold text-muted-foreground uppercase tracking-wider flex items-center gap-1"
+                    onClick={() => updateState(session.id, { showOneOff: !state.showOneOff })}
+                  >
+                    <span>{state.showOneOff ? "▾" : "▸"}</span>
+                    One-off sends
+                  </button>
+                  {state.showOneOff && (
+                    <div className="space-y-4">
+                      <p className="text-xs text-muted-foreground">
+                        Send a single email immediately to {selectedCount} selected contact{selectedCount !== 1 ? "s" : ""}. Does not affect sequence enrollment.
+                      </p>
+                      {EMAIL_GROUPS.map((group, gi) => (
+                        <div key={group.label} className={`rounded-lg border p-4 space-y-3 ${GROUP_COLORS[gi].header}`}>
+                          <div>
+                            <p className="text-sm font-semibold">{group.label}</p>
+                            <p className="text-xs text-muted-foreground mt-0.5">{group.description}</p>
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            {group.types.map(type => (
+                              <button
+                                key={type}
+                                onClick={() => sendEmail(session, type)}
+                                disabled={state.sending !== null || selectedCount === 0}
+                                className={`text-left text-sm px-3 py-2 rounded-md border font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${GROUP_COLORS[gi].btn}`}
+                              >
+                                {state.sending === type ? "Sending..." : EMAIL_TYPE_LABELS[type]}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* One-off send result banner */}
               {state.result && (
                 <div className={`rounded-lg px-4 py-3 text-sm font-medium ${
                   state.result.errors
