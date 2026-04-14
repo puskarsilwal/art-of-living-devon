@@ -31,11 +31,11 @@ const courseBlock = `
     <p style="font-weight: 600; margin: 0 0 12px 0; font-size: 15px;">Upcoming Part 1 Course dates:</p>
     <p style="margin: 0 0 2px 0;"><strong>May 8, 9 &amp; 10, 2026</strong> &bull; St Sidwell's Community Centre, Exeter</p>
     <p style="margin: 0 0 14px 0; font-size: 14px;">
-      <a href="https://aolreg.org/c/GBC1012472" style="color: #f97316; font-weight: 600;">Register for May &rarr;</a>
+      <a href="${COURSE_PAGE_URL}" style="color: #f97316; font-weight: 600;">Find out more and register for May &rarr;</a>
     </p>
     <p style="margin: 0 0 2px 0;"><strong>September 25, 26 &amp; 27, 2026</strong> &bull; St Sidwell's Community Centre, Exeter</p>
     <p style="margin: 0; font-size: 14px;">
-      <a href="https://aolreg.org/c/GBC1044098" style="color: #f97316; font-weight: 600;">Register for September &rarr;</a>
+      <a href="${COURSE_PAGE_URL}" style="color: #f97316; font-weight: 600;">Find out more and register for September &rarr;</a>
     </p>
   </div>
 `
