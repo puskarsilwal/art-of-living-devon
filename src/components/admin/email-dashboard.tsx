@@ -262,8 +262,30 @@ export default function EmailDashboard({
     document.body.removeChild(link)
   }
 
+  function exportAllLoadedContactsToCsv() {
+    const allContacts: Contact[] = []
+    Object.values(states).forEach(state => {
+      if (state.contacts) {
+        allContacts.push(...state.contacts)
+      }
+    })
+    
+    if (allContacts.length === 0) {
+      alert("No contacts loaded to export. Please click 'Load contacts' on at least one session.")
+      return
+    }
+    
+    const uniqueContacts = Array.from(new Map(allContacts.map(c => [c.email, c])).values())
+    exportContactsToCsv(uniqueContacts, "all-sessions-master")
+  }
+
   return (
     <div className="space-y-6">
+      <div className="flex justify-end border-b border-border pb-4">
+        <Button variant="default" onClick={exportAllLoadedContactsToCsv}>
+          Export Master List (All Loaded Sessions)
+        </Button>
+      </div>
       {sessions.map(session => {
         const state = states[session.id]
         const hasListId = !!session.brevoListId
