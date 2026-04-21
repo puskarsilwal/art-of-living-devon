@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { getEmailContent } from "@/lib/emails/post-intro-templates"
 
 export const runtime = "nodejs"
 
@@ -37,11 +38,38 @@ async function enrollContact(email: string, name: string, phone: string, sequenc
   const firstName = nameParts[0] || ""
   const lastName = nameParts.slice(1).join(" ")
 
+  let initialStep = 0
+  let lastSent = ""
+
+  // If attended, we immediately send the first email rather than wait for the cron
+  if (sequence === "attended") {
+    const { subject, htmlContent } = getEmailContent("attended-1-welcome", firstName || email.split("@")[0])
+    
+    const emailRes = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "api-key": process.env.BREVO_API_KEY!,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sender: { name: "Art of Living Devon", email: "puskarsilwal001@gmail.com" },
+        to: [{ email, name: firstName }],
+        subject,
+        htmlContent,
+      }),
+    })
+    
+    if (emailRes.ok) {
+      initialStep = 1
+      lastSent = today
+    }
+  }
+
   const attributes: Record<string, any> = {
     SEQUENCE: sequence,
     SEQ_START: today,
-    SEQ_STEP: 0,
-    SEQ_LAST_SENT: "",
+    SEQ_STEP: initialStep,
+    SEQ_LAST_SENT: lastSent,
   }
 
   if (firstName) attributes.FIRSTNAME = firstName
