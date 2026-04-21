@@ -12,6 +12,7 @@ type SequenceType = "attended" | "missed" | "cold"
 interface Contact {
   email: string
   name: string
+  phone?: string
   sequence?: string
   seqStep?: number
   seqStart?: string
@@ -234,6 +235,33 @@ export default function EmailDashboard({
     }
   }
 
+  function exportContactsToCsv(contacts: Contact[], sessionDate: string) {
+    if (!contacts || contacts.length === 0) return
+    const headers = ["Name", "Email", "Phone", "Sequence", "Step", "Start Date"]
+    const rows = contacts.map(c => [
+      c.name || "",
+      c.email,
+      c.phone || "",
+      c.sequence || "None",
+      c.seqStep?.toString() || "0",
+      c.seqStart || ""
+    ])
+    
+    const csvContent = [
+      headers.join(","),
+      ...rows.map(row => row.map(v => `"${v.replace(/"/g, '""')}"`).join(","))
+    ].join("\n")
+    
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement("a")
+    link.href = url
+    link.setAttribute("download", `contacts-${sessionDate.replace(/\W+/g, "-").toLowerCase()}.csv`)
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <div className="space-y-6">
       {sessions.map(session => {
@@ -260,9 +288,16 @@ export default function EmailDashboard({
                   </p>
                 </div>
                 {hasListId ? (
-                  <Button variant="outline" size="sm" onClick={() => loadContacts(session)} disabled={state.loading}>
-                    {state.loading ? "Loading..." : state.contacts !== null ? "Refresh" : "Load contacts"}
-                  </Button>
+                  <div className="flex items-center gap-2">
+                    <Button variant="outline" size="sm" onClick={() => loadContacts(session)} disabled={state.loading}>
+                      {state.loading ? "Loading..." : state.contacts !== null ? "Refresh" : "Load contacts"}
+                    </Button>
+                    {state.contacts !== null && state.contacts.length > 0 && (
+                      <Button variant="outline" size="sm" onClick={() => exportContactsToCsv(state.contacts!, session.date)}>
+                        Export CSV
+                      </Button>
+                    )}
+                  </div>
                 ) : (
                   <Badge variant="outline" className="text-muted-foreground">No Brevo list configured</Badge>
                 )}

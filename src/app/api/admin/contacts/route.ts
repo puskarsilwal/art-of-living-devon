@@ -66,6 +66,7 @@ export async function GET(request: Request) {
       return {
         email: c.email,
         name: String(attrs?.FIRSTNAME || c.attributes?.FIRSTNAME || ""),
+        phone: String(attrs?.PHONE || c.attributes?.PHONE || ""),
         sequence: String(attrs?.SEQUENCE || ""),
         seqStep: attrs?.SEQ_STEP != null ? Number(attrs.SEQ_STEP) : undefined,
         seqStart: String(attrs?.SEQ_START || ""),

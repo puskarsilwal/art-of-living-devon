@@ -31,25 +31,35 @@ async function ensureBrevoAttributes() {
   }
 }
 
-async function enrollContact(email: string, sequence: SequenceType, today: string) {
-  const res = await fetch(
-    `https://api.brevo.com/v3/contacts/${encodeURIComponent(email)}`,
-    {
-      method: "PUT",
-      headers: {
-        "api-key": process.env.BREVO_API_KEY!,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        attributes: {
-          SEQUENCE: sequence,
-          SEQ_START: today,
-          SEQ_STEP: 0,
-          SEQ_LAST_SENT: "",
-        },
-      }),
-    }
-  )
+async function enrollContact(email: string, name: string, phone: string, sequence: SequenceType, today: string) {
+  // Try to parse first name and last name
+  const nameParts = (name || "").trim().split(/\s+/)
+  const firstName = nameParts[0] || ""
+  const lastName = nameParts.slice(1).join(" ")
+
+  const attributes: Record<string, any> = {
+    SEQUENCE: sequence,
+    SEQ_START: today,
+    SEQ_STEP: 0,
+    SEQ_LAST_SENT: "",
+  }
+
+  if (firstName) attributes.FIRSTNAME = firstName
+  if (lastName) attributes.LASTNAME = lastName
+  if (phone) attributes.PHONE = phone
+
+  const res = await fetch(`https://api.brevo.com/v3/contacts`, {
+    method: "POST",
+    headers: {
+      "api-key": process.env.BREVO_API_KEY!,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      attributes,
+      updateEnabled: true,
+    }),
+  })
   return res.ok
 }
 
@@ -63,7 +73,7 @@ export async function POST(request: Request) {
 
   const body = await request.json()
   const { contacts, sequence, startDate } = body as {
-    contacts: Array<{ email: string; name: string }>
+    contacts: Array<{ email: string; name: string; phone?: string }>
     sequence: SequenceType
     startDate?: string
   }
@@ -89,7 +99,7 @@ export async function POST(request: Request) {
   const errors: string[] = []
 
   for (const contact of contacts) {
-    const ok = await enrollContact(contact.email, sequence, today)
+    const ok = await enrollContact(contact.email, contact.name || "", contact.phone || "", sequence, today)
     if (ok) {
       enrolled++
     } else {

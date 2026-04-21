@@ -1,5 +1,6 @@
 import { introTalkSessions } from "@/lib/data/intro-talks"
 import EmailDashboard from "@/components/admin/email-dashboard"
+import { ManualEnrollment } from "@/components/admin/manual-enrollment"
 
 export const metadata = {
   title: "Admin | Art of Living Devon",
@@ -39,6 +40,7 @@ export default async function AdminPage({ searchParams }: Props) {
             Preview emails
           </a>
         </div>
+        <ManualEnrollment adminKey={key} />
         <EmailDashboard sessions={introTalkSessions} adminKey={key} />
       </div>
     </main>
