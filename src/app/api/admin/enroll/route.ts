@@ -33,6 +33,23 @@ async function ensureBrevoAttributes() {
   }
 }
 
+function formatForSms(phone: string): string | null {
+  // Remove spaces and non-digit characters except '+'
+  const clean = phone.replace(/[^\d+]/g, "")
+  if (!clean) return null
+
+  // Handle common UK formats
+  if (clean.startsWith("07") && clean.length === 11) return "+44" + clean.slice(1)
+  if (clean.startsWith("+07")) return "+44" + clean.slice(2)
+  if (clean.startsWith("+44")) return clean
+  if (clean.startsWith("44") && !clean.startsWith("+")) return "+" + clean
+  
+  // If it starts with + and looks like it has a country code, return as is
+  if (clean.startsWith("+") && clean.length > 8) return clean
+
+  return null // Return null if we can't be sure it's a valid international mobile
+}
+
 async function enrollContact(email: string, name: string, phone: string, sequence: SequenceType, today: string) {
   // Try to parse first name and last name
   const nameParts = (name || "").trim().split(/\s+/)
@@ -77,7 +94,10 @@ async function enrollContact(email: string, name: string, phone: string, sequenc
   if (lastName) attributes.LASTNAME = lastName
   if (phone) {
     attributes.PHONE = phone
-    attributes.SMS = phone
+    const smsFormatted = formatForSms(phone)
+    if (smsFormatted) {
+      attributes.SMS = smsFormatted
+    }
   }
 
   const res = await fetch(`https://api.brevo.com/v3/contacts`, {
