@@ -237,15 +237,48 @@ export default function EmailDashboard({
 
   function exportContactsToCsv(contacts: Contact[], sessionDate: string) {
     if (!contacts || contacts.length === 0) return
-    const headers = ["Name", "Email", "Phone", "Sequence", "Step", "Start Date"]
-    const rows = contacts.map(c => [
-      c.name || "",
-      c.email,
-      c.phone || "",
-      c.sequence || "None",
-      c.seqStep?.toString() || "0",
-      c.seqStart || ""
-    ])
+    
+    const headers = [
+      "Name",
+      "Phone",
+      "Action / Status",
+      "Priority",
+      "Session Date",
+      "Email",
+      "Sequence Progress",
+      "Notes (For Caller)"
+    ]
+
+    const rows = contacts.map(c => {
+      let status = "New Lead"
+      let priority = "3 - Low"
+      
+      if (c.sequence === "missed") {
+        status = "MISSED: Call to re-invite"
+        priority = "1 - HIGH"
+      } else if (c.sequence === "attended") {
+        status = "ATTENDED: Call for Course"
+        priority = "2 - Medium"
+      } else if (c.sequence === "cold") {
+        status = "Cold Lead"
+        priority = "4 - Very Low"
+      }
+
+      const progress = c.sequence 
+        ? `${c.seqStep ?? 0}/${SEQUENCE_LENGTHS[c.sequence as SequenceType] || "?"}`
+        : "N/A"
+
+      return [
+        c.name || "",
+        c.phone || "",
+        status,
+        priority,
+        c.seqStart || sessionDate,
+        c.email,
+        progress,
+        "" // Empty notes column
+      ]
+    })
     
     const csvContent = [
       headers.join(","),
@@ -256,7 +289,7 @@ export default function EmailDashboard({
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.setAttribute("download", `contacts-${sessionDate.replace(/\W+/g, "-").toLowerCase()}.csv`)
+    link.setAttribute("download", `calling-list-${sessionDate.replace(/\W+/g, "-").toLowerCase()}.csv`)
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
