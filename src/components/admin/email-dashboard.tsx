@@ -361,7 +361,8 @@ export default function EmailDashboard({
                             className="h-4 w-4 accent-primary cursor-pointer shrink-0"
                           />
                           <span className="text-sm font-medium min-w-[100px]">{c.name || "-"}</span>
-                          <span className="text-sm text-muted-foreground flex-1">{c.email}</span>
+                          <span className="text-sm text-muted-foreground min-w-[150px] truncate">{c.email}</span>
+                          <span className="text-sm text-muted-foreground flex-1 opacity-70">{c.phone || "-"}</span>
                           <span className={`text-xs font-medium ${status.color} shrink-0`}>{status.label}</span>
                         </label>
                       )
