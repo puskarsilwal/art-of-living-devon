@@ -39,6 +39,7 @@ async function sendBrevoConfirmation(data: {
           FIRSTNAME: firstName,
           EMAIL: data.email,
           PHONE: data.phone || "",
+          SMS: data.phone || "",
           SESSION_ID: data.sessionId,
           SESSION_DATE: session.date,
         },

@@ -14,6 +14,7 @@ async function ensureBrevoAttributes() {
     { name: "SEQ_START", type: "text" },
     { name: "SEQ_STEP", type: "float" },
     { name: "SEQ_LAST_SENT", type: "text" },
+    { name: "PHONE", type: "text" },
   ]
 
   for (const attr of attrs) {
@@ -74,7 +75,10 @@ async function enrollContact(email: string, name: string, phone: string, sequenc
 
   if (firstName) attributes.FIRSTNAME = firstName
   if (lastName) attributes.LASTNAME = lastName
-  if (phone) attributes.PHONE = phone
+  if (phone) {
+    attributes.PHONE = phone
+    attributes.SMS = phone
+  }
 
   const res = await fetch(`https://api.brevo.com/v3/contacts`, {
     method: "POST",
